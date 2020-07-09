@@ -2,7 +2,7 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 ========
 
 
-### Table of Contents
+## Table of Contents
 **[Overview](#Overview)**<br>
 **[Module Initialization](#Module-Initialization)**<br>
 **[Global Functions](#Global-Functions)**<br>
@@ -15,43 +15,33 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 
 -----------------------------
 
-# Overview
+## Overview
 
 
 
-# Module Initialization
+## Module Initialization
 
 
 
-# Global Functions
+## Global Functions
 
 
 
-# Internal Functions
+## Internal Functions
 
 
 
-# Interfaces
+## Interfaces
 
 
 
-## Module Inputs
-
-| No.	| Variable			 | Description 		| Data Type	 	 | Init Value   | Dimension |
-|:---	| :---:              | :--:             |:---:        	 | :--:         | ---:      |
-|		| 			         | 			        |				 | 			    |			|
-|		| 			         | 			        |				 | 			    |			|
-## Module Outputs
+### Module Inputs
 
 | No.	| Variable			 | Description 		| Data Type	 	 | Init Value   | Dimension |
 |:---	| :---:              | :--:             |:---:        	 | :--:         | ---:      |
 |		| 			         | 			        |				 | 			    |			|
 |		| 			         | 			        |				 | 			    |			|
-
-
-Internal Data
------------------------------
-
+### Module Outputs
 
 | No.	| Variable			 | Description 		| Data Type	 	 | Init Value   | Dimension |
 |:---	| :---:              | :--:             |:---:        	 | :--:         | ---:      |
@@ -59,8 +49,18 @@ Internal Data
 |		| 			         | 			        |				 | 			    |			|
 
 
-Configuration Data
------------------------------
+## Internal Data
+
+
+
+| No.	| Variable			 | Description 		| Data Type	 	 | Init Value   | Dimension |
+|:---	| :---:              | :--:             |:---:        	 | :--:         | ---:      |
+|		| 			         | 			        |				 | 			    |			|
+|		| 			         | 			        |				 | 			    |			|
+
+
+## Configuration Data
+
 
 
 | No.	| Parameter			 | Description 		| Data Type	 	| Value 		| Dimension |
@@ -69,8 +69,8 @@ Configuration Data
 |		| 			         | 			        |				| 			    |			|	
 
 
-Calibration Data
------------------------------
+## Calibration Data
+
 
 
 | No.	| Parameter			 | Description 		| Data Type	 	| Value 		| Dimension |
@@ -78,8 +78,8 @@ Calibration Data
 |		| 			         | 			        |				| 			    |			|
 |		| 			         | 			        |				| 			    |			|	
 
-Version History
----------------
+## Version History
+
 
 1.0.0 (Date):
 
