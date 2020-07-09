@@ -3,19 +3,29 @@ Diagnostic Server for Common Data Identifiers
 
 
 ### Table of Contents
-**[Functional Overview](#Functional-Overview)**<br>
-**[Initialization](#Initialization)**<br>
+**[Overview](#Overview)**<br>
+**[Module Initialization](#Module-Initialization)**<br>
+**[Global Functions](#Global-Functions)**<br>
+**[Internal Functions](#Internal-Functions)**<br>
 **[Interfaces](#Interfaces)**<br>
 **[Internal Data](#Internal-Data)**<br>
 **[Configuration Data](#Configuration-Data)**<br>
 **[Calibration Data](#Calibration-Data)**<br>
 **[Version History](#Version-History)**<br>
 
-Functional Overview
+Overview
 ------------
 
 
-Initialization
+Module Initialization
+-----------------------------
+
+
+Global Functions
+-----------------------------
+
+
+Internal Functions
 -----------------------------
 
 
