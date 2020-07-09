@@ -27,7 +27,7 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 
 ### Global Function1
 
-	refer [internal function1](#Internal-Function1)
+	refer internal function1(#Internal-Functions)
 
 ### Global Function2
 
