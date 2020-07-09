@@ -9,7 +9,7 @@ Diagnostic Server for Common Data Identifiers
 **[Internal Data](#Internal-Data)**<br>
 **[Configuration Data](#Configuration-Data)**<br>
 **[Calibration Data](#Calibration-Data)**<br>
-**[Next Steps, Credits, Feedback, License](#next-steps)**<br>
+**[Version History](#Version-History)**<br>
 
 Functional Overview
 ------------
