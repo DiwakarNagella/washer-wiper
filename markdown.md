@@ -31,8 +31,11 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 	arg1
 	arg2
 #### Returntype
+	return value
 	
 #### Description
+	
+	Read Total Vehicle Distance signal for later use by Odometer_P1AFS_ReadData()
 	
 
 ### Global Function2
@@ -40,7 +43,17 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 
 ## Internal Functions
 
-### Internal Function1
+### fillPartNumber
+
+#### Arguments
+	- uint8** pDestPtr 
+	- const uint8 IdType
+	- const uint8* partNumber
+#### Returntype
+	- void
+#### Description
+	
+	Copy the partNumber into the destination location
 
 ### Internal Function2
 
