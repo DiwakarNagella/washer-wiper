@@ -25,18 +25,26 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 
 ## Global Functions
 
-### Global Function1
+### VOL_DIDServer_Init
 
 #### Arguments
-	arg1
-	arg2
+	 - Void
 #### Returntype
-	return value
+	 - Void
 	
 #### Description
 	
-	Read Total Vehicle Distance signal for later use by Odometer_P1AFS_ReadData()
+	+ During Power-on-reset OR when the CRC is not valid Set the following to default values */
+		vehicleMode - VehicleMode_NotAvailable
+		ambAirTemp -  AAT_NA_MAX
+		totalDistance - TOTAL_VEHICLE_DISTANCE_HIGH_RES_DBC_DEFAULT
+		utcTime - UTC_NOT_AVAILABLE
+      
+	+ Update the CRC of m_noInitVars  
 	
+	+ Set the Diagnostic default session
+
+   	
 
 ### Global Function2
 
@@ -103,6 +111,15 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 |:---	| :---:              | :--:             |:---:         	| :--:          | ---:      |
 |		| 			         | 			        |				| 			    |			|
 |		| 			         | 			        |				| 			    |			|	
+
+## ENUMs
+
+
+
+| No.	| Variable			 | Description 		| 
+|:---	| :---:              | --:              |
+|		| 			         | 			        |
+|		| 			         | 			        |
 
 ## Version History
 
