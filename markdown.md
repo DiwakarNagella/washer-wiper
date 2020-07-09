@@ -348,7 +348,7 @@ Siehe \ref{fig:diagramm}, die folgendes zeigt:
 - zweite Sache,
 - dritte Sache.
 
-![Diagramm\label{fig:diagramm}](../Diagrams/diagramm.pdf)
+![Diagramm\label{fig:diagramm}](/doc/images/runnable_measure_overview.png)
 
 # Grundlagen
 
