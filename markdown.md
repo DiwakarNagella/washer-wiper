@@ -82,6 +82,6 @@ Version History
 
 1.0.0 (Date):
 
-+	Changed the init fucntion 
++	Changed the init function 
 
 	**NOTE**: This change affects the initialization behaviour of the module.
