@@ -34,15 +34,15 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 	
 #### Description
 	
-	+ During Power-on-reset OR when the CRC is not valid Set the following to default values */
++ During Power-on-reset OR when the CRC is not valid Set the following to default values
 		vehicleMode - VehicleMode_NotAvailable
 		ambAirTemp -  AAT_NA_MAX
 		totalDistance - TOTAL_VEHICLE_DISTANCE_HIGH_RES_DBC_DEFAULT
 		utcTime - UTC_NOT_AVAILABLE
       
-	+ Update the CRC of m_noInitVars  
++ Update the CRC of m_noInitVars  
 	
-	+ Set the Diagnostic default session
++ Set the Diagnostic default session
 
    	
 
