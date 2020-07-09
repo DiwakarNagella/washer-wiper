@@ -1,4 +1,4 @@
-Diagnostic Server for Common Data Identifiers
+Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 ========
 
 
@@ -33,63 +33,55 @@ Internal Functions
 Interfaces
 -----------------------------
 
-Lorem
 
 ## Module Inputs
 
-| Spalte linksbündig | Spalte zentriert | Spalte rechtsbündig |
-| :---               | :--:             | ---:                |
-| Zeile 1 a          | Zeile 1 b        | Zeile 1 c           |
-| Zeile 2 a          | Zeile 2 b        | Zeile 2 c           |
-
+| No.	| Variable			 | Description 		| Data Type	 	 | Init Value   | Dimension |
+|:---	| :---:              | :--:             |:---:        	 | :--:         | ---:      |
+|		| 			         | 			        |				 | 			    |			|
+|		| 			         | 			        |				 | 			    |			|
 ## Module Outputs
 
-| Spalte linksbündig | Spalte zentriert | Spalte rechtsbündig |
-| :---               | :--:             | ---:                |
-| Zeile 1 a          | Zeile 1 b        | Zeile 1 c           |
-| Zeile 2 a          | Zeile 2 b        | Zeile 2 c           |
+| No.	| Variable			 | Description 		| Data Type	 	 | Init Value   | Dimension |
+|:---	| :---:              | :--:             |:---:        	 | :--:         | ---:      |
+|		| 			         | 			        |				 | 			    |			|
+|		| 			         | 			        |				 | 			    |			|
 
 
 Internal Data
 -----------------------------
 
 
-Ipsum
-
-| Spalte linksbündig | Spalte zentriert | Spalte rechtsbündig |
-| :---               | :--:             | ---:                |
-| Zeile 1 a          | Zeile 1 b        | Zeile 1 c           |
-| Zeile 2 a          | Zeile 2 b        | Zeile 2 c           |
+| No.	| Variable			 | Description 		| Data Type	 	 | Init Value   | Dimension |
+|:---	| :---:              | :--:             |:---:        	 | :--:         | ---:      |
+|		| 			         | 			        |				 | 			    |			|
+|		| 			         | 			        |				 | 			    |			|
 
 
 Configuration Data
 -----------------------------
 
-Lorem
 
-| Spalte linksbündig | Spalte zentriert | Spalte rechtsbündig |
-| :---               | :--:             | ---:                |
-| Zeile 1 a          | Zeile 1 b        | Zeile 1 c           |
-| Zeile 2 a          | Zeile 2 b        | Zeile 2 c           |
+| No.	| Parameter			 | Description 		| Data Type	 	| Value 		| Dimension |
+|:---	| :---:              | :--:             |:---:         	| :--:          | ---:      |
+|		| 			         | 			        |				| 			    |			|
+|		| 			         | 			        |				| 			    |			|	
 
 
 Calibration Data
 -----------------------------
 
-Ipsum
 
-| Spalte linksbündig | Spalte zentriert | Spalte rechtsbündig |
-| :---               | :--:             | ---:                |
-| Zeile 1 a          | Zeile 1 b        | Zeile 1 c           |
-| Zeile 2 a          | Zeile 2 b        | Zeile 2 c           |
+| No.	| Parameter			 | Description 		| Data Type	 	| Value 		| Dimension |
+|:---	| :---:              | :--:             |:---:         	| :--:          | ---:      |
+|		| 			         | 			        |				| 			    |			|
+|		| 			         | 			        |				| 			    |			|	
 
 Version History
 ---------------
 
-1.0.1 (14 Dec 2004):
+1.0.0 (Date):
 
-+	Changed the code 
++	Changed the init fucntion 
 
-	**NOTE**: This changes the syntax from all previous versions of
-	Markdown. Code blocks and spans involving backslash characters
-	will now generate different output than before.
+	**NOTE**: This change affects the initialization behaviour of the module.
