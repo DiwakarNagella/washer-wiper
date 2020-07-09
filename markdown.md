@@ -1,34 +1,12 @@
-Markdown
+Diagnostic Server for Common Data Identifiers
 ========
 
-Version 1.0.1 - Tue 14 Dec 2004
 
-by John Gruber  
-<http://daringfireball.net/>
-
-
-Introduction
+Functional Overview
 ------------
 
-Markdown is a text-to-HTML conversion tool for web writers. Markdown
-allows you to write using an easy-to-read, easy-to-write plain text
-format, then convert it to structurally valid XHTML (or HTML).
 
-Thus, "Markdown" is two things: a plain text markup syntax, and a
-software tool, written in Perl, that converts the plain text markup 
-to HTML.
-
-Markdown works both as a Movable Type plug-in and as a standalone Perl
-script -- which means it can also be used as a text filter in BBEdit
-(or any other application that supporst filters written in Perl).
-
-Full documentation of Markdown's syntax and configuration options is
-available on the web: <http://daringfireball.net/projects/markdown/>.
-(Note: this readme file is formatted in Markdown.)
-
-
-
-Installation and Requirements
+Initialization
 -----------------------------
 
 Markdown requires Perl 5.6.0 or later. Welcome to the 21st Century.
@@ -350,37 +328,51 @@ Siehe \ref{fig:diagramm}, die folgendes zeigt:
 
 ![Diagramm\label{fig:diagramm}](/doc/images/runnable_measure_overview.png)
 
-# Grundlagen
+# Interfaces
 
 Lorem
 
-## Wichtige Grundlage 1
-
-### Unterpunkt
-
-#### Noch tieferer Unterpunkt
-
-Siehe auch Tabelle \ref{tab:formatierung}:
-
-Table: Wichtige Übersicht zur Formatierung von Tabellen\label{tab:formatierung}
+## Module Inputs
 
 | Spalte linksbündig | Spalte zentriert | Spalte rechtsbündig |
 | :---               | :--:             | ---:                |
 | Zeile 1 a          | Zeile 1 b        | Zeile 1 c           |
 | Zeile 2 a          | Zeile 2 b        | Zeile 2 c           |
 
-## Wichtige Grundlage 2
+## Module Outputs
 
-## Wichtige Grundlage 3
+| Spalte linksbündig | Spalte zentriert | Spalte rechtsbündig |
+| :---               | :--:             | ---:                |
+| Zeile 1 a          | Zeile 1 b        | Zeile 1 c           |
+| Zeile 2 a          | Zeile 2 b        | Zeile 2 c           |
 
-# Hauptteil
+
+# Internal Data
 
 Ipsum
 
-# Validierung
+| Spalte linksbündig | Spalte zentriert | Spalte rechtsbündig |
+| :---               | :--:             | ---:                |
+| Zeile 1 a          | Zeile 1 b        | Zeile 1 c           |
+| Zeile 2 a          | Zeile 2 b        | Zeile 2 c           |
+
+
+# Configuration Details
 
 Lorem
 
-# Fazit und Ausblick
+| Spalte linksbündig | Spalte zentriert | Spalte rechtsbündig |
+| :---               | :--:             | ---:                |
+| Zeile 1 a          | Zeile 1 b        | Zeile 1 c           |
+| Zeile 2 a          | Zeile 2 b        | Zeile 2 c           |
+
+
+# Calibration Details
 
 Ipsum
+
+| Spalte linksbündig | Spalte zentriert | Spalte rechtsbündig |
+| :---               | :--:             | ---:                |
+| Zeile 1 a          | Zeile 1 b        | Zeile 1 c           |
+| Zeile 2 a          | Zeile 2 b        | Zeile 2 c           |
+
