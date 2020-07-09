@@ -25,11 +25,16 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 
 ## Global Functions
 
+### Global Function1
+
+### Global Function2
 
 
 ## Internal Functions
 
+### Internal Function1
 
+### Internal Function2
 
 ## Interfaces
 
