@@ -13,24 +13,24 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 **[Calibration Data](#Calibration-Data)**<br>
 **[Version History](#Version-History)**<br>
 
-Overview
+# Overview
 ------------
 
 
-Module Initialization
+# Module Initialization
 -----------------------------
 
 
-Global Functions
+# Global Functions
 -----------------------------
 
 
-Internal Functions
+# Internal Functions
 -----------------------------
 
 
 
-Interfaces
+# Interfaces
 -----------------------------
 
 
