@@ -5,10 +5,10 @@ Diagnostic Server for Common Data Identifiers
 ### Table of Contents
 **[Functional Overview](#Functional-Overview)**<br>
 **[Initialization](#Initialization)**<br>
-**[Troubleshooting](#troubleshooting)**<br>
-**[Compatibility](#compatibility)**<br>
-**[Notes and Miscellaneous](#notes-and-miscellaneous)**<br>
-**[Building the Extension Bundles](#building-the-extension-bundles)**<br>
+**[Interfaces](#Interfaces)**<br>
+**[Internal Data](#Internal-Data)**<br>
+**[Configuration Data](#Configuration-Data)**<br>
+**[Calibration Data](#Calibration-Data)**<br>
 **[Next Steps, Credits, Feedback, License](#next-steps)**<br>
 
 Functional Overview
@@ -20,7 +20,8 @@ Initialization
 
 
 
-# Interfaces
+Interfaces
+-----------------------------
 
 Lorem
 
@@ -39,7 +40,9 @@ Lorem
 | Zeile 2 a          | Zeile 2 b        | Zeile 2 c           |
 
 
-# Internal Data
+Internal Data
+-----------------------------
+
 
 Ipsum
 
@@ -49,7 +52,8 @@ Ipsum
 | Zeile 2 a          | Zeile 2 b        | Zeile 2 c           |
 
 
-# Configuration Details
+Configuration Data
+-----------------------------
 
 Lorem
 
@@ -59,7 +63,8 @@ Lorem
 | Zeile 2 a          | Zeile 2 b        | Zeile 2 c           |
 
 
-# Calibration Details
+Calibration Data
+-----------------------------
 
 Ipsum
 
@@ -73,13 +78,7 @@ Version History
 
 1.0.1 (14 Dec 2004):
 
-+	Changed the syntax rules for code blocks and spans. Previously,
-	backslash escapes for special Markdown characters were processed
-	everywhere other than within inline HTML tags. Now, the contents
-	of code blocks and spans are no longer processed for backslash
-	escapes. This means that code blocks and spans are now treated
-	literally, with no special rules to worry about regarding
-	backslashes.
++	Changed the code 
 
 	**NOTE**: This changes the syntax from all previous versions of
 	Markdown. Code blocks and spans involving backslash characters
