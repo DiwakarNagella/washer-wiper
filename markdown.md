@@ -27,12 +27,12 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 
 ### Global Function1
 
-	#### Arguments
+#### Arguments
 	arg1
 	arg2
-	#### Returntype
+#### Returntype
 	
-	#### Description
+#### Description
 	
 
 ### Global Function2
