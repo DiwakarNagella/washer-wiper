@@ -2,6 +2,15 @@ Diagnostic Server for Common Data Identifiers
 ========
 
 
+### Table of Contents
+**[Functional Overview](#Functional Overview)**<br>
+**[Usage Instructions](#usage-instructions)**<br>
+**[Troubleshooting](#troubleshooting)**<br>
+**[Compatibility](#compatibility)**<br>
+**[Notes and Miscellaneous](#notes-and-miscellaneous)**<br>
+**[Building the Extension Bundles](#building-the-extension-bundles)**<br>
+**[Next Steps, Credits, Feedback, License](#next-steps)**<br>
+
 Functional Overview
 ------------
 
@@ -264,116 +273,3 @@ Version History
 	**NOTE**: This changes the syntax from all previous versions of
 	Markdown. Code blocks and spans involving backslash characters
 	will now generate different output than before.
-
-+	Tweaked the rules for link definitions so that they must occur
-	within three spaces of the left margin. Thus if you indent a link
-	definition by four spaces or a tab, it will now be a code block.
-	
-		   [a]: /url/  "Indented 3 spaces, this is a link def"
-
-		    [b]: /url/  "Indented 4 spaces, this is a code block"
-	
-	**IMPORTANT**: This may affect existing Markdown content if it
-	contains link definitions indented by 4 or more spaces.
-
-+	Added `>`, `+`, and `-` to the list of backslash-escapable
-	characters. These should have been done when these characters
-	were added as unordered list item markers.
-
-+	Trailing spaces and tabs following HTML comments and `<hr/>` tags
-	are now ignored.
-
-+	Inline links using `<` and `>` URL delimiters weren't working:
-
-		like [this](<http://example.com/>)
-
-+	Added a bit of tolerance for trailing spaces and tabs after
-	Markdown hr's.
-
-+	Fixed bug where auto-links were being processed within code spans:
-
-		like this: `<http://example.com/>`
-
-+	Sort-of fixed a bug where lines in the middle of hard-wrapped
-	paragraphs, which lines look like the start of a list item,
-	would accidentally trigger the creation of a list. E.g. a
-	paragraph that looked like this:
-
-		I recommend upgrading to version
-		8. Oops, now this line is treated
-		as a sub-list.
-
-	This is fixed for top-level lists, but it can still happen for
-	sub-lists. E.g., the following list item will not be parsed
-	properly:
-
-		+	I recommend upgrading to version
-			8. Oops, now this line is treated
-			as a sub-list.
-
-	Given Markdown's list-creation rules, I'm not sure this can
-	be fixed.
-
-+	Standalone HTML comments are now handled; previously, they'd get
-	wrapped in a spurious `<p>` tag.
-
-+	Fix for horizontal rules preceded by 2 or 3 spaces.
-
-+	`<hr>` HTML tags in must occur within three spaces of left
-	margin. (With 4 spaces or a tab, they should be code blocks, but
-	weren't before this fix.)
-
-+	Capitalized "With" in "Markdown With SmartyPants" for
-	consistency with the same string label in SmartyPants.pl.
-	(This fix is specific to the MT plug-in interface.)
-
-+	Auto-linked email address can now optionally contain
-	a 'mailto:' protocol. I.e. these are equivalent:
-
-		<mailto:user@example.com>
-		<user@example.com>
-
-+	Fixed annoying bug where nested lists would wind up with
-	spurious (and invalid) `<p>` tags.
-
-+	You can now write empty links:
-
-		[like this]()
-
-	and they'll be turned into anchor tags with empty href attributes.
-	This should have worked before, but didn't.
-
-+	`***this***` and `___this___` are now turned into
-
-		<strong><em>this</em></strong>
-
-	Instead of
-
-		<strong><em>this</strong></em>
-
-	which isn't valid. (Thanks to Michel Fortin for the fix.)
-
-+	Added a new substitution in `_EncodeCode()`: s/\$/&#036;/g; This
-	is only for the benefit of Blosxom users, because Blosxom
-	(sometimes?) interpolates Perl scalars in your article bodies.
-
-+	Fixed problem for links defined with urls that include parens, e.g.:
-
-		[1]: http://sources.wikipedia.org/wiki/Middle_East_Policy_(Chomsky)
-
-	"Chomsky" was being erroneously treated as the URL's title.
-
-+	At some point during 1.0's beta cycle, I changed every sub's
-	argument fetching from this idiom:
-
-		my $text = shift;
-
-	to:
-
-		my $text = shift || return '';
-
-	The idea was to keep Markdown from doing any work in a sub
-	if the input was empty. This introduced a bug, though:
-	if the input to any function was the single-character string
-	"0", it would also evaluate as false and return immediately.
-	How silly. Now fixed.
