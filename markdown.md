@@ -3,7 +3,7 @@ Diagnostic Server for Common Data Identifiers
 
 
 ### Table of Contents
-**[Functional Overview](#Functional Overview)**<br>
+**[Functional Overview](#Functional-Overview)**<br>
 **[Usage Instructions](#usage-instructions)**<br>
 **[Troubleshooting](#troubleshooting)**<br>
 **[Compatibility](#compatibility)**<br>
