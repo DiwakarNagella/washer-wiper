@@ -2,21 +2,8 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 ========
 
 
-## Table of Contents
-**[Overview](#Overview)**<br>
-**[Module Initialization](#Module-Initialization)**<br>
-**[Global Functions](#Global-Functions)**<br>
-**[Internal Functions](#Internal-Functions)**<br>
-**[Interfaces](#Interfaces)**<br>
-**[Internal Data](#Internal-Data)**<br>
-**[Configuration Data](#Configuration-Data)**<br>
-**[Calibration Data](#Calibration-Data)**<br>
-**[Version History](#Version-History)**<br>
-
------------------------------
-
 ## Overview
-
+Module provides the
 
 
 ## Module Initialization
@@ -69,21 +56,25 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 
 
 
-### Module Inputs
+### Application Software Identification and Build Version
 
-| No.	| Variable			 | Description 		| Data Type	 	 | Init Value   | Dimension |
-|:---	| :---:              | :--:             |:---:        	 | :--:         | ---:      |
-|		| 			         | 			        |				 | 			    |			|
-|		| 			         | 			        |				 | 			    |			|
-### Module Outputs
+| Module ID			| Part Number			| Build Version    | Description	 | 
+|:---				|:---:              	| :--:             | ---:        	 | 
+|UFBL_MODULE_ID		|BOOTLOADER_PARTNUMBER	|None 			   |				 |
+|MSW_MODULE_ID		|MSW_PARTNUMBER			|BUILD_VERSION_MSW |				 | 
+|CSW_MODULE_ID		|Part number			|None			   |				 | 
+		
+### Application Data Identification and Buid ID
 
-| No.	| Variable			 | Description 		| Data Type	 	 | Init Value   | Dimension |
-|:---	| :---:              | :--:             |:---:        	 | :--:         | ---:      |
-|		| 			         | 			        |				 | 			    |			|
-|		| 			         | 			        |				 | 			    |			|
+| Module ID			| Part Number				  | Build Version    | Description	 														 | 
+|:---				|:---:              		  | :--:             | ---:        	 														 | 
+|APP_MODULE_ID		|DATASET_PARTNUMBER			  |DATASET_BUILD_ID  |Data set - Configuration parameters									 |
+|APP_MODULE_ID		|POSTBUILD_PARTNUMBER		  |POSTBUILD_BUILD_ID|Post build data area for Software Configuration						 | 
+|APP_MODULE_ID		|SOUND_PARTNUMBER			  |None			     |Data area to handle the Sound on IC									 |
+|APP_MODULE_ID		|DWM_CONFIGURATION_PARTNUMBER |None			     |Dynamic Window manager data area to handle the pixel data.Valid for IC.| 
 
 
-## Internal Data
+## ECU Hardware Number
 
 
 
