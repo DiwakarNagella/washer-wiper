@@ -3,46 +3,13 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 
 
 ## Overview
-Module provides constant and dynamic diagnostic data requested by Diagnostic Communication manager.   
+Module provides constant and dynamic diagnostic data to Diagnostic Communication manager when requested by Diagnostic tester.   
 
 ![Overview](doc/images/Overview.png)
-## Module Initialization
 
-	
-#### Description
-	
-+ During Power-on-reset OR when the CRC is not valid Set the following to default values
-		vehicleMode - VehicleMode_NotAvailable
-		ambAirTemp -  AAT_NA_MAX
-		totalDistance - TOTAL_VEHICLE_DISTANCE_HIGH_RES_DBC_DEFAULT
-		utcTime - UTC_NOT_AVAILABLE
-      
-+ Update the CRC of m_noInitVars  
-	
-+ Set the Diagnostic default session
+Module Initializes the dynamic data to their default values and periodically updates the data received from other SWCs.
 
-   	
-
-### Global Function2
-
-
-## Internal Functions
-
-### fillPartNumber
-
-#### Arguments
-	- uint8** pDestPtr 
-	- const uint8 IdType
-	- const uint8* partNumber
-#### Returntype
-	- void
-#### Description
-	
-	Copy the partNumber into the destination location
-
-### Internal Function2
-
-## Interfaces
+## The following Static stored data provided by the Module:
 
 
 
@@ -50,9 +17,9 @@ Module provides constant and dynamic diagnostic data requested by Diagnostic Com
 
 | Module ID			| Part Number			| Build Version    | Description	 | 
 |:---				|:---:              	| :--:             | ---:        	 | 
-|UFBL_MODULE_ID		|BOOTLOADER_PARTNUMBER	|None 			   |				 |
-|MSW_MODULE_ID		|MSW_PARTNUMBER			|BUILD_VERSION_MSW |				 | 
-|CSW_MODULE_ID		|Part number			|None			   |				 | 
+|UFBL_MODULE_ID		|BOOTLOADER_PARTNUMBER	|None 			   |Bootloader Software				 |
+|MSW_MODULE_ID		|MSW_PARTNUMBER			|BUILD_VERSION_MSW |Application Software				 | 
+|CSW_MODULE_ID		|Part number			|None			   |optional module				 | 
 		
 ### Application Data Identification and Buid ID
 
@@ -66,47 +33,9 @@ Module provides constant and dynamic diagnostic data requested by Diagnostic Com
 
 ## ECU Hardware Number
 
-
-
-| No.	| Variable			 | Description 		| Data Type	 	 | Init Value   | Dimension |
-|:---	| :---:              | :--:             |:---:        	 | :--:         | ---:      |
-|		| 			         | 			        |				 | 			    |			|
-|		| 			         | 			        |				 | 			    |			|
-
-
-## Configuration Data
-
-
-
-| No.	| Parameter			 | Description 		| Data Type	 	| Value 		| Dimension |
-|:---	| :---:              | :--:             |:---:         	| :--:          | ---:      |
-|		| 			         | 			        |				| 			    |			|
-|		| 			         | 			        |				| 			    |			|	
-
-
-## Calibration Data
-
-
-
-| No.	| Parameter			 | Description 		| Data Type	 	| Value 		| Dimension |
-|:---	| :---:              | :--:             |:---:         	| :--:          | ---:      |
-|		| 			         | 			        |				| 			    |			|
-|		| 			         | 			        |				| 			    |			|	
-
-## ENUMs
-
-
-
-| No.	| Variable			 | Description 		| 
-|:---	| :---:              | --:              |
-|		| 			         | 			        |
-|		| 			         | 			        |
-
-## Version History
-
-
-1.0.0 (Date):
-
-+	Changed the init function 
-
-	**NOTE**: This change affects the initialization behaviour of the module.
+| Module ID			| Part Number				  | Serial Number    | Sub Module info	 | Description	  | 
+|:---				|:---:              		  | :--:             | :---:        	 	 | 	---:			  |									 | 
+|HW_MODULE_ID		|HARDWARE_PARTNUMBER		  |HARDWARE_SERIAL_NO  |SUB_HW_MODULE_ID,
+																		Sub node Part number,
+																		Sub node serial number | Lin Slave node information |
+							
