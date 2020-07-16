@@ -26,8 +26,8 @@ Module Initializes the dynamic data to their default values and periodically upd
 |:---				|:---:              		  | :--:             | :---:        	 														 | 
 |APP_MODULE_ID		|DATASET_PARTNUMBER			  |DATASET_BUILD_ID  |Data set - Configuration parameters									 |
 |APP_MODULE_ID		|POSTBUILD_PARTNUMBER		  |POSTBUILD_BUILD_ID|Post build data area for Software Configuration						 | 
-|APP_MODULE_ID		|SOUND_PARTNUMBER			  |None			     |Data area to handle the Sound on IC									 |
-|APP_MODULE_ID		|DWM_CONFIGURATION_PARTNUMBER |None			     |Dynamic Window manager data area to handle the pixel data.Valid for IC.| 
+|APP_MODULE_ID		|SOUND_PARTNUMBER			  |None			     |Data area to handle the Sound data on IC								 |
+|APP_MODULE_ID		|DWM_CONFIGURATION_PARTNUMBER |None			     |Dynamic Window manager data area to handle the pixel data.Only valid for IC.| 
 
 
 ### ECU Hardware Number
