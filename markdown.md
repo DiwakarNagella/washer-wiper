@@ -3,21 +3,11 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 
 
 ## Overview
-Module provides the
+Module provides constant and dynamic diagnostic data requested by Diagnostic Communication manager.   
 
-
+![Overview](doc/images/Overview.png)
 ## Module Initialization
 
-
-
-## Global Functions
-
-### VOL_DIDServer_Init
-
-#### Arguments
-	 - Void
-#### Returntype
-	 - Void
 	
 #### Description
 	
