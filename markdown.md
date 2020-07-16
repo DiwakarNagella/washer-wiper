@@ -30,7 +30,7 @@ Module Initializes the dynamic data to their default values and periodically upd
 |APP_MODULE_ID		|DWM_CONFIGURATION_PARTNUMBER |None			     |Dynamic Window manager data area to handle the pixel data.Valid for IC.| 
 
 
-## ECU Hardware Number
+### ECU Hardware Number
 
 | Module ID			| Part Number				  | Serial Number    | Sub Module info	 | 
 |:---				|:---:              		  | :--:             | :---:        	 | 		 
