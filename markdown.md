@@ -7,16 +7,15 @@ Module provides constant and dynamic diagnostic data to Diagnostic Communication
 
 ![Overview](doc/images/Overview.png)
 
-Module Initializes the dynamic data to their default values and periodically updates the data received from other SWCs.
+Module Initializes the dynamic data to their default values and periodically updates the data as received from corresponding SWCs which might receive the data by CAN or Environment data.
 
-## The following Static stored data provided by the Module:
-
+## The following Static data provided by the Module:
 
 
 ### Application Software Identification and Build Version
 
 | Module ID			| Part Number			| Build Version    | Description	 | 
-|:---				|:---:              	| :--:             | ---:        	 | 
+|:---				|:---:              	| :--:             | :---:        	 | 
 |UFBL_MODULE_ID		|BOOTLOADER_PARTNUMBER	|None 			   |Bootloader Software				 |
 |MSW_MODULE_ID		|MSW_PARTNUMBER			|BUILD_VERSION_MSW |Application Software				 | 
 |CSW_MODULE_ID		|Part number			|None			   |optional module				 | 
@@ -24,7 +23,7 @@ Module Initializes the dynamic data to their default values and periodically upd
 ### Application Data Identification and Buid ID
 
 | Module ID			| Part Number				  | Build Version    | Description	 														 | 
-|:---				|:---:              		  | :--:             | ---:        	 														 | 
+|:---				|:---:              		  | :--:             | :---:        	 														 | 
 |APP_MODULE_ID		|DATASET_PARTNUMBER			  |DATASET_BUILD_ID  |Data set - Configuration parameters									 |
 |APP_MODULE_ID		|POSTBUILD_PARTNUMBER		  |POSTBUILD_BUILD_ID|Post build data area for Software Configuration						 | 
 |APP_MODULE_ID		|SOUND_PARTNUMBER			  |None			     |Data area to handle the Sound on IC									 |
@@ -36,4 +35,6 @@ Module Initializes the dynamic data to their default values and periodically upd
 | Module ID			| Part Number				  | Serial Number    | Sub Module info	 | 
 |:---				|:---:              		  | :--:             | :---:        	 | 		 
 |HW_MODULE_ID		|HARDWARE_PARTNUMBER		  |HARDWARE_SERIAL_NO  |SUB_HW_MODULE_ID,Sub node Part number,Sub node serial number |
-							
+
+ECU hardware number includes the above information along with Sub node (LIN Slave) information. It is assumed that VOL_DIDServer module is running on ECU which implements LIN Master server.
+Number of Sub modules depends on number of LIN slave nodes configured in that LIN cluster. Then the Hardware Number includes ID, Part number and Serial number of those many LIN Slaves. 
