@@ -33,7 +33,7 @@ Module Initializes the dynamic data to their default values and periodically upd
 
 ## ECU Hardware Number
 
-| Module ID			| Part Number				  | Serial Number    | Sub Module info	 | Description	  | 
-|:---				|:---:              		  | :--:             | :---:        	 | 	---:  		  |	 
-|HW_MODULE_ID		|HARDWARE_PARTNUMBER		  |HARDWARE_SERIAL_NO  |SUB_HW_MODULE_ID,Sub node Part number,Sub node serial number | Lin Slave node information |
+| Module ID			| Part Number				  | Serial Number    | Sub Module info	 | 
+|:---				|:---:              		  | :--:             | ---:        	 | 		 
+|HW_MODULE_ID		|HARDWARE_PARTNUMBER		  |HARDWARE_SERIAL_NO  |SUB_HW_MODULE_ID,Sub node Part number,Sub node serial number |
 							
