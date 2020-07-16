@@ -7,7 +7,7 @@ Module provides constant and dynamic diagnostic data to Diagnostic Communication
 
 ![Overview](doc/images/Overview.png)
 
-Module Initializes the dynamic data to their default values and periodically updates the data as received from corresponding SWCs which might receive the data by CAN or Environment data.
+Module Initializes the dynamic data to their default values and periodically updates the data as received from corresponding SWCs which inturn might receive the data either by CAN or Sensors.
 
 ## The following Static data provided by the Module:
 
