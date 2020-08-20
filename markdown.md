@@ -5,7 +5,7 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 ## Overview
 Module provides constant and dynamic diagnostic data to Diagnostic Communication manager when requested by Diagnostic tester.   
 
-![Overview](Overview.png)
+![Overview](/doc/images/Overview.png)
 
 Module Initializes the dynamic data to their default values and periodically updates the data as received from corresponding SWCs which inturn might receive the data either by CAN or Sensors.
 
