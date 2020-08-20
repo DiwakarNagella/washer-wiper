@@ -94,9 +94,9 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 
 ## Address Parameters:
 
-| Parameter                   	| Description 	|
-|-----------------------------	|-------------	|
-| P1C54_FactoryModeActive     	|             	|
-| VINNO_VIN                   	|             	|
-| X1CJT_EnableCustomDemCfgCrc 	|             	|
-| CHANO_ChassisId             	|             	|
+| Parameter                   	| Init Value 	| Description	|
+|-----------------------------	|-------------	|-------------	|
+| P1C54_FactoryModeActive     	|             	|		|
+| VINNO_VIN                   	|             	|		|
+| X1CJT_EnableCustomDemCfgCrc 	|             	|		|
+| CHANO_ChassisId             	|             	|		|
