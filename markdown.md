@@ -92,7 +92,7 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 | TotalVehicleDistanceHighRes 	| TotalVehicleDistanceHighRes+I 	|          	|             	|
 
 
-## Address Parameters:
+## Address Parameters Required Ports:
 
 | Parameter                   	| Init Value 	| Description	|
 |-----------------------------	|-------------	|-------------	|
