@@ -113,8 +113,7 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 
 ## Usecases:
 
-| Func()	                | 				| 
-|----------------------------->	|				|      Func()  	|		
-								| ------------->	|			
-								|             	|	Func()
-								|             	| ------------->	|
+| Func()-->                    	|                    		|           Description       		|
+|-----------------------------	|-----------------------------	|------------------------------------	|
+| 				| Func()-->			| 				  	|
+| 			       	| 			 	| 	Func()-->		 	|
