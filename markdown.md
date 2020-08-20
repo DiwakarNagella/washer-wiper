@@ -69,3 +69,10 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 | DataServices_P1OLT_Data_P1OLT_BuildVersionInfo              | DataServices_P1OLT_Data_P1OLT       | ReadData()                  |             |
 | DataServices_P1Q82_Data_P1Q82_DescriptionFileSha256         | DataServices_P1Q82_Data_P1Q82       | ReadData()                  |             |
 | DataServices_P1URK_Data_P1URK_BuildIds                      | DataServices_P1URK_Data_P1URK       | ReadData() ReadDataLength() |             |
+
+
+## Required C/S Ports:
+
+| Port               	| Interface                	| C/S Operation                                                                                        	| Description 	|
+|--------------------	|--------------------------	|------------------------------------------------------------------------------------------------------	|-------------	|
+| LINMaster_Services 	| VOL_LINMaster_Services_I 	| RequestAllSlaveSnSnPn() FetchNoOfLinSlaves() FetchAllSlaveSnSnPnServerStatus() FetchAllSlaveSnSnPn() 	|             	|
