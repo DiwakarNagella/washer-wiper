@@ -5,7 +5,7 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 ## Overview
 Module provides constant and dynamic diagnostic data to Diagnostic Communication manager when requested by Diagnostic tester.   
 
-![Overview](doc/images/Overview.png)
+![Overview](/SWC/Services/VOL_DIDServer/Overview.png)
 
 Module Initializes the dynamic data to their default values and periodically updates the data as received from corresponding SWCs which inturn might receive the data either by CAN or Sensors.
 
@@ -14,7 +14,7 @@ Module Initializes the dynamic data to their default values and periodically upd
 
 ### Application Software Identification and Build Version
 
-| Module ID			| Part Number			| Build Version    | Description	 | 
+| Module ID			| Part Number			| Build Version    | Description	 |
 |:---				|:---:              	| :--:             | :---:        	 | 
 |UFBL_MODULE_ID		|BOOTLOADER_PARTNUMBER	|None 			   |Bootloader Software				 |
 |MSW_MODULE_ID		|MSW_PARTNUMBER			|BUILD_VERSION_MSW |Application Software				 | 
@@ -38,3 +38,22 @@ Module Initializes the dynamic data to their default values and periodically upd
 
 ECU hardware number includes the above information along with Sub node (LIN Slave) information. It is assumed that VOL_DIDServer module is running on ECU which implements LIN Master server.
 Number of Sub modules depends on number of LIN slave nodes configured in that LIN cluster. Then the Hardware Number includes ID, Part number and Serial number of those many LIN Slaves apart from the main ECU hardware details. 
+
+## Provided C/S Ports:
+
+| Port                                   | Interface                           | C/S Operation | Description |
+|----------------------------------------|-------------------------------------|---------------|-------------|
+| CBReadData_UTCTimeStamp_First_Day      | CSDataServices_UTCTimeStamp_Day     | ReadData()    |             |
+| CBReadData_UTCTimeStamp_First_Hour     | CSDataServices_UTCTimeStamp_Hour    | ReadData()    |             |
+| CBReadData_UTCTimeStamp_First_Minutes  | CSDataServices_UTCTimeStamp_Minutes | ReadData()    |             |
+| CBReadData_UTCTimeStamp_First_Month    | CSDataServices_UTCTimeStamp_Month   | ReadData()    |             |
+| CBReadData_UTCTimeStamp_First_Seconds  | CSDataServices_UTCTimeStamp_Seconds | ReadData()    |             |
+| CBReadData_UTCTimeStamp_First_Year     | CSDataServices_UTCTimeStamp_Year    | ReadData()    |             |
+| CBReadData_UTCTimeStamp_Latest_Day     | CSDataServices_UTCTimeStamp_Day     | ReadData()    |             |
+| CBReadData_UTCTimeStamp_Latest_Hour    | CSDataServices_UTCTimeStamp_Hour    | ReadData()    |             |
+| CBReadData_UTCTimeStamp_Latest_Minutes | CSDataServices_UTCTimeStamp_Minutes | ReadData()    |             |
+| CBReadData_UTCTimeStamp_Latest_Month   | CSDataServices_UTCTimeStamp_Month   | ReadData()    |             |
+| CBReadData_UTCTimeStamp_Latest_Seconds | CSDataServices_UTCTimeStamp_Seconds | ReadData()    |             |
+| CBReadData_UTCTimeStamp_Latest_Year    | CSDataServices_UTCTimeStamp_Year    | ReadData()    |             |
+|                                        |                                     |               |             |
+|                                        |                                     |               |             |
