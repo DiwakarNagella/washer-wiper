@@ -109,3 +109,12 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 |-----------------------------	|-----------------------------	|------------------------------------	|
 | DcmDiagnosticSessionControl 	| DcmDiagnosticSessionControl 	| DEFAULT_SESSION, EXTENDED_SESSION  	|
 | Switch_ESH_ModeSwitch       	| BswM_MSI_ESH_Mode           	| STARTUP, WAKEUP, POSTRUN, SHUTDOWN 	|
+
+
+## Usecases:
+
+| Func()	                | 				| 
+|----------------------------->	|				|      Func()  	|		
+								| ------------->	|			
+								|             	|	Func()
+								|             	| ------------->	|
