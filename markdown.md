@@ -76,3 +76,17 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 | Port               	| Interface                	| C/S Operation                                                                                        	| Description 	|
 |--------------------	|--------------------------	|------------------------------------------------------------------------------------------------------	|-------------	|
 | LINMaster_Services 	| VOL_LINMaster_Services_I 	| RequestAllSlaveSnSnPn() FetchNoOfLinSlaves() FetchAllSlaveSnSnPnServerStatus() FetchAllSlaveSnSnPn() 	|             	|
+
+## Required S/R Ports:
+
+| Port                        	| Interface                     	| DataType 	| Description 	|
+|-----------------------------	|-------------------------------	|----------	|-------------	|
+| AmbientAirTemperature       	| AmbientAirTemperature_I       	|          	|             	|
+| DayUTC                      	| DayUTC_I                      	|          	|             	|
+| HoursUTC                    	| HoursUTC_I                    	|          	|             	|
+| MinutesUTC                  	| MinutesUTC_I                  	|          	|             	|
+| MonthUTC                    	| MonthUTC_I                    	|          	|             	|
+| SecondsUTC                  	| SecondsUTC_I                  	|          	|             	|
+| YearUTC                     	| YearUTC_I                     	|          	|             	|
+| VehicleMode                 	| VehicleMode_I                 	|          	|             	|
+| TotalVehicleDistanceHighRes 	| TotalVehicleDistanceHighRes+I 	|          	|             	|
