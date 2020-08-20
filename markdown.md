@@ -100,3 +100,11 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 | VINNO_VIN                   	|             	|		|
 | X1CJT_EnableCustomDemCfgCrc 	|             	|		|
 | CHANO_ChassisId             	|             	|		|
+
+
+## Mode Switch Ports (Required):
+
+| Port                        	| Interface                   	| Mode Declarations                  	|
+|-----------------------------	|-----------------------------	|------------------------------------	|
+| DcmDiagnosticSessionControl 	| DcmDiagnosticSessionControl 	| DEFAULT_SESSION, EXTENDED_SESSION  	|
+| Switch_ESH_ModeSwitch       	| BswM_MSI_ESH_Mode           	| STARTUP, WAKEUP, POSTRUN, SHUTDOWN 	|
