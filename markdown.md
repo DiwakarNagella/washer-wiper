@@ -1,6 +1,7 @@
 Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 ========
 
+
 ## Overview
 Module provides static and dynamic diagnostic data to Diagnostic Communication Manager and Diagnostic Event Manager when requested.   
 
@@ -18,6 +19,7 @@ Data is protected with CRC.
 |OutdoorTemperature	|AAT_NA_MAX			 |Default value - 65535				 | 
 |Odometer status	|TOTAL_VEHICLE_DISTANCE_HIGH_RES_DBC_DEFAULT			|Default value - 0xffffffffu				 | 
 |Vehicle Mode		|VehicleMode_NotAvailable		|				 | 
+
 
 
 ## Static data provided by the Module:
@@ -93,25 +95,25 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 
 | Port                        	| Interface                     	| DataType 	| Description 	|
 |-----------------------------	|-------------------------------	|----------	|-------------	|
-| AmbientAirTemperature       	| AmbientAirTemperature_I       	|          	|             	|
-| DayUTC                      	| DayUTC_I                      	|          	|             	|
-| HoursUTC                    	| HoursUTC_I                    	|          	|             	|
-| MinutesUTC                  	| MinutesUTC_I                  	|          	|             	|
-| MonthUTC                    	| MonthUTC_I                    	|          	|             	|
-| SecondsUTC                  	| SecondsUTC_I                  	|          	|             	|
-| YearUTC                     	| YearUTC_I                     	|          	|             	|
-| VehicleMode                 	| VehicleMode_I                 	|          	|             	|
-| TotalVehicleDistanceHighRes 	| TotalVehicleDistanceHighRes+I 	|          	|             	|
+| AmbientAirTemperature       	| AmbientAirTemperature_I       	| Temperature16bit_T         	|   From Onboard sensor	|
+| DayUTC                      	| DayUTC_I                      	| Days8bit_Fact025_T         	|   RTC          	|
+| HoursUTC                    	| HoursUTC_I                    	| Hours8bit_T         	|   RTC          	|
+| MinutesUTC                  	| MinutesUTC_I                  	| Minutes8bit_T         	|   RTC          	|
+| MonthUTC                    	| MonthUTC_I                    	| Months8bit_T         	|   RTC          	|
+| SecondsUTC                  	| SecondsUTC_I                  	| Seconds8bitFact025_T          	|   RTC          	|
+| YearUTC                     	| YearUTC_I                     	| Years8bit_T         	|   RTC          	|
+| VehicleMode                 	| VehicleMode_I                 	| VehicleMode_T         	|   Received by CAN    	|
+| TotalVehicleDistanceHighRes 	| TotalVehicleDistanceHighRes_I 	| Distance32bit_T         	|    Received by CAN   	|
 
 
 ## Address Parameters Required Ports:
 
-| Parameter                   	| Init Value 	| Description	|
-|-----------------------------	|-------------	|-------------	|
-| P1C54_FactoryModeActive     	|      0       	|		|
-| VINNO_VIN                   	|             	|		|
-| X1CJT_EnableCustomDemCfgCrc 	|             	|		|
-| CHANO_ChassisId             	|             	|		|
+| Parameter                   	| Init Value 	| Description		|
+|-----------------------------	|-------------	|-----------------------|
+| P1C54_FactoryModeActive     	|      0       	|			|
+| VINNO_VIN                   	|     [0]      	|			|
+| X1CJT_EnableCustomDemCfgCrc 	|     [0]      	|Dem Admin data CRC	|
+| CHANO_ChassisId             	|     [0]     	|			|
 
 
 ## Mode Switch Ports (Required):
@@ -125,7 +127,7 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 ## Usecases:
 
 ### DCM Use Case  
-Diagnostic Communication Manager can Read/Write the following data From VOL_DIDServer component
+Diagnostic Communication Manager can Read the following data From VOL_DIDServer component. However Diagnostic Data Write services are not part of this module.
 
 * ChassisId - Using DataServices_CHANO_Data_CHANO_ChassisId_ReadData() Parameter Port interface 
 
@@ -140,7 +142,7 @@ Diagnostic Communication Manager can Read/Write the following data From VOL_DIDS
 
 | Diagnostic Tester         	|    	|          DCM   		|    | VOL_DIDServer |
 |-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
-|    RDBID 22 01 00		|	                     					|	Call DataServices_CHANO_Data_CHANO_ChassisId_ReadData()	|			    		 |	Reads Data from Address Parameter and returns back the response			|	
+|    RDBID 22 11 02		|	                     					|	Call DataServices_P1AFR_Data_P1AFR_OutdoorTemperature_ReadData()	|			    		 |	Reads Data periodically from RTE and Updates local copy after validation and returns back as Diag response to DCM			|	
 
 
 * VehicleMode - Using DataServices_P1AFT_Data_P1AFT_VehicleMode_ReadData() C/S interface     
@@ -148,7 +150,7 @@ Diagnostic Communication Manager can Read/Write the following data From VOL_DIDS
 
 | Diagnostic Tester         	|    	|          DCM   		|    | VOL_DIDServer |
 |-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
-|    RDBID 22 01 00		|	                     					|	Call DataServices_CHANO_Data_CHANO_ChassisId_ReadData()	|			    		 |	Reads Data from Address Parameter and returns back the response			|	
+|    RDBID 22 11 00		|	                     					|	Call DataServices_P1AFT_Data_P1AFT_VehicleMode_ReadData()	|			    		 |	Reads Data periodically from RTE and Updates local copy after validation and returns back as Diag response to DCM			|	
 
 
 * DataServices_P1ALA_Data_P1ALA_ECUHardwareNumber_ReadData() C/S interface
@@ -156,14 +158,8 @@ Diagnostic Communication Manager can Read/Write the following data From VOL_DIDS
 
 | Diagnostic Tester         	|    	|          DCM   		|    | VOL_DIDServer |
 |-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
-|    RDBID 22 01 00		|	                     					|	Call DataServices_CHANO_Data_CHANO_ChassisId_ReadData()	|			    		 |	Reads Data from Address Parameter and returns back the response			|	
+|    RDBID 22 F1 91		|	                     					|	Call DataServices_P1ALA_Data_P1ALA_ECUHardwareNumber_ReadData()	|			    		 |	Reads Data from Memory and returns back the response ***			|	
 
-
-* DataServices_P1ALA_Data_P1ALA_ECUHardwareNumber_ReadDataLength()  C/S interface
-
-
-
-| Diagnostic Tester         	|    	|          DCM   		|    | VOL_DIDServer |
-|-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
-|    RDBID 22 01 00		|	                     					|	Call DataServices_CHANO_Data_CHANO_ChassisId_ReadData()	|			    		 |	Reads Data from Address Parameter and returns back the response			|	
-
+### DEM Use Case  
+Diagnostic Event Manager Needs UTC Time stamp information, Vehicle mode, Odometer status and Outside air temperature that might be part of Snapshot data for various DTCs 
+DEM uses C/S ports to access the data.
