@@ -1,7 +1,5 @@
 Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 ========
-graph TD
-    Start --> Stop
 
 ## Overview
 Module provides static and dynamic diagnostic data to Diagnostic Communication Manager and Diagnostic Event Manager when requested.   
@@ -127,14 +125,16 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 ## Usecases:
 
 ### DCM Use Case  
-Diagnostic Communication Manager can request the following data From the ECU integarted with VOL_DIDServer component
+Diagnostic Communication Manager can Read/Write the following data From VOL_DIDServer component
 
 * ChassisId - Using DataServices_CHANO_Data_CHANO_ChassisId_ReadData() Parameter Port interface*   
 
 
-| Diagnostic Tester -->        	|    --------------->	|          DCM   	|   ---------------> | VOL_DIDServer |
+| Diagnostic Tester -->        	|    --------------->	|          DCM   		|   ---------------> | VOL_DIDServer |
 |-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
-|            					|						|						|					|				|	
+|    RDBID 22 01 00				|						|	Call DataServices_CHANO_Data_CHANO_ChassisId_ReadData()	|					 |	Reads Data from Address Parameter and returns back the response			|	
+
+
 * OutdoorTemperature - Using DataServices_P1AFR_Data_P1AFR_OutdoorTemperature_ReadData() C/S interface *   
 
 
@@ -163,5 +163,6 @@ Diagnostic Communication Manager can request the following data From the ECU int
 
 | Diagnostic Tester -->        	|    --------------->	|          DCM   	|   ---------------> | VOL_DIDServer |
 |-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
-|            					|						|						|					|				|	
+|            					|						|						|					|				|	        
+
 
