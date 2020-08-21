@@ -135,9 +135,33 @@ Diagnostic Communication Manager can request the following data From the ECU int
 | Diagnostic Tester -->        	|    --------------->	|          DCM   	|   ---------------> | VOL_DIDServer |
 |-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
 |            					|						|						|					|				|	
-* OutdoorTemperature - Using DataServices_P1AFR_Data_P1AFR_OutdoorTemperature_ReadData() C/S interface *                         
+* OutdoorTemperature - Using DataServices_P1AFR_Data_P1AFR_OutdoorTemperature_ReadData() C/S interface *   
 
-* VehicleMode - Using DataServices_P1AFT_Data_P1AFT_VehicleMode_ReadData() C/S interface  *                
+
+
+| Diagnostic Tester -->        	|    --------------->	|          DCM   	|   ---------------> | VOL_DIDServer |
+|-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
+|            					|						|						|					|				|	
+
+* VehicleMode - Using DataServices_P1AFT_Data_P1AFT_VehicleMode_ReadData() C/S interface  *   
+
+
+
+| Diagnostic Tester -->        	|    --------------->	|          DCM   	|   ---------------> | VOL_DIDServer |
+|-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
+|            					|						|						|					|				|	
 * DataServices_P1ALA_Data_P1ALA_ECUHardwareNumber_ReadData() C/S interface*
+
+
+
+| Diagnostic Tester -->        	|    --------------->	|          DCM   	|   ---------------> | VOL_DIDServer |
+|-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
+|            					|						|						|					|				|	
 * DataServices_P1ALA_Data_P1ALA_ECUHardwareNumber_ReadDataLength()  C/S interface* 
+
+
+
+| Diagnostic Tester -->        	|    --------------->	|          DCM   	|   ---------------> | VOL_DIDServer |
+|-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
+|            					|						|						|					|				|	
 
