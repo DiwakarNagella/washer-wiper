@@ -129,4 +129,16 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 | Func()-->                    	|                    			|           Description       			|
 |-----------------------------	|-----------------------------	|------------------------------------	|
 | 								| Func()-->					 	| 									  	|
-| 						       	| 					           	| 	Func()-->						 	|
+| 						       	| 					           	| 	Func()-->	
+
+|
+
++--------+   +-------+    +-------+
+  |        | --+ ditaa +--> |       |
+  |  Text  |   +-------+    |diagram|
+  |Document|   |!magic!|    |       |
+  |     {d}|   |       |    |       |
+  +---+----+   +-------+    +-------+
+      :                         ^
+      |       Lots of work      |
+      +-------------------------+
