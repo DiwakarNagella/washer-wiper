@@ -132,7 +132,7 @@ Diagnostic Communication Manager can Read/Write the following data From VOL_DIDS
 
 | Diagnostic Tester         	|    	|          DCM   		|    | VOL_DIDServer |
 |-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
-|    RDBID 22 01 00		|	                    --------->					|	Call DataServices_CHANO_Data_CHANO_ChassisId_ReadData()	|			-------->		 |	Reads Data from Address Parameter and returns back the response			|	
+|    RDBID 22 01 00		|	                     -->					|	Call DataServices_CHANO_Data_CHANO_ChassisId_ReadData()	|			    -->		 |	Reads Data from Address Parameter and returns back the response			|	
 
 
 * OutdoorTemperature - Using DataServices_P1AFR_Data_P1AFR_OutdoorTemperature_ReadData() C/S interface *   
