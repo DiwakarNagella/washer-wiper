@@ -7,7 +7,9 @@ Module provides static and dynamic diagnostic data to Diagnostic Communication M
 
 ![Overview](/doc/images/Overview.png)
 
-## Module Initializes the following dynamic data to their default values and periodically updates the data as Read from RTE (received from corresponding SWCs,CAN/ On board Sensors) and check if it is valid. Only Valid signals are considered.
+## Dynamic data provided by the Module:
+
+Module Initializes the following dynamic data to their default values and periodically updates the data as Read from RTE (received from corresponding SWCs,CAN/ On board Sensors) and check if it is valid. Only Valid signals are considered.
 Data is protected with CRC.
 
 
@@ -19,7 +21,7 @@ Data is protected with CRC.
 |Vehicle Mode		|VehicleMode_NotAvailable		|				 | 
 
 
-## The following Static data is provided by the Module:
+## Static data provided by the Module:
 
 
 ### Application Software Identification and Build Version
