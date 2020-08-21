@@ -127,7 +127,7 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 ### DCM Use Case  
 Diagnostic Communication Manager can Read/Write the following data From VOL_DIDServer component
 
-* ChassisId - Using DataServices_CHANO_Data_CHANO_ChassisId_ReadData() Parameter Port interface*   
+* ChassisId - Using DataServices_CHANO_Data_CHANO_ChassisId_ReadData() Parameter Port interface 
 
 
 | Diagnostic Tester         	|    	|          DCM   		|    | VOL_DIDServer |
@@ -135,47 +135,35 @@ Diagnostic Communication Manager can Read/Write the following data From VOL_DIDS
 |    RDBID 22 01 00		|	                     					|	Call DataServices_CHANO_Data_CHANO_ChassisId_ReadData()	|			    		 |	Reads Data from Address Parameter and returns back the response			|	
 
 
-* OutdoorTemperature - Using DataServices_P1AFR_Data_P1AFR_OutdoorTemperature_ReadData() C/S interface *   
+* OutdoorTemperature - Using DataServices_P1AFR_Data_P1AFR_OutdoorTemperature_ReadData() C/S interface   
 
 
-
-| Diagnostic Tester -->        	|    --------------->	|          DCM   	|   ---------------> | VOL_DIDServer |
+| Diagnostic Tester         	|    	|          DCM   		|    | VOL_DIDServer |
 |-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
-|            					|						|						|					|				|	
-
-* VehicleMode - Using DataServices_P1AFT_Data_P1AFT_VehicleMode_ReadData() C/S interface  *   
+|    RDBID 22 01 00		|	                     					|	Call DataServices_CHANO_Data_CHANO_ChassisId_ReadData()	|			    		 |	Reads Data from Address Parameter and returns back the response			|	
 
 
+* VehicleMode - Using DataServices_P1AFT_Data_P1AFT_VehicleMode_ReadData() C/S interface     
 
-| Diagnostic Tester -->        	|    --------------->	|          DCM   	|   ---------------> | VOL_DIDServer |
+
+| Diagnostic Tester         	|    	|          DCM   		|    | VOL_DIDServer |
 |-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
-|            					|						|						|					|				|	
-* DataServices_P1ALA_Data_P1ALA_ECUHardwareNumber_ReadData() C/S interface*
+|    RDBID 22 01 00		|	                     					|	Call DataServices_CHANO_Data_CHANO_ChassisId_ReadData()	|			    		 |	Reads Data from Address Parameter and returns back the response			|	
 
 
+* DataServices_P1ALA_Data_P1ALA_ECUHardwareNumber_ReadData() C/S interface
 
-| Diagnostic Tester -->        	|    --------------->	|          DCM   	|   ---------------> | VOL_DIDServer |
+
+| Diagnostic Tester         	|    	|          DCM   		|    | VOL_DIDServer |
 |-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
-|            					|						|						|					|				|	
-* DataServices_P1ALA_Data_P1ALA_ECUHardwareNumber_ReadDataLength()  C/S interface* 
+|    RDBID 22 01 00		|	                     					|	Call DataServices_CHANO_Data_CHANO_ChassisId_ReadData()	|			    		 |	Reads Data from Address Parameter and returns back the response			|	
+
+
+* DataServices_P1ALA_Data_P1ALA_ECUHardwareNumber_ReadDataLength()  C/S interface
 
 
 
-| Diagnostic Tester -->        	|    --------------->	|          DCM   	|   ---------------> | VOL_DIDServer |
+| Diagnostic Tester         	|    	|          DCM   		|    | VOL_DIDServer |
 |-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
-|            					|						|						|					|				|	        
+|    RDBID 22 01 00		|	                     					|	Call DataServices_CHANO_Data_CHANO_ChassisId_ReadData()	|			    		 |	Reads Data from Address Parameter and returns back the response			|	
 
-
-gantt
-dateFormat  YYYY-MM-DD
-title Adding GANTT diagram to mermaid
-excludes weekdays 2014-01-10
-
-section A section
-Completed task            :done,    des1, 2014-01-06,2014-01-08
-Active task               :active,  des2, 2014-01-09, 3d
-Future task               :         des3, after des2, 5d
-Future task2               :         des4, after des3, 5d
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
