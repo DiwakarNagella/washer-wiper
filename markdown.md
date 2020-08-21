@@ -3,11 +3,21 @@ Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 
 
 ## Overview
-Module provides constant and dynamic diagnostic data to Diagnostic Communication manager when requested by Diagnostic tester.   
+Module provides static and dynamic diagnostic data to Diagnostic Communication Manager and Diagnostic Event Manager when requested.   
 
 ![Overview](/doc/images/Overview.png)
 
-Module Initializes the dynamic data to their default values and periodically updates the data as received from corresponding SWCs which inturn might receive the data either by CAN or Sensors.
+## Module Initializes the following dynamic data to their default values and periodically updates the data as Read from RTE (received from corresponding SWCs,CAN/ On board Sensors) and check if it is valid. Only Valid signals are considered.
+Data is protected with CRC.
+
+
+| Data				| Init Value			|  Description	 |
+|:---				|:---:              	|  :---:        	 | 
+|UTCTimeStamp		|UTC_NOT_AVAILABLE		 | Default value - 0xFF				 |
+|OutdoorTemperature	|AAT_NA_MAX			 |Default value - 65535				 | 
+|Odometer status	|TOTAL_VEHICLE_DISTANCE_HIGH_RES_DBC_DEFAULT			|Default value - 0xffffffffu				 | 
+|Vehicle Mode		|VehicleMode_NotAvailable		|				 | 
+
 
 ## The following Static data is provided by the Module:
 
@@ -97,7 +107,7 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 
 | Parameter                   	| Init Value 	| Description	|
 |-----------------------------	|-------------	|-------------	|
-| P1C54_FactoryModeActive     	|             	|		|
+| P1C54_FactoryModeActive     	|      0       	|		|
 | VINNO_VIN                   	|             	|		|
 | X1CJT_EnableCustomDemCfgCrc 	|             	|		|
 | CHANO_ChassisId             	|             	|		|
@@ -113,7 +123,7 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 
 ## Usecases:
 
-| Func()-->                    	|                    		|           Description       		|
+| Func()-->                    	|                    			|           Description       			|
 |-----------------------------	|-----------------------------	|------------------------------------	|
-| 				| Func()-->			| 				  	|
-| 			       	| 			 	| 	Func()-->		 	|
+| 								| Func()-->					 	| 									  	|
+| 						       	| 					           	| 	Func()-->						 	|
