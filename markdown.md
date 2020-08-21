@@ -135,4 +135,4 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 
 
 | Diagnostic Tester -->        	|    --------------->	|          DCM   	|   ---------------> | VOL_DIDServer |
-|-----------------------------	|															
+|-----------------------------	|			|-----------------------|		     |----------------| 										
