@@ -1,6 +1,7 @@
 Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 ========
-
+graph TD
+    Start --> Stop
 
 ## Overview
 Module provides static and dynamic diagnostic data to Diagnostic Communication Manager and Diagnostic Event Manager when requested.   
