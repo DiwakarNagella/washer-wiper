@@ -131,11 +131,8 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 | 								| Func()-->					 	| 									  	|
 | 						       	| 					           	| 	Func()-->	
 
-|
+			|
 
 
-| Diagnostic Tester -->        	|                    			|           VOL_DIDServer       		|
-|-----------------------------	|-----------------------------	|------------------------------------	|
-| 								| DCM -->					 	
- 					           	
-|<----------External--->| <--------------------------ECU-------------------------->																
+| Diagnostic Tester -->        	|    --------------->	|          DCM   	|   ---------------> | VOL_DIDServer |
+|-----------------------------	|															
