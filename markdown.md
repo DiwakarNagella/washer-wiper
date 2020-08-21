@@ -126,13 +126,16 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 
 ## Usecases:
 
-| Func()-->                    	|                    			|           Description       			|
-|-----------------------------	|-----------------------------	|------------------------------------	|
-| 								| Func()-->					 	| 									  	|
-| 						       	| 					           	| 	Func()-->	
-
-			|
-
+### DCM Use Case  
+Diagnostic Communication Manager can request the following data From the ECU integarted with VOL_DIDServer component
 
 | Diagnostic Tester -->        	|    --------------->	|          DCM   	|   ---------------> | VOL_DIDServer |
-|-----------------------------	|----------------------	|-----------------------|--------------------|----------------| 										
+|-----------------------------	|----------------------	|-----------------------|--------------------|----------------| 
+
+* ChassisId - Using DataServices_CHANO_Data_CHANO_ChassisId_ReadData() Parameter Port interface*               
+* OutdoorTemperature - Using DataServices_P1AFR_Data_P1AFR_OutdoorTemperature_ReadData() C/S interface *                         
+
+* VehicleMode - Using DataServices_P1AFT_Data_P1AFT_VehicleMode_ReadData() C/S interface  *                
+* DataServices_P1ALA_Data_P1ALA_ECUHardwareNumber_ReadData() C/S interface*
+* DataServices_P1ALA_Data_P1ALA_ECUHardwareNumber_ReadDataLength()  C/S interface*         
+
