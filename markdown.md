@@ -1,4 +1,4 @@
-Fault Event gateway module to broadcast Active faults within the ECU
+Fault Event gateway module maintains and broadcasts Active faults within the ECU
 ========
 
 
