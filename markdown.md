@@ -1,11 +1,11 @@
-Diagnostic Server for Common Data Identifiers - VOL_DIDServer
+Fault Event gateway module to broadcast Active faults within the ECU
 ========
 
 
 ## Overview
-Module provides static and dynamic diagnostic data to Diagnostic Communication Manager and Diagnostic Event Manager when requested.   
+Module maintains the Active Fault list for various Diagnostic Events using data structures and Broadcasts Active faults periodically and it is allowed to do that only when the vehicle mode is either RUNNING or PRE-RUNNING.    
 
-![Overview](/doc/images/Overview.png)
+![Introduction](images/Overview.png)
 
 ## Dynamic data provided by the Module:
 
