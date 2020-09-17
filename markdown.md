@@ -57,70 +57,40 @@ Number of Sub modules depends on number of LIN slave nodes configured in that LI
 
 | Port                                                        | Interface                           | C/S Operation               | Description |
 |-------------------------------------------------------------|-------------------------------------|-----------------------------|-------------|
-| CBReadData_UTCTimeStamp_First_Day                           | CSDataServices_UTCTimeStamp_Day     | ReadData()                  |             |
-| CBReadData_UTCTimeStamp_First_Hour                          | CSDataServices_UTCTimeStamp_Hour    | ReadData()                  |             |
-| CBReadData_UTCTimeStamp_First_Minutes                       | CSDataServices_UTCTimeStamp_Minutes | ReadData()                  |             |
-| CBReadData_UTCTimeStamp_First_Month                         | CSDataServices_UTCTimeStamp_Month   | ReadData()                  |             |
-| CBReadData_UTCTimeStamp_First_Seconds                       | CSDataServices_UTCTimeStamp_Seconds | ReadData()                  |             |
-| CBReadData_UTCTimeStamp_First_Year                          | CSDataServices_UTCTimeStamp_Year    | ReadData()                  |             |
-| CBReadData_UTCTimeStamp_Latest_Day                          | CSDataServices_UTCTimeStamp_Day     | ReadData()                  |             |
-| CBReadData_UTCTimeStamp_Latest_Hour                         | CSDataServices_UTCTimeStamp_Hour    | ReadData()                  |             |
-| CBReadData_UTCTimeStamp_Latest_Minutes                      | CSDataServices_UTCTimeStamp_Minutes | ReadData()                  |             |
-| CBReadData_UTCTimeStamp_Latest_Month                        | CSDataServices_UTCTimeStamp_Month   | ReadData()                  |             |
-| CBReadData_UTCTimeStamp_Latest_Seconds                      | CSDataServices_UTCTimeStamp_Seconds | ReadData()                  |             |
-| CBReadData_UTCTimeStamp_Latest_Year                         | CSDataServices_UTCTimeStamp_Year    | ReadData()                  |             |
-| DataServices_CHANO_Data_CHANO_ChassisId                     | DataServices_CHANO_Data_CHANO       | ReadData()                  |             |
-| DataServices_P1AFR_Data_P1AFR_OutdoorTemperature            | DataServices_P1AFR_Data_P1AFR       | ReadData()                  |             |
-| DataServices_P1AFS_Data_P1AFS_Odometer                      | DataServices_P1AFS_Data_P1AFS       | ReadData()                  |             |
-| DataServices_P1AFT_Data_P1AFT_VehicleMode                   | DataServices_P1AFT_Data_P1AFT       | ReadData()                  |             |
-| DataServices_P1ALA_Data_P1ALA_ECUHardwareNumber             | DataServices_P1ALA_Data_P1ALA       | ReadData() ReadDataLength() |             |
-| DataServices_P1ALB_Data_P1ALB_SystemNameOrEngineType        | DataServices_P1ALB_Data_P1ALB       | ReadData()                  |             |
-| DataServices_P1ALP_Data_P1ALP_ApplicationDataId             | DataServices_P1ALP_Data_P1ALP       | ReadData() ReadDataLength() |             |
-| DataServices_P1ALQ_Data_P1ALQ_ApplicationSoftwareId         | DataServices_P1ALQ_Data_P1ALQ       | ReadData() ReadDataLength() |             |
-| DataServices_P1B1O_Data_P1B1O_BootSWIdentifier              | DataServices_P1B1O_Data_P1B1O       | ReadData()                  |             |
-| DataServices_P1DIH_Data_P1DIH_activeDiagnosticSessionDataId | DataServices_P1DIH_Data_P1DIH       | ReadData()                  |             |
-| DataServices_VINNO_Data_VINNO_VIN                           | DataServices_VINNO_Data_VINNO       | ReadData()                  |             |
-| DataServices_P1OLT_Data_P1OLT_BuildVersionInfo              | DataServices_P1OLT_Data_P1OLT       | ReadData()                  |             |
-| DataServices_P1Q82_Data_P1Q82_DescriptionFileSha256         | DataServices_P1Q82_Data_P1Q82       | ReadData()                  |             |
-| DataServices_P1URK_Data_P1URK_BuildIds                      | DataServices_P1URK_Data_P1URK       | ReadData() ReadDataLength() |             |
+|CBStatusDTC_DemCallbackDTCStatusChanged                      | CallbackDTCStatusChange		    | DTCStatusChanged()          | Used by DEM to update the Event dtc status |
 
 
 ## Required C/S Ports:
 
-| Port               	| Interface                	| C/S Operation                                                                                        	| Description 	|
-|--------------------	|--------------------------	|------------------------------------------------------------------------------------------------------	|-------------	|
-| LINMaster_Services 	| VOL_LINMaster_Services_I 	| RequestAllSlaveSnSnPn() FetchNoOfLinSlaves() FetchAllSlaveSnSnPnServerStatus() FetchAllSlaveSnSnPn() 	|             	|
+| Port               	| Interface                	| C/S Operation        			| Description 	|
+|--------------------	|--------------------------	|---------------------------------------|-------------	|
+| GeneralEvtInfo 	| GeneralDiagnosticInfo 	|GetEventStatus(), GetDTCOfEvent() 	| Used only during module Init|
+|Event_D1BR9_68_VOL_FaultEventGateway_ListFull |DiagnosticMonitor |SetEventStatus() | Used to inform DEM about Fault List status     |
+
+## Provided S/R Ports:
+
+| Port                        	| Interface                     	| DataType 	| Description 	|
+|-----------------------------	|-------------------------------	|----------	|-------------	|
+| DiagFaultStat                 	| DiagFaultStat_I                 	| DiagFaultStat         	|   Broadcast fault information    	|
 
 ## Required S/R Ports:
 
 | Port                        	| Interface                     	| DataType 	| Description 	|
 |-----------------------------	|-------------------------------	|----------	|-------------	|
-| AmbientAirTemperature       	| AmbientAirTemperature_I       	| Temperature16bit_T         	|   From Onboard sensor	|
-| DayUTC                      	| DayUTC_I                      	| Days8bit_Fact025_T         	|   RTC          	|
-| HoursUTC                    	| HoursUTC_I                    	| Hours8bit_T         	|   RTC          	|
-| MinutesUTC                  	| MinutesUTC_I                  	| Minutes8bit_T         	|   RTC          	|
-| MonthUTC                    	| MonthUTC_I                    	| Months8bit_T         	|   RTC          	|
-| SecondsUTC                  	| SecondsUTC_I                  	| Seconds8bitFact025_T          	|   RTC          	|
-| YearUTC                     	| YearUTC_I                     	| Years8bit_T         	|   RTC          	|
 | VehicleMode                 	| VehicleMode_I                 	| VehicleMode_T         	|   Received by CAN    	|
-| TotalVehicleDistanceHighRes 	| TotalVehicleDistanceHighRes_I 	| Distance32bit_T         	|    Received by CAN   	|
 
 
 ## Address Parameters Required Ports:
 
 | Parameter                   	| Init Value 	| Description		|
 |-----------------------------	|-------------	|-----------------------|
-| P1C54_FactoryModeActive     	|      0       	|			|
-| VINNO_VIN                   	|     [0]      	|			|
-| X1CJT_EnableCustomDemCfgCrc 	|     [0]      	|Dem Admin data CRC	|
-| CHANO_ChassisId             	|     [0]     	|			|
+| P1BDU_DWMVehicleModes     	|      0       	|			|
 
 
 ## Mode Switch Ports (Required):
 
 | Port                        	| Interface                   	| Mode Declarations                  	|
 |-----------------------------	|-----------------------------	|------------------------------------	|
-| DcmDiagnosticSessionControl 	| DcmDiagnosticSessionControl 	| DEFAULT_SESSION, EXTENDED_SESSION  	|
 | Switch_ESH_ModeSwitch       	| BswM_MSI_ESH_Mode           	| STARTUP, WAKEUP, POSTRUN, SHUTDOWN 	|
 
 
