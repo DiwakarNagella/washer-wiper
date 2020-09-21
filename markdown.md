@@ -90,7 +90,7 @@ This module waits for the LIN Master to responds back with LIN slave info untill
 
 | Port               	| Interface                	| C/S Operation                                                                                        	| Description 	|
 |--------------------	|--------------------------	|------------------------------------------------------------------------------------------------------	|-------------	|
-| LINMaster_Services 	| VOL_LINMaster_Services_I 	| RequestAllSlaveSnSnPn() FetchNoOfLinSlaves() FetchAllSlaveSnSnPnServerStatus() FetchAllSlaveSnSnPn() 	|             	|
+| LINMaster_Services 	| VOL_LINMaster_Services_I 	| RequestAllSlaveSnSnPn() FetchNoOfLinSlaves() FetchAllSlaveSnSnPnServerStatus() FetchAllSlaveSnSnPn() 	|   LIN Slave info          	|
 
 ## Required S/R Ports:
 
