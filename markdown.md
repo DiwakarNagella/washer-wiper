@@ -74,7 +74,7 @@ This module waits for the LIN Master to responds back with LIN slave info untill
 | DataServices_P1AFR_Data_P1AFR_OutdoorTemperature| DataServices_P1AFR_Data_P1AFR       | ReadData()                  |             |
 | DataServices_P1AFS_Data_P1AFS_Odometer          | DataServices_P1AFS_Data_P1AFS       | ReadData()                  |             |
 | DataServices_P1AFT_Data_P1AFT_VehicleMode       | DataServices_P1AFT_Data_P1AFT       | ReadData()                  |             |
-| DataServices_P1ALA_Data_P1ALA_ECUHardwareNumber | DataServices_P1ALA_Data_P1ALA       | ReadData() ReadDataLength() |Data Length may vary based on the ECU configuration and/or ECU project itself. To indicate the actual size of the data, data length is also provided.            |
+| DataServices_P1ALA_Data_P1ALA_ECUHardwareNumber | DataServices_P1ALA_Data_P1ALA       | ReadData() ReadDataLength() |Data Length may vary based on the ECU |
 | DataServices_P1ALB_Data_P1ALB_SystemNameOrEngineType| DataServices_P1ALB_Data_P1ALB       | ReadData()                  |             |
 | DataServices_P1ALP_Data_P1ALP_ApplicationDataId| DataServices_P1ALP_Data_P1ALP       | ReadData() ReadDataLength() |Data Length may vary based on the ECU configuration and/or ECU project itself. To indicate the actual size of the data, data length is also provided.             |
 | DataServices_P1ALQ_Data_P1ALQ_ApplicationSoftwareId|DataServices_P1ALQ_Data_P1ALQ       | ReadData() ReadDataLength() |Data Length may vary based on the ECU configuration and/or ECU project itself. To indicate the actual size of the data, data length is also provided.             |
