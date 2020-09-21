@@ -56,7 +56,7 @@ This module waits for the LIN Master to responds back with LIN slave info untill
 ## The following Section provides the details about ports and interfaces
 ## Provided C/S Ports:
 
-| Port                                                        | Interface                           | C/S Operation               | Description |
+| Port                                                        | Interface                           | C/S Operation               | Description                                |
 |-------------------------------------------------------------|-------------------------------------|-----------------------------|--------------------------------------------|
 | CBReadData_UTCTimeStamp_First_Day                           | CSDataServices_UTCTimeStamp_Day     | ReadData()                  |             |
 | CBReadData_UTCTimeStamp_First_Hour                          | CSDataServices_UTCTimeStamp_Hour    | ReadData()                  |             |
