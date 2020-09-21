@@ -1,67 +1,166 @@
-Fault Event gateway module maintains and broadcasts Active faults within the ECU
+Diagnostic Server for Common Data Identifiers - VOL_DIDServer
 ========
 
 
 ## Overview
-Module maintains the Active Fault list for various Diagnostic Events using data structures and Broadcasts Active faults periodically and it is allowed to do that only when the vehicle mode is either RUNNING or PRE-RUNNING and also depends on the parameter DWMVehicleModes. 
+Module provides static and dynamic diagnostic data to Diagnostic Communication Manager and Diagnostic Event Manager when requested.   
 
-![Introduction](images/FaultEventGateway_Overview.png)
+![Introduction](images/Overview.png)
+
+## Dynamic data provided by the Module:
+
+Module Initializes the following dynamic data to their default values and periodically updates the data as Read from RTE (received from corresponding SWCs,CAN/ On board Sensors) and check if it is valid. Only Valid signals are considered.
+Data is protected with CRC.
+
+
+| Data				| Init Value			|  Description	 |
+|:---				|:---:              	|  :---:        	 | 
+|UTCTimeStamp		|UTC_NOT_AVAILABLE		 | Default value - 0xFF				 |
+|OutdoorTemperature	|AAT_NA_MAX			 |Default value - 65535				 | 
+|Odometer status	|TOTAL_VEHICLE_DISTANCE_HIGH_RES_DBC_DEFAULT			|Default value - 0xffffffffu				 | 
+|Vehicle Mode		|VehicleMode_NotAvailable		|				 | 
+
+
+
+## Static data provided by the Module:
+
+
+### Application Software Identification and Build Version
+
+| Module ID			| Part Number			| Build Version    | Description	 |
+|:---				|:---:              	| :--:             | :---:        	 | 
+|UFBL_MODULE_ID		|BOOTLOADER_PARTNUMBER	|None 			   |Bootloader Software				 |
+|MSW_MODULE_ID		|MSW_PARTNUMBER			|BUILD_VERSION_MSW |Application Software				 | 
+|CSW_MODULE_ID		|Part number			|None			   |optional module				 | 
+		
+### Application Data Identification and Buid ID
+
+| Module ID			| Part Number				  | Build Version    | Description	 														 | 
+|:---				|:---:              		  | :--:             | :---:        	 														 | 
+|APP_MODULE_ID		|DATASET_PARTNUMBER			  |DATASET_BUILD_ID  |Data set - Configuration parameters									 |
+|APP_MODULE_ID		|POSTBUILD_PARTNUMBER		  |POSTBUILD_BUILD_ID|Post build data area for Software Configuration						 | 
+|APP_MODULE_ID		|SOUND_PARTNUMBER			  |None			     |Data area to handle the Sound data on IC								 |
+|APP_MODULE_ID		|DWM_CONFIGURATION_PARTNUMBER |None			     |Dynamic Window manager data area to handle the pixel data.Only valid for IC.| 
+
+
+### ECU Hardware Number
+
+| Module ID			| Part Number				  | Serial Number    | Sub Module info	 | 
+|:---				|:---:              		  | :--:             | :---:        	 | 		 
+|HW_MODULE_ID		|HARDWARE_PARTNUMBER		  |HARDWARE_SERIAL_NO  |SUB_HW_MODULE_ID,Sub node Part number,Sub node serial number |
+
+ECU hardware number includes the above information along with Sub node (LIN Slave) information. It is assumed that VOL_DIDServer module is running on ECU which implements LIN Master server.
+Number of Sub modules depends on number of LIN slave nodes configured in that LIN cluster. Then the Hardware Number includes ID, Part number and Serial number of those many LIN Slaves apart from the main ECU hardware details.
+This module waits for the LIN Master to responds back with LIN slave info untill the timeout. If LIN master doesn't respond within the timeout, this module returns the ECU H/W info with out the LIN slave information.
 
 ## The following Section provides the details about ports and interfaces
 ## Provided C/S Ports:
 
 | Port                                                        | Interface                           | C/S Operation               | Description |
 |-------------------------------------------------------------|-------------------------------------|-----------------------------|-------------|
-|CBStatusDTC_DemCallbackDTCStatusChanged                      | CallbackDTCStatusChange		    | DTCStatusChanged()          | Used by DEM to update the Event dtc status |
+| CBReadData_UTCTimeStamp_First_Day                           | CSDataServices_UTCTimeStamp_Day     | ReadData()                  |             |
+| CBReadData_UTCTimeStamp_First_Hour                          | CSDataServices_UTCTimeStamp_Hour    | ReadData()                  |             |
+| CBReadData_UTCTimeStamp_First_Minutes                       | CSDataServices_UTCTimeStamp_Minutes | ReadData()                  |             |
+| CBReadData_UTCTimeStamp_First_Month                         | CSDataServices_UTCTimeStamp_Month   | ReadData()                  |             |
+| CBReadData_UTCTimeStamp_First_Seconds                       | CSDataServices_UTCTimeStamp_Seconds | ReadData()                  |             |
+| CBReadData_UTCTimeStamp_First_Year                          | CSDataServices_UTCTimeStamp_Year    | ReadData()                  |             |
+| CBReadData_UTCTimeStamp_Latest_Day                          | CSDataServices_UTCTimeStamp_Day     | ReadData()                  |             |
+| CBReadData_UTCTimeStamp_Latest_Hour                         | CSDataServices_UTCTimeStamp_Hour    | ReadData()                  |             |
+| CBReadData_UTCTimeStamp_Latest_Minutes                      | CSDataServices_UTCTimeStamp_Minutes | ReadData()                  |             |
+| CBReadData_UTCTimeStamp_Latest_Month                        | CSDataServices_UTCTimeStamp_Month   | ReadData()                  |             |
+| CBReadData_UTCTimeStamp_Latest_Seconds                      | CSDataServices_UTCTimeStamp_Seconds | ReadData()                  |             |
+| CBReadData_UTCTimeStamp_Latest_Year                         | CSDataServices_UTCTimeStamp_Year    | ReadData()                  |             |
+| DataServices_CHANO_Data_CHANO_ChassisId                     | DataServices_CHANO_Data_CHANO       | ReadData()                  |             |
+| DataServices_P1AFR_Data_P1AFR_OutdoorTemperature            | DataServices_P1AFR_Data_P1AFR       | ReadData()                  |             |
+| DataServices_P1AFS_Data_P1AFS_Odometer                      | DataServices_P1AFS_Data_P1AFS       | ReadData()                  |             |
+| DataServices_P1AFT_Data_P1AFT_VehicleMode                   | DataServices_P1AFT_Data_P1AFT       | ReadData()                  |             |
+| DataServices_P1ALA_Data_P1ALA_ECUHardwareNumber             | DataServices_P1ALA_Data_P1ALA       | ReadData() ReadDataLength() |Data Length may vary based on the ECU configuration and/or ECU project itself. To indicate the actual size of the data, data length is also provided.            |
+| DataServices_P1ALB_Data_P1ALB_SystemNameOrEngineType        | DataServices_P1ALB_Data_P1ALB       | ReadData()                  |             |
+| DataServices_P1ALP_Data_P1ALP_ApplicationDataId             | DataServices_P1ALP_Data_P1ALP       | ReadData() ReadDataLength() |Data Length may vary based on the ECU configuration and/or ECU project itself. To indicate the actual size of the data, data length is also provided.             |
+| DataServices_P1ALQ_Data_P1ALQ_ApplicationSoftwareId         | DataServices_P1ALQ_Data_P1ALQ       | ReadData() ReadDataLength() |Data Length may vary based on the ECU configuration and/or ECU project itself. To indicate the actual size of the data, data length is also provided.             |
+| DataServices_P1B1O_Data_P1B1O_BootSWIdentifier              | DataServices_P1B1O_Data_P1B1O       | ReadData()                  |             |
+| DataServices_P1DIH_Data_P1DIH_activeDiagnosticSessionDataId | DataServices_P1DIH_Data_P1DIH       | ReadData()                  |             |
+| DataServices_VINNO_Data_VINNO_VIN                           | DataServices_VINNO_Data_VINNO       | ReadData()                  |             |
+| DataServices_P1OLT_Data_P1OLT_BuildVersionInfo              | DataServices_P1OLT_Data_P1OLT       | ReadData()                  |             |
+| DataServices_P1Q82_Data_P1Q82_DescriptionFileSha256         | DataServices_P1Q82_Data_P1Q82       | ReadData()                  |             |
+| DataServices_P1URK_Data_P1URK_BuildIds                      | DataServices_P1URK_Data_P1URK       | ReadData() ReadDataLength() |Data Length may vary based on the ECU configuration and/or ECU project itself. To indicate the actual size of the data, data length is also provided.             |
 
 
 ## Required C/S Ports:
 
-| Port               	| Interface                	| C/S Operation        			| Description 	|
-|--------------------	|--------------------------	|---------------------------------------|-------------	|
-| GeneralEvtInfo 	| GeneralDiagnosticInfo 	|GetEventStatus(), GetDTCOfEvent() 	| Used only during module Init|
-|Event_D1BR9_68_VOL_FaultEventGateway_ListFull |DiagnosticMonitor |SetEventStatus() | Used to inform DEM about Fault List status     |
-
-## Provided S/R Ports:
-
-| Port                        	| Interface                     	| DataType 	| Description 	|
-|-----------------------------	|-------------------------------	|----------	|-------------	|
-| DiagFaultStat                 	| DiagFaultStat_I                 	| DiagFaultStat         	|   Broadcast fault information    	|
+| Port               	| Interface                	| C/S Operation                                                                                        	| Description 	|
+|--------------------	|--------------------------	|------------------------------------------------------------------------------------------------------	|-------------	|
+| LINMaster_Services 	| VOL_LINMaster_Services_I 	| RequestAllSlaveSnSnPn() FetchNoOfLinSlaves() FetchAllSlaveSnSnPnServerStatus() FetchAllSlaveSnSnPn() 	|             	|
 
 ## Required S/R Ports:
 
 | Port                        	| Interface                     	| DataType 	| Description 	|
 |-----------------------------	|-------------------------------	|----------	|-------------	|
+| AmbientAirTemperature       	| AmbientAirTemperature_I       	| Temperature16bit_T         	|   From Onboard sensor	|
+| DayUTC                      	| DayUTC_I                      	| Days8bit_Fact025_T         	|   RTC          	|
+| HoursUTC                    	| HoursUTC_I                    	| Hours8bit_T         	|   RTC          	|
+| MinutesUTC                  	| MinutesUTC_I                  	| Minutes8bit_T         	|   RTC          	|
+| MonthUTC                    	| MonthUTC_I                    	| Months8bit_T         	|   RTC          	|
+| SecondsUTC                  	| SecondsUTC_I                  	| Seconds8bitFact025_T          	|   RTC          	|
+| YearUTC                     	| YearUTC_I                     	| Years8bit_T         	|   RTC          	|
 | VehicleMode                 	| VehicleMode_I                 	| VehicleMode_T         	|   Received by CAN    	|
+| TotalVehicleDistanceHighRes 	| TotalVehicleDistanceHighRes_I 	| Distance32bit_T         	|    Received by CAN   	|
 
 
 ## Address Parameters Required Ports:
 
 | Parameter                   	| Init Value 	| Description		|
 |-----------------------------	|-------------	|-----------------------|
-| P1BDU_DWMVehicleModes     	|      0       	|			|
+| P1C54_FactoryModeActive     	|      0       	|			|
+| VINNO_VIN                   	|     [0]      	|			|
+| X1CJT_EnableCustomDemCfgCrc 	|     [0]      	|Dem Admin data CRC	|
+| CHANO_ChassisId             	|     [0]     	|			|
 
 
 ## Mode Switch Ports (Required):
 
 | Port                        	| Interface                   	| Mode Declarations                  	|
 |-----------------------------	|-----------------------------	|------------------------------------	|
+| DcmDiagnosticSessionControl 	| DcmDiagnosticSessionControl 	| DEFAULT_SESSION, EXTENDED_SESSION  	|
 | Switch_ESH_ModeSwitch       	| BswM_MSI_ESH_Mode           	| STARTUP, WAKEUP, POSTRUN, SHUTDOWN 	|
 
 
 ## Usecases:
 
+### DCM Use Case  
+Diagnostic Communication Manager can Read the following data From VOL_DIDServer component. However Diagnostic Data Write services are not part of this module.
+
+* ChassisId - Using DataServices_CHANO_Data_CHANO_ChassisId_ReadData() Parameter Port interface 
+
+
+| Diagnostic Tester         	|    	|          DCM   		|    | VOL_DIDServer |
+|-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
+|    RDBID 22 01 00		|	                     					|	Call DataServices_CHANO_Data_CHANO_ChassisId_ReadData()	|			    		 |	Reads Data from Address Parameter and returns back the response			|	
+
+
+* OutdoorTemperature - Using DataServices_P1AFR_Data_P1AFR_OutdoorTemperature_ReadData() C/S interface   
+
+
+| Diagnostic Tester         	|    	|          DCM   		|    | VOL_DIDServer |
+|-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
+|    RDBID 22 11 02		|	                     					|	Call DataServices_P1AFR_Data_P1AFR_OutdoorTemperature_ReadData()	|			    		 |	Reads Data periodically from RTE and Updates local copy after validation and returns back as Diag response to DCM			|	
+
+
+* VehicleMode - Using DataServices_P1AFT_Data_P1AFT_VehicleMode_ReadData() C/S interface     
+
+
+| Diagnostic Tester         	|    	|          DCM   		|    | VOL_DIDServer |
+|-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
+|    RDBID 22 11 00		|	                     					|	Call DataServices_P1AFT_Data_P1AFT_VehicleMode_ReadData()	|			    		 |	Reads Data periodically from RTE and Updates local copy after validation and returns back as Diag response to DCM			|	
+
+
+* DataServices_P1ALA_Data_P1ALA_ECUHardwareNumber_ReadData() C/S interface
+
+
+| Diagnostic Tester         	|    	|          DCM   		|    | VOL_DIDServer |
+|-----------------------------	|----------------------	|-----------------------|--------------------|------------| 
+|    RDBID 22 F1 91		|	                     					|	Call DataServices_P1ALA_Data_P1ALA_ECUHardwareNumber_ReadData()	|			    		 |	Reads Data from Memory and returns back the response ***			|	
+
 ### DEM Use Case  
-## Initialization Behaviour:
-This modules needs to be initialized only after DEM is initialized.
-Module creates a Fault List (using Linked List) for various Diagnostic events as defined by DEM configuration Dem_Cfg_GlobalPrimaryFirst() and Dem_Cfg_GlobalPrimaryLast().
-Fault entry is made for only those events for which the DTC status bit 'Failed" is set.
-
-## Runtime Behaviour:
-This modules updates the Fault list with new active faults as requested by DEM for those events with DTC status bit 'Failed' changes from 0 to 1. For those Events for which the DTC status bit 'Failed' changes from 1 to 0, and if the event is already captured in the Fault list, it will be removed from the List.
-
-Fault list can store only NUM_DTC (Constant) number of faults in the list and once the list fills up then the last entry would be the FAULT_List_FULL DTC.
-
-This modules broadcasts only 2 Active faults periodically to RTE.
-
-If there are any new Events, then DEM informs this module about the new event status to be updated in the fault list.
+Diagnostic Event Manager Needs UTC Time stamp information, Vehicle mode, Odometer status and Outside air temperature that might be part of Snapshot data for various DTCs 
+DEM uses C/S ports to access the data.
