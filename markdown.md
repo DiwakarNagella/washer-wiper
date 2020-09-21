@@ -5,7 +5,7 @@ Fault Event gateway module maintains and broadcasts Active faults within the ECU
 ## Overview
 Module maintains the Active Fault list for various Diagnostic Events using data structures and Broadcasts Active faults periodically and it is allowed to do that only when the vehicle mode is either RUNNING or PRE-RUNNING and also depends on the parameter DWMVehicleModes. 
 
-![Introduction](images/Overview.png)
+![Introduction](images/FaultEventGateway_Overview.png)
 
 ## The following Section provides the details about ports and interfaces
 ## Provided C/S Ports:
