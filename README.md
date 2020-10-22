@@ -51,7 +51,10 @@ Module provides static and dynamic diagnostic data to Diagnostic Communication M
 |APP_MODULE_ID		|SOUND_PARTNUMBER			  |None			     |Data area to handle the Sound data on IC								 |
 |APP_MODULE_ID		|DWM_CONFIGURATION_PARTNUMBER |None			     |Diagnostic Warning Manager configuration | 
 
-REQ-SS-19 v3, REQ-SS-11 v1, REQ-SS-19 v3,REQ-SS-42 v1
+#### Related Requirements
+* REQ-SS-19 v3
+* REQ-SS-11 v1
+* REQ-SS-42 v1
 
 #### ECU Hardware Number
 
