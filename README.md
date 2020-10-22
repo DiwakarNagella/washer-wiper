@@ -1,3 +1,51 @@
+VOL_FaultEventGateway
+========
+
+
+## Overview
+
+* Module maintains the Active Fault list for various primary Diagnostic Events to display them to driver.
+* Maintains the fault list for subnets 
+* Broadcasts Active faults periodically only when the vehicle mode is in either RUNNING or PRE-RUNNING
+and if Diagnostic Warning Manager (DWM) is active in these vehice modes(refer parameter [P1BDU](https://sews.volvo.net/Sews2/Case/ObjectParameter.aspx?ObjectID=1503))
+ 
+## Usecases
+
+### Initialization Behaviour
+
+* This modules needs to be initialized only after DEM is initialized.
+* Module depends on DEM configuration Dem_Cfg_GlobalPrimaryFirst() and Dem_Cfg_GlobalPrimaryLast().
+* Fault entry is made for only those configured events for which the DTC status bit 'Failed" is set.
+
+### Runtime Behaviour
+
+* A fault is active if DTC status bit 'Failed' changes from 0 to 1.
+* A fault is inactive if DTC status bit 'Failed' changes from 1 to 0. 
+* This modules updates the Fault list with new active faults reported by DEM.
+* Removes the inactive faults if an entry is already made in the list.
+* Fault list can store only NUM_DTC (Constant) number of faults in the list.
+* Once the list fills up then the last entry would be the FAULT_List_FULL DTC.
+* List Full status is updated to DEM.
+* This modules broadcasts only 2 Active faults periodically to RTE.
+
+#### Related Requirements
+
+* Basically to support few of DWM requirements.
+
+
+## More Information
+
+### Technical References
+For functionality, API and configuration of the AUTOSAR BSW module, refer Vector technical references which can be found in ECU SIP. The following documents were referred.
+
+* TechnicalReference_Dem.pdf
+
+### SEWS
+
+See the actual version used in ContainerInfo.xml, convenience link to version [3.0](https://sews.volvo.net/Sews2/ViewData/ViewContainerData.aspx?ContainerId=14461)
+
+
+
 # ![Markdown Here logo](https://raw.github.com/adam-p/markdown-here/master/src/common/images/icon48.png) Markdown Here
 
 [**Visit the website.**](http://markdown-here.com)<br>
