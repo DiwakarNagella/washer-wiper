@@ -24,12 +24,11 @@
 
 ### Technical References
 
-  For functionality, API and configuration of the AUTOSAR BSW module, refer Vector technical references which can be found in ECU SIP.
+  For functionality, API and configuration of the AUTOSAR BSW module,<br\> refer Vector technical references which can be found in ECU SIP.
   The following documents were referred.
 * TechnicalReference_Issm.pdf
 
 ### SEWS
 
-* See the actual version used in `ContainerInfo.xml`,<br/>
-        convenience link to version [6.0](https://sews.volvo.net/Sews2/ViewData/ViewContainerData.aspx?ContainerId=26026).
+* See the actual version used in `ContainerInfo.xml`,convenience link to version [6.0](https://sews.volvo.net/Sews2/ViewData/ViewContainerData.aspx?ContainerId=26026).
 
