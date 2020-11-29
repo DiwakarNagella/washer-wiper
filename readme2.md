@@ -14,9 +14,9 @@
 
 * Used to configure the debug server to be in the preffered state to read the data.
 * Reset the CPU load counters and CPU load data
-* Possible to force Generate the following types of MCU resets for CHASSIS ECUS while the debug server is in reset state
-   -Controlled reset<br/>
-   -OS error reset<br/>
+* Possible to force Generate the following types of MCU resets for CHASSIS ECUS while the debug server is in reset state<br/>
+   -- Controlled reset<br/>
+   *OS error reset<br/>
    -other exception resets related to illegal instruction and data fetch
 
 
