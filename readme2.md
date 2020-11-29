@@ -10,7 +10,11 @@
 	
 ## Usecases
 
-### P1EGD - Debug Info
+### P1EGD - Debug Info Write data
+
+#### Related requirements
+
+### P1EGD - Debug Info Read data
 
 #### Related requirements
 
