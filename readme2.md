@@ -2,19 +2,27 @@
 
 ## Overview
 
-* Debug server module provides the following ECU internal debug data when requested using corresponding data services<br/>
-	-CPU load<br/>
-	-Application Network Status/ISS status<br/>
-	-Extended reset info<br/>
-	-Error counters
+* Debug server module provides the following ECU internal debug data when requested using corresponding DIDs<br/>
+    -CPU load<br/>
+    -Application Network Status/ISS status<br/>
+    -Extended reset info<br/>
+    -Error counters
 	
 ## Usecases
 
-### P1EGD - Debug Info Write data
+### P1EGD - Debug Info Write data DID
+
+* Used to configure the debug server to be in the preffered state to read the data.
+* Reset the CPU load counters and CPU load data
+* Possible to force Generate the following types of MCU resets for CHASSIS ECUS while the debug server is in reset state
+   -Controlled reset<br/>
+   -OS error reset<br/>
+   -other exception resets related to illegal instruction and data fetch
+
 
 #### Related requirements
 
-### P1EGD - Debug Info Read data
+### P1EGD - Debug Info Read data DID
 
 #### Related requirements
 
