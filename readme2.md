@@ -2,7 +2,7 @@
 
 ## Overview
 
-* Debug server module provides the following ECU internal debug data when requested using corresponding DIDs<br/>
+Debug server module provides the following ECU internal debug data when requested using corresponding DIDs<br/>
     -CPU load<br/>
     -Application Network Status/ISS status<br/>
     -Extended reset info<br/>
