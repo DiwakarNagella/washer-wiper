@@ -16,11 +16,12 @@
 * Reset the CPU load counters and CPU load data
 * Possible to force Generate the following types of MCU resets for CHASSIS ECUS while the debug server is in reset state<br/>
    -- Controlled reset<br/>
-   *OS error reset<br/>
-   -other exception resets related to illegal instruction and data fetch
-
+   -- OS error reset<br/>
+   -- other exception resets related to illegal instruction and data fetch
 
 #### Related requirements
+
+TBD
 
 ### P1EGD - Debug Info Read data DID
 
