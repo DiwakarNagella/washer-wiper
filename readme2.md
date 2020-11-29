@@ -40,7 +40,7 @@ TBD
 
 ### CPU load measurement
 
-* Cpu load is measured only for a specified period selected from X1A2D address parameter.
+* Cpu load is measured in a periodic 10ms task and only for a specified period which is selected from X1A2D address parameter.
 * Smoothing factor for cpu load is selected from X1AWT address parameter.
 * CPU load functionality is disabled from default dataset or parameters in production.
 
@@ -59,6 +59,8 @@ TBD
 TBD
 
 ### P1F2A - Application Network Status
+* DID returns the status of application network mapped to Infra Structure Subsets
+* Number of active users (Corresponding to ANW) in the local ECU and Backbone2 requested the 
 
 #### Related requirements
 #### Integration Notes
