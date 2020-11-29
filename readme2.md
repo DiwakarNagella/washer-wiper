@@ -85,6 +85,11 @@ TBD
 TBD
 
 ### P1M4R - Error counters
+* This services provides the following stored error counters info:
+    -- RAM error counter updated each time due to for example ECC errors
+    -- ROM error counter updated each time due to NvM time out (60 s)
+    -- Reset counter that includes software resets and Hardware resets except WDG supervised entity resets
+    -- Software error counters
 
 #### Related requirements
 #### Integration Notes
