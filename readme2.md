@@ -35,6 +35,8 @@ TBD
 * While in Data Read and Reset state returns min,max and average CPU Load.
 
 #### Related requirements
+TBD
+
 #### Integration Notes
 TBD
 
@@ -45,6 +47,8 @@ TBD
 * CPU load functionality is disabled from default dataset or parameters in production.
 
 #### Related requirements
+TBD
+
 #### Integration Notes
 TBD
 
@@ -53,8 +57,8 @@ TBD
 DID used to read the Development internal version information like build version, build time etc.
 
 #### Related requirements
-
 TBD
+
 #### Integration Notes
 TBD
 
@@ -67,6 +71,8 @@ TBD
     -- ANW/ISS user info in an ECU, with information if the ECU keeps the networks active.
     
 #### Related requirements
+
+* Requirements related to ISS REQ-ISS_11/01,REQ-ISS_11/01,REQ-ISS_18/01,REQ-ISS_20/01,REQ-ISS_24/01,REQ-ISS_XX/01,REQ-ISS_36/01
 
 #### Integration Notes
 TBD
@@ -81,6 +87,8 @@ TBD
     -- Stored Os error information
     
 #### Related requirements
+TBD
+
 #### Integration Notes
 TBD
 
@@ -92,6 +100,8 @@ TBD
     -- Software error counters
 
 #### Related requirements
+TBD
+
 #### Integration Notes
 TBD
 
