@@ -12,14 +12,14 @@ Debug server module provides the following ECU internal debug data when requeste
 
 ### P1EGD - Debug Info Write data DID
 
-* This will enable adding and removing of special functionality
-* Most functionality will be disabled from default dataset or parameters in production
-* Used to configure the debug server to be in the preffered state to read the data.
-* Reset the CPU load counters and CPU load data
-* Possible to force Generate the following types of MCU resets for CHASSIS ECUS while the debug server is in reset state<br/>
+* This will enable adding and removing of special functionality.<br/>
+* Most functionality will be disabled from default dataset or parameters in production.<br/>
+* Used to configure the debug server to be in the preffered state to read the data.<br/>
+* Reset the CPU load counters and CPU load data.<br/>
+* Possible to force Generate the following types of MCU resets for CHASSIS ECUS while the debug server is in reset state.<br/>
    -- Controlled reset<br/>
    -- OS error reset<br/>
-   -- other exception resets related to unalligned memory, illegal instruction and data fetch
+   -- other exception resets related to unalligned memory, illegal instruction and data fetch<br/>
 * Reset causes DTC D1AD0 to be set
 
 #### Related requirements
@@ -28,16 +28,16 @@ TBD
 
 ### P1EGD - Debug Info Read data DID
 
-By default responds with the state of debug server
-While in Configure state, it returns only the CPU load measure period selected from X1A2D address parameter
-While in Data Read and Reset state returns min,max and average CPU Load calculated in a periodic 10ms task 
-CPU loadfunctionality is disabled from default dataset or parameters in production
+By default responds with the state of debug server.<br/>
+While in Configure state, it returns only the CPU load measure period selected from X1A2D address parameter.<br/>
+While in Data Read and Reset state returns min,max and average CPU Load calculated in a periodic 10ms task.<br/> 
+CPU loadfunctionality is disabled from default dataset or parameters in production.<br/>
 
 #### Related requirements
 
 ### CPU load measurement
 
-Cpu load is measured only for a specified period selected from X1A2D address parameter.
+Cpu load is measured only for a specified period selected from X1A2D address parameter.<br/>
 smoothing factor for cpu load is selected from X1AWT address parameter
 
 #### Related requirements
