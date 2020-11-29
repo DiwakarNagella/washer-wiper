@@ -17,7 +17,8 @@
 * Possible to force Generate the following types of MCU resets for CHASSIS ECUS while the debug server is in reset state<br/>
    -- Controlled reset<br/>
    -- OS error reset<br/>
-   -- other exception resets related to illegal instruction and data fetch
+   -- other exception resets related to unalligned memory, illegal instruction and data fetch
+* Reset causes DTC D1AD0 to be set
 
 #### Related requirements
 
