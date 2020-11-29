@@ -16,7 +16,7 @@
 
 ### P1EGB - BuildVersionInfo
 
-DID used to get the Development internal version information like build version, build time etc.
+DID used to read the Development internal version information like build version, build time etc.
 
 #### Related requirements
 
