@@ -2,7 +2,7 @@
 
 ## Overview
 
-Debug server module provides the following ECU internal debug data when requested using corresponding DIDs<br/>
+Debug server module provides the following ECU internal debug data when requested using corresponding DIDs.<br/>
     -- CPU load<br/>
     -- Application Network Status/ISS status<br/>
     -- Extended reset info<br/>
@@ -16,7 +16,7 @@ Debug server module provides the following ECU internal debug data when requeste
 * Most functionality will be disabled from default dataset or parameters in production.
 * Used to configure the debug server to be in the preffered state to read the data.
 * Reset the CPU load counters and CPU load data.
-* Possible to force Generate the following types of MCU resets for CHASSIS ECUS while the debug server is in reset state.
+* Possible to force Generate the following types of MCU resets for CHASSIS ECUS while the debug server is in reset state.<br/>
    -- Controlled reset<br/>
    -- OS error reset<br/>
    -- other exception resets related to unalligned memory, illegal instruction and data fetch
