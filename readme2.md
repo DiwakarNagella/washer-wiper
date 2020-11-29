@@ -9,15 +9,29 @@
 	-Error counters
 	
 ## Usecases
+
 ### P1EGD - Debug Info
+
 #### Related requirements
+
 ### P1EGB - BuildVersionInfo
+
+DID used to get the Development internal version information like build version, build time etc.
+
 #### Related requirements
+
+TBD
+
 ### P1F2A - Application Network Status
+
 #### Related requirements
+
 ### P1VLE - ExtendedResetInfo
+
 #### Related requirements
+
 ### P1M4R - Error counters
+
 #### Related requirements
 
 ## More Information
