@@ -72,13 +72,14 @@ TBD
 TBD
 
 ### P1VLE - ExtendedResetInfo
+
 * For ZYNQ based ECUs, this service provides ECU last reset type(reason).
-* For CHASSIS ECUS
-    -- it provides last reset type,minimum free stack and task ID at reset.
-    -- exception register values for resets related to unalligned memory, illegal instruction, data write
-    -- exception register values for unhandled IRQ reset and Software Watchdog reset
+* For CHASSIS ECUS<br/>
+    -- it provides last reset type,minimum free stack and task ID at reset.<br/>
+    -- exception register values for resets related to unalligned memory, illegal instruction, data write.<br/>
+    -- exception register values for unhandled IRQ reset and Software Watchdog reset.<br/>
     -- stored Os error information
- 
+    
 #### Related requirements
 #### Integration Notes
 TBD
