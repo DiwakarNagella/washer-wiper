@@ -3,15 +3,17 @@
 ## Overview
 
 Debug server module provides the following ECU internal debug data when requested using corresponding DIDs<br/>
-    -CPU load<br/>
-    -Application Network Status/ISS status<br/>
-    -Extended reset info<br/>
+    -- CPU load<br/>
+    -- Application Network Status/ISS status<br/>
+    -- Extended reset info<br/>
     -Error counters
 	
 ## Usecases
 
 ### P1EGD - Debug Info Write data DID
 
+* This will enable adding and removing of special functionality
+* Most functionality will be disabled from default dataset or parameters in production
 * Used to configure the debug server to be in the preffered state to read the data.
 * Reset the CPU load counters and CPU load data
 * Possible to force Generate the following types of MCU resets for CHASSIS ECUS while the debug server is in reset state<br/>
@@ -25,6 +27,18 @@ Debug server module provides the following ECU internal debug data when requeste
 TBD
 
 ### P1EGD - Debug Info Read data DID
+
+By default responds with the state of debug server
+While in Configure state, it returns only the CPU load measure period selected from X1A2D address parameter
+While in Data Read and Reset state returns min,max and average CPU Load calculated in a periodic 10ms task 
+CPU loadfunctionality is disabled from default dataset or parameters in production
+
+#### Related requirements
+
+### CPU load measurement
+
+Cpu load is measured only for a specified period selected from X1A2D address parameter.
+smoothing factor for cpu load is selected from X1AWT address parameter
 
 #### Related requirements
 
