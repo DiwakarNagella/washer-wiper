@@ -75,20 +75,20 @@ TBD
 
 * For ZYNQ based ECUs, this service provides ECU last reset type(reason).
 * For CHASSIS ECUS<br/>
-    -- it provides last reset type,minimum free stack and task ID at reset.<br/>
-    -- exception register values for resets related to unalligned memory, illegal instruction, data write.<br/>
-    -- exception register values for unhandled IRQ reset and Software Watchdog reset.<br/>
-    -- stored Os error information
+    -- It provides last reset type,minimum free stack and task ID at reset.<br/>
+    -- Exception register values for resets related to unalligned memory, illegal instruction, data write.<br/>
+    -- Exception register values for unhandled IRQ reset and Software Watchdog reset.<br/>
+    -- Stored Os error information
     
 #### Related requirements
 #### Integration Notes
 TBD
 
 ### P1M4R - Error counters
-* This services provides the following stored error counters info:
-    -- RAM error counter updated each time due to for example ECC errors
-    -- ROM error counter updated each time due to NvM time out (60 s)
-    -- Reset counter that includes software resets and Hardware resets except WDG supervised entity resets
+* This services provides the following stored error counters info:<br/>
+    -- RAM error counter updated each time due to for example ECC errors.<br/>
+    -- ROM error counter updated each time due to NvM time out (60 s).<br/>
+    -- Reset counter that includes software resets and Hardware resets except WDG supervised entity resets.<br/>
     -- Software error counters
 
 #### Related requirements
