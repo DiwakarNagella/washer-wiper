@@ -59,9 +59,12 @@ TBD
 TBD
 
 ### P1F2A - Application Network Status
-* DID returns the status of application network mapped to Infra Structure Subsets
-* Number of active users (Corresponding to ANW) in the local ECU and Backbone2 requested the 
 
+* Only ISS status (transimtted in AnmMsg_ECUName_ISS, for ex: ISS is Backbone2) does't give any info about which ANW users are active.<br/>
+* This service provides the following info:<br/>
+    -- Number of active users (Corresponding to ANW) in the local ECU and ISS status.<br/> 
+    -- ANW/ISS user info in an ECU, with information if the ECU keeps the networks active.
+    
 #### Related requirements
 #### Integration Notes
 TBD
