@@ -30,7 +30,7 @@ TBD
 
 ### P1EGD - Debug Info Read data DID
 
-* By default responds with the state of debug server.
+* Responds with the state of debug server.
 * While in Configure state, it returns only the CPU load measure period selected from X1A2D address parameter.
 * While in Data Read and Reset state returns min,max and average CPU Load.
 
