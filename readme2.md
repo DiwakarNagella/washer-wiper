@@ -23,7 +23,9 @@ Debug server module provides the following ECU internal debug data when requeste
 * Reset causes DTC D1AD0 to be set
 
 #### Related requirements
+TBD
 
+#### Integration Notes
 TBD
 
 ### P1EGD - Debug Info Read data DID
@@ -33,6 +35,8 @@ TBD
 * While in Data Read and Reset state returns min,max and average CPU Load.
 
 #### Related requirements
+#### Integration Notes
+TBD
 
 ### CPU load measurement
 
@@ -41,6 +45,8 @@ TBD
 * CPU load functionality is disabled from default dataset or parameters in production.
 
 #### Related requirements
+#### Integration Notes
+TBD
 
 ### P1EGB - BuildVersionInfo
 
@@ -49,18 +55,26 @@ DID used to read the Development internal version information like build version
 #### Related requirements
 
 TBD
+#### Integration Notes
+TBD
 
 ### P1F2A - Application Network Status
 
 #### Related requirements
+#### Integration Notes
+TBD
 
 ### P1VLE - ExtendedResetInfo
 
 #### Related requirements
+#### Integration Notes
+TBD
 
 ### P1M4R - Error counters
 
 #### Related requirements
+#### Integration Notes
+TBD
 
 ## More Information
 
