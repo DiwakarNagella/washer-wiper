@@ -19,7 +19,7 @@ Debug server module provides the following ECU internal debug data when requeste
 * Possible to force Generate the following types of MCU resets for CHASSIS ECUS while the debug server is in reset state.<br/>
    -- Controlled reset<br/>
    -- OS error reset<br/>
-   -- other exception resets related to unalligned memory, illegal instruction and data fetch
+   -- other exception resets related to unalligned memory, illegal instruction and data write
 * Reset causes DTC D1AD0 to be set
 
 #### Related requirements
@@ -63,7 +63,7 @@ TBD
 * Only ISS status (transimtted in AnmMsg_ECUName_ISS, for ex: ISS is Backbone2) does't give any info about which ANW users are active.<br/>
 * This service provides the following info:<br/>
     -- Number of active users (Corresponding to ANW) in the local ECU.<br/>
-    -- ISS status.<br/> 
+    -- ISS(Communication Networks) status.<br/> 
     -- ANW/ISS user info in an ECU, with information if the ECU keeps the networks active.
     
 #### Related requirements
@@ -72,7 +72,13 @@ TBD
 TBD
 
 ### P1VLE - ExtendedResetInfo
-
+* For ZYNQ based ECUs, this service provides ECU last reset type(reason).
+* For CHASSIS ECUS
+    -- it provides last reset type,minimum free stack and task ID at reset.
+    -- exception register values for resets related to unalligned memory, illegal instruction, data write
+    -- exception register values for unhandled IRQ reset and Software Watchdog reset
+    -- stored Os error information
+ 
 #### Related requirements
 #### Integration Notes
 TBD
