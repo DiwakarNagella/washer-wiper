@@ -14,7 +14,7 @@ Debug server module provides the following ECU internal debug data when requeste
 
 * This will enable adding and removing of special functionality.
 * Most functionality will be disabled from default dataset or parameters in production.
-* Used to configure the debug server to be in the preffered state to read the data.
+* Configure the debug server to be in the preffered state to read the data.
 * Reset the CPU load counters and CPU load data.
 * Possible to force Generate the following types of MCU resets for CHASSIS ECUS while the debug server is in reset state.<br/>
    -- Controlled reset<br/>
@@ -54,7 +54,7 @@ TBD
 
 ### P1EGB - BuildVersionInfo
 
-DID used to read the Development internal version information like build version, build time etc.
+Read the Development internal version information like build version, build time etc.
 
 #### Related requirements
 TBD
@@ -72,7 +72,7 @@ TBD
     
 #### Related requirements
 
-* Requirements related to ISS REQ-ISS_11/01,REQ-ISS_11/01,REQ-ISS_18/01,REQ-ISS_20/01,REQ-ISS_24/01,REQ-ISS_XX/01,REQ-ISS_36/01
+* Requirements related to ISS REQ-ISS_11/01,REQ-ISS_11/01,REQ-ISS_18/01,REQ-ISS_20/01,REQ-ISS_24/01,REQ-ISS_XX/01,REQ-ISS_36/01 are tested
 
 #### Integration Notes
 TBD
@@ -93,7 +93,7 @@ TBD
 TBD
 
 ### P1M4R - Error counters
-* This services provides the following stored error counters info:<br/>
+* This service provides the following stored error counters info:<br/>
     -- RAM error counter updated each time due to for example ECC errors.<br/>
     -- ROM error counter updated each time due to NvM time out (60 s).<br/>
     -- Reset counter that includes software resets and Hardware resets except WDG supervised entity resets.<br/>
