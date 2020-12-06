@@ -20,7 +20,7 @@ Debug server module provides the following ECU internal debug data when requeste
    -- Controlled reset<br/>
    -- OS error reset<br/>
    -- other exception resets related to unalligned memory, illegal instruction and data write
-* Reset causes DTC D1AD0 to be set
+* Reset causes DTC D1AD0_49 and D1AD0_94 to be set
 
 #### Related requirements
 TBD
