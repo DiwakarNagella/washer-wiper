@@ -75,7 +75,8 @@ TBD
 * Requirements related to ISS REQ-ISS_11/01,REQ-ISS_11/01,REQ-ISS_18/01,REQ-ISS_20/01,REQ-ISS_24/01,REQ-ISS_XX/01,REQ-ISS_36/01 are tested
 
 #### Integration Notes
-TBD
+
+Connect service ports of ISSM to request the active Application Network Users.
 
 ### P1VLE - ExtendedResetInfo
 
