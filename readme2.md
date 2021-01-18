@@ -23,9 +23,11 @@ Debug server module provides the following ECU internal debug data when requeste
 * Reset causes DTC D1AD0_49 and D1AD0_94 to be set
 
 #### Related requirements
+
 TBD
 
 #### Integration Notes
+
 TBD
 
 ### P1EGD - Debug Info Read data DID
@@ -35,9 +37,11 @@ TBD
 * While in Data Read and Reset state returns min,max and average CPU Load.
 
 #### Related requirements
+
 TBD
 
 #### Integration Notes
+
 TBD
 
 ### CPU load measurement
@@ -47,9 +51,11 @@ TBD
 * CPU load functionality is disabled from default dataset or parameters in production.
 
 #### Related requirements
+
 TBD
 
 #### Integration Notes
+
 TBD
 
 ### P1EGB - BuildVersionInfo
@@ -57,9 +63,11 @@ TBD
 Read the Development internal version information like build version, build time etc.
 
 #### Related requirements
+
 TBD
 
 #### Integration Notes
+
 TBD
 
 ### P1F2A - Application Network Status
@@ -88,12 +96,15 @@ Connect service ports of ISSM to request the active Application Network Users.
     4. Stored Os error information
     
 #### Related requirements
+
 TBD
 
 #### Integration Notes
+
 TBD
 
 ### P1M4R - Error counters
+
 * This service provides the following stored error counters info:
     1. RAM error counter updated each time due to for example ECC errors.
     2. ROM error counter updated each time due to NvM time out (60 s).
@@ -101,9 +112,11 @@ TBD
     4. Software error counters
 
 #### Related requirements
+
 TBD
 
 #### Integration Notes
+
 TBD
 
 ## More Information
