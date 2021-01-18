@@ -16,10 +16,10 @@ Debug server module provides the following ECU internal debug data when requeste
 * Most functionality will be disabled from default dataset or parameters in production.
 * Configure the debug server to be in the preffered state to read the data.
 * Reset the CPU load counters and CPU load data.
-* Possible to force Generate the following types of MCU resets for CHASSIS ECUS while the debug server is in reset state.<br/>
-   -- Controlled reset<br/>
-   -- OS error reset<br/>
-   -- other exception resets related to unalligned memory, illegal instruction and data write
+* Possible to force Generate the following types of MCU resets for CHASSIS ECUS while the debug server is in reset state.
+   * Controlled reset
+   * OS error reset
+   * other exception resets related to unalligned memory, illegal instruction and data write
 * Reset causes DTC D1AD0_49 and D1AD0_94 to be set
 
 #### Related requirements
