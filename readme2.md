@@ -64,11 +64,11 @@ TBD
 
 ### P1F2A - Application Network Status
 
-* Only ISS status (transimtted in AnmMsg_ECUName_ISS, for ex: ISS is Backbone2) does't give any info about which ANW users are active.<br/>
-* This service provides the following info:<br/>
-    -- Number of active users (Corresponding to ANW) in the local ECU.<br/>
-    -- ISS(Communication Networks) status.<br/> 
-    -- ANW/ISS user info in an ECU, with information if the ECU keeps the networks active.
+* Only ISS status (transimtted in AnmMsg_ECUName_ISS, for ex: ISS is Backbone2) does't give any info about which ANW users are active.
+* This service provides the following info:
+    1. Number of active users (Corresponding to ANW) in the local ECU.
+    2. ISS(Communication Networks) status. 
+    3. ANW/ISS user info in an ECU, with information if the ECU keeps the networks active.
     
 #### Related requirements
 
@@ -81,11 +81,11 @@ Connect service ports of ISSM to request the active Application Network Users.
 ### P1VLE - ExtendedResetInfo
 
 * For ZYNQ based ECUs, this service provides ECU last reset type(reason).
-* For CHASSIS ECUS<br/>
-    -- It provides last reset type,minimum free stack and task ID at reset.<br/>
-    -- Exception register values for resets related to unalligned memory, illegal instruction, data write.<br/>
-    -- Exception register values for unhandled IRQ reset and Software Watchdog reset.<br/>
-    -- Stored Os error information
+* For CHASSIS ECUS
+    1. It provides last reset type,minimum free stack and task ID at reset.
+    2. Exception register values for resets related to unalligned memory, illegal instruction, data write.
+    3. Exception register values for unhandled IRQ reset and Software Watchdog reset.
+    4. Stored Os error information
     
 #### Related requirements
 TBD
@@ -94,11 +94,11 @@ TBD
 TBD
 
 ### P1M4R - Error counters
-* This service provides the following stored error counters info:<br/>
-    -- RAM error counter updated each time due to for example ECC errors.<br/>
-    -- ROM error counter updated each time due to NvM time out (60 s).<br/>
-    -- Reset counter that includes software resets and Hardware resets except WDG supervised entity resets.<br/>
-    -- Software error counters
+* This service provides the following stored error counters info:
+    1. RAM error counter updated each time due to for example ECC errors.
+    2. ROM error counter updated each time due to NvM time out (60 s).
+    3. Reset counter that includes software resets and Hardware resets except WDG supervised entity resets.
+    4. Software error counters
 
 #### Related requirements
 TBD
