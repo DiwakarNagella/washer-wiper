@@ -7,20 +7,25 @@ Debug server module provides the following ECU internal debug data when requeste
    *  Application Network Status/ISS status
    *  Extended reset info
    *  Error counters
-	
+
+P1EGD is a multiplexed DID used for debug purpose, introduced before X-DIDs were allowed in production SW.  
+But now X-DIDs are allowed in production SW and still this debug info DID is used.  
+Much of the functionality depends on the target ECU.  
+Documentation for this DID is available in the source file.  
+
 ## Usecases
 
 ### P1EGD - Debug Info Write data DID
 
 *   This will enable adding and removing of special functionality.
 *   Most functionality will be disabled from default dataset or parameters in production.
-*   Configure the debug server to be in the preffered state to read the data.
+*   Configure the debug server to be in the preferred state to read the data.
 *   Reset the CPU load counters and CPU load data.
 *   Possible to force Generate the following types of MCU resets for CHASSIS  
     ECUS while the debug server is in reset state.
     1.  Controlled reset
     2.  OS error reset
-    3.  Other exception resets related to unalligned memory, illegal instruction and data write
+    3.  Other exception resets related to unaligned memory, illegal instruction and data write
 *   Reset causes DTC D1AD0_49 and D1AD0_94 to be set
 
 #### Related requirements
@@ -96,7 +101,7 @@ Connect service ports of ISSM to request the active Application Network Users.
 *   For ZYNQ based ECUs, this service provides ECU last reset type(reason).
 *   For CHASSIS ECUS
     1.  It provides last reset type,minimum free stack and task ID at reset.
-    2.  Exception register values for resets related to unalligned memory,  
+    2.  Exception register values for resets related to unaligned memory,  
         illegal instruction, data write.
     3.  Exception register values for unhandled IRQ reset and Software Watchdog reset.
     4.  Stored Os error information
@@ -139,4 +144,3 @@ TBD
 ### SEWS
 
 * See the actual version used in `ContainerInfo.xml`,convenience link to version [6.0](https://sews.volvo.net/Sews2/ViewData/ViewContainerData.aspx?ContainerId=26026).
-
