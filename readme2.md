@@ -50,21 +50,14 @@ TBD
 
 TBD
 
-### presenting DWM related messages to the driver within 3 seconds
+### Maximum number of DTCs
 
-* The maximum number of DTCs that this component shall handle is 30 
-* DTCs that can be periodically sent will be limited to 30 and this will result in
-fullfilling an overall requirement of 
+* DTCs that can be periodically (100ms) sent will be limited to 30.
+* This is to fulfill an overall requirement of presenting DWM related messages to the driver within 3 seconds. 
 * When the number of DTCs that are periodically sent reaches 29, this component is responsible to set a DTC on its own.
 * The purpose of this DTC is to inform the system that this ECU has too many DTCs set and that the maximum limit is reached.
-* This specific DTC set by this component is the last DTC of the 30 DTCs handled by this component and it shall be one
-of the 30 DTCs sent
-Upon initialization of this component the specific DTC (number 30) shall be reported as TestPassed to the DEM in order
-to clear the previous fault.
-* By doing like this the total number of DTCs that can be periodically sent will be limited to 30 and this will result in
-fullfilling an overall requirement of presenting DWM related messages to the driver within 3 seconds.
-* There might be more than 30 DTCs set and active in the DEM, but this component will only send the 30 first DTCs to
-the DiagnosticWarningManager.
+* This specific DTC set by this component is the last DTC of the 30 DTCs handled by this component.
+* There might be more than 30 DTCs set and active in the DEM, but this component will only send the 30 first DTCs.
 
 #### Related Requirements
 
@@ -73,6 +66,12 @@ the DiagnosticWarningManager.
 #### Integration Notes
 
 TBD
+
+### Initialization Behaviour
+
+* Upon initialization of this component the specific DTC (number 30) shall be reported as TestPassed to the DEM in order
+to clear the previous fault.
+
 
 ## More Information
 
