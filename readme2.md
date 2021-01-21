@@ -75,7 +75,7 @@ Connect Serverice port of DEM to report D1BR9_68.
 
 #### Related Requirements
 
-* To fulfill the requirement - LD_Req-21508 v1
+TBD
 
 #### Integration Notes
 
