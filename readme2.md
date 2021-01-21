@@ -1,8 +1,23 @@
 VOL_DIDServer
 ========
 
-## Overview
-Module provides static and dynamic diagnostic data to Diagnostic Communication Manager and Diagnostic Event Manager when requested.   
+# Overview
+Module provides the following diagnostic data to Diagnostic Communication Manager and Diagnostic Event Manager when requested:
+
+* Application Software Identification
+* Application Data Identification
+* Chassis Identification
+* Vehicle Identification Number
+* DescriptionFileSha256
+* ECU Hardware Number
+* Engine Type
+* Build ID
+* Boot Software Identification
+
+* Outdoor Temperature
+* Odometer 
+* Vehicle Mode
+* Active Diagnostic Session
 
 ## Usecases
 
