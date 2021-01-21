@@ -1,95 +1,102 @@
-VOL_FaultEventGateway
+VOL_DIDServer
 ========
 
-# Overview
+## Overview
+Module provides static and dynamic diagnostic data to Diagnostic Communication Manager and Diagnostic Event Manager when requested.   
 
-* Module acts as a gateway for the Diagnostic Fault status.
-* Responsible to collect DTC information from the DEM.
-* Periodically sends Diagnostic Fault Status of Active Faults and ECU alive status to DiagnosticWarningManager.
- 
 ## Usecases
 
-### Receiving DTC information
+### Dynamic data
+* Module Initializes the dynamic data to their default values and periodically updates the data.
+* Module receives the data from corresponding SWCs,CAN/On board Sensors and check if it is valid.
+* Only Valid signals are considered.
+* Data is protected with CRC.
 
-* Active DTCs with warning indicator bit set to true are collected from DEM just before each transmission. 
+#### Snapshot data
+ 
+| Data				| Init Value			|  Description	 |
+|:---				|:---:              	|  :---:        	 | 
+|OutdoorTemperature	|AAT_NA_MAX			 |Default value - 65535				 | 
+|Odometer status	|TOTAL_VEHICLE_DISTANCE_HIGH_RES_DBC_DEFAULT			|Default value - 0xffffffffu		 | 
+|Vehicle Mode		|VehicleMode_NotAvailable		|				 | 
 
-#### Related Requirements
+##### Related Requirements
+* REQ-DIR-15 v6  
 
-* LD_Req-5622 v5
+#### Extended data
 
-#### Integration Notes
+| Data				| Init Value			|  Description	 |
+|:---				|:---:              	|  :---:        	 | 
+|UTCTimeStamp		|UTC_NOT_AVAILABLE		 | Default value - 0xFF				 |
 
-* Need Dem eventIds to request DTC status from DEM (generated DEM configuration)
-* Connect service ports of DEM to get these event status and dtcs.
+##### Related Requirements
+* REQ-DIR-27 v4
 
-### Send Diagnostic Fault Status
+### Static data
 
-* When there are one or more DTCs that are active, fault information shall be sent with a periodicity of 100ms.
-* Sends out the status of 2 Active faults each time.
-* If there are no active faults, then only the ECU address is sent in the signal as alive status.
+#### Application Software Identification and Build Version
 
-#### Related Requirements
+| Module ID			| Part Number			| Build Version    | Description	 |
+|:---				|:---:              	| :--:             | :---:        	 | 
+|UFBL_MODULE_ID		|BOOTLOADER_PARTNUMBER	|None 			   |Bootloader Software				 |
+|MSW_MODULE_ID		|MSW_PARTNUMBER			|BUILD_VERSION_MSW |Application Software				 | 
+|CSW_MODULE_ID		|Part number			|None			   |optional module				 | 
+		
+#### Application Data Identification and Buid ID
 
-* LD_Req-5623 v7
-
-#### Integration Notes
-
-TBD
-
-### Configurability and Vehicle modes
-
-* P1BDU parameter is used to check the vehicle mode validity of Diagnostic Warning Manager.
-* This module broadcasts the fault status only during those modes where Diagnostic Warning Manager is active.
-* Default vehicle modes are Running and Pre-running
-
-#### Related Requirements
-
-* LD_Req-7627 v2
-* LD_Req-5625 v4
-
-#### Integration Notes
-
-TBD
-
-### Maximum number of DTCs
-
-* DTCs that can be periodically (100ms) sent will be limited to 30.
-* This is to fulfill an overall requirement of presenting DWM related messages to the driver within 3 seconds. 
-* When the number of DTCs that are periodically sent reaches 29, this component is responsible to set a DTC (D1BR9_68) on its own.
-* The purpose of this DTC is to inform the system that this ECU has too many DTCs set and that the maximum limit is reached.
-* This specific DTC set by this component is the last DTC of the 30 DTCs handled by this component.
-* There might be more than 30 DTCs set and active in the DEM, but this component will only send the 30 first DTCs.
+| Module ID			| Part Number				  | Build Version    | Description	 														 | 
+|:---				|:---:              		  | :--:             | :---:        	 														 | 
+|APP_MODULE_ID		|DATASET_PARTNUMBER			  |DATASET_BUILD_ID  |Data set - Configuration parameters									 |
+|APP_MODULE_ID		|POSTBUILD_PARTNUMBER		  |POSTBUILD_BUILD_ID|Post build data area for Software Configuration						 | 
+|APP_MODULE_ID		|SOUND_PARTNUMBER			  |None			     |Data area to handle the Sound data on IC								 |
+|APP_MODULE_ID		|DWM_CONFIGURATION_PARTNUMBER |None			     |Diagnostic Warning Manager configuration | 
 
 #### Related Requirements
+* REQ-SS-19 v3
+* REQ-SS-11 v1
+* REQ-SS-42 v1
 
-* LD_Req-21508 v1
+#### ECU Hardware Number
 
-#### Integration Notes
+| Module ID			| Part Number				  | Serial Number    | Sub Module info	 | 
+|:---				|:---:              		  | :--:             | :---:        	 | 		 
+|HW_MODULE_ID		|HARDWARE_PARTNUMBER		  |HARDWARE_SERIAL_NO  |SUB_HW_MODULE_ID,Sub node Part number,Sub node serial number |
 
-Connect Serverice port of DEM to report D1BR9_68.
+* ECU hardware number includes the above information along with Sub node (LIN Slave) information.
+* It is assumed that VOL_DIDServer module is running on ECU which implements LIN Master server.
+* Number of Sub modules depends on number of LIN slave nodes configured in that LIN cluster.
+* Hardware Number includes ID, Part number and Serial number of those many LIN Slaves and main ECU hardware details.
+* This module waits for the LIN Master to respond back with LIN slave info untill the timeout.
+* If LIN master doesn't respond within the timeout, this module returns the ECU H/W info without LIN slave information.
 
-### Initialization Behaviour
+##### Related Requirements
+* REQ-LNI_verification-2 v2
+* REQ-LNI_SN-4 v3
+* REQ-LNI_SN-5 v3
+* REQ-LNI_SNPN-4 v2
+* REQ-LNI_readout-10 v1
+* REQ-LNI_readout-1 v1
+* REQ-LNI_readout-2 v2
+* REQ-LNI_readout-3 v2
+* REQ-LNI_readout-7 v2
+* REQ-SS-9 v3
 
-* During initialization, the DTC (D1BR9_68) is reported as TestPassed to the DEM in order to clear the previous fault.
-* This module is initialized after the DEM is initialized
+### DCM Use Case  
+Diagnostic Communication Manager can request above mentioned diagnostic data along with ChassisId and VIN. 
+However Diagnostic Data Write services are not part of this module.
 
 #### Related Requirements
-
-TBD
-
-#### Integration Notes
-
-TBD
+* REQ-OBD-115 v1 - for OBD ECUs
+* REQ-EOALP-18 v1 - Non OBD ECUs
 
 ## More Information
 
 ### Technical References
-Refer Vector technical references for functionality, API and configuration of BSW Module.
-
-The following documents were referred which can be found in ECU SIP.
+For functionality, API and configuration of the AUTOSAR BSW module, refer Vector technical references which can be found in ECU SIP. The following documents were referred.
 
 * TechnicalReference_Dem.pdf
+* TechnicalReference_Dcm.pdf
 
 ### SEWS
 
-See the actual version used in ContainerInfo.xml, convenience link to version [3.0](https://sews.volvo.net/Sews2/ViewData/ViewContainerData.aspx?ContainerId=14461)
+See the actual version used in ContainerInfo.xml, convenience link to version [10.0](https://sews.volvo.net/Sews2/ViewData/ViewContainerData.aspx?ContainerId=27734)
