@@ -24,16 +24,18 @@
 
 #### Integration Notes
 
-* Need Dem eventIds to request DTC status from DEM (generated DEM configuration)
+* DTCs configured in Dem with the WIB bit set (set by default by SEWS).
+* SEWS container with the DTC
+* Service port GeneralEventInfo (?) connected to Dem -------------------------------------------
 * Connect service ports of DEM to get these event status and dtcs.
 * FEG needs to be initialized after the DEM is initialized.
 * Connect Serverice port of DEM to report D1BR9_68.
 
 ### Send Diagnostic Fault Status
 
-* When there are one or more DTCs that are active, fault information shall be sent with a periodicity of 100ms.
-* Sends out the status of 2 Active faults each time.
-* If there are no active faults, then only the ECU address is sent in the signal as alive status.
+* The FEG cycles the internal list and initiates sending every 100 ms.
+* If there are no active faults, the signal is empty (the signal is used as a heartbeat too).
+* Note that the signal database will send the signal every 100 ms when it has been changed, otherwise the Com stack sends every 1000 ms to reduce bus load.
 
 #### Related Requirements
 
@@ -41,7 +43,7 @@
 
 #### Integration Notes
 
-TBD
+Connect signal--------------------------------------
 
 ### Configurability and Vehicle modes
 
