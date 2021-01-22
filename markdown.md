@@ -8,7 +8,7 @@
  
 ## Usecases
 
-### Receiving DTC information
+### List with active DTCs
 
 * Active DTCs with warning indicator bit set to true are collected from DEM just before each transmission. 
 
