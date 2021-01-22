@@ -1,7 +1,6 @@
-VOL_FaultEventGateway
-========
+# VOL_FaultEventGateway
 
-# Overview
+## Overview
 
 * Module acts as a gateway for the Diagnostic Fault status.
 * Responsible to collect DTC information from the DEM.
