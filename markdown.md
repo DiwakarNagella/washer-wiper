@@ -26,8 +26,7 @@
 
 * DTCs configured in Dem with the WIB bit set (set by default by SEWS).
 * SEWS container with the DTC
-* Service port GeneralEventInfo (?) connected to Dem -------------------------------------------
-* Connect service ports of DEM to get these event status and dtcs.
+* Service port GeneralEventInfo (GetDTCOfEvent & GetEventStatus) connected to Dem
 * FEG needs to be initialized after the DEM is initialized.
 * Connect Serverice port of DEM to report D1BR9_68.
 
@@ -43,7 +42,7 @@
 
 #### Integration Notes
 
-Connect signal--------------------------------------
+Connect DiagFaultStat signal
 
 ### Configurability and Vehicle modes
 
@@ -65,9 +64,10 @@ TBD
 ### Technical References
 Refer Vector technical references for functionality, API and configuration of BSW Module.
 
-The following documents were referred which can be found in ECU SIP.
+The following documents were referred.
 
-* TechnicalReference_Dem.pdf
+* TechnicalReference_Dem.pdf (which can be found in ECU SIP)
+* 
 
 ### SEWS
 
