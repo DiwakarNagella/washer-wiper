@@ -67,7 +67,7 @@ Refer Vector technical references for functionality, API and configuration of BS
 The following documents were referred.
 
 * TechnicalReference_Dem.pdf (which can be found in ECU SIP)
-* 
+* Send DiagnosticFaultStatus, Read DTC, Vehicle Mode system specifications from Reg. no. 50269231 (LDS_FCIOM)
 
 ### SEWS
 
