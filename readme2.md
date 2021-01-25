@@ -1,8 +1,8 @@
 VOL_DIDServer
-========
 
 # Overview
-Module provides the following diagnostic data to Diagnostic Communication Manager and Diagnostic Event Manager when requested:
+
+Module provides the following diagnostic data to DCM and DEM when requested:
 
 * Application Software Identification(P1ALQ)
 * Application Data Identification(P1ALP)
@@ -14,56 +14,47 @@ Module provides the following diagnostic data to Diagnostic Communication Manage
 * Build ID(P1URK)
 * Boot Software Identification(P1B1O)
 * Outdoor Temperature(P1AFR)
-* Odometer(P1AFS)
+* Total Vehicle Distance(P1AFS)
 * Vehicle Mode(P1AFT)
 * Active Diagnostic Session(P1DIH)
+* UTCTimeStamp
 
 ## Usecases
 
-### Dynamic data
-* Module Initializes the dynamic data to their default values and periodically updates the data.
-* Module receives the data from corresponding SWCs,CAN/On board Sensors and check if it is valid.
-* Only Valid signals are considered.
-* Data is protected with CRC.
-
-#### Snapshot data
+### Snapshot data
  
-| Data				| Init Value			|  Description	 |
-|:---				|:---:              	|  :---:        	 | 
-|OutdoorTemperature	|AAT_NA_MAX			 |Default value - 65535				 | 
-|Odometer status	|TOTAL_VEHICLE_DISTANCE_HIGH_RES_DBC_DEFAULT			|Default value - 0xffffffffu		 | 
-|Vehicle Mode		|VehicleMode_NotAvailable		|				 | 
+OutdoorTemperature	
+Odometer value (TOTAL_VEHICLE_DISTANCE_HIGH_RES) 
+Vehicle Mode		
 
 ##### Related Requirements
 * REQ-DIR-15 v6  
 
-#### Extended data
+### Extended data
 
-| Data				| Init Value			|  Description	 |
-|:---				|:---:              	|  :---:        	 | 
-|UTCTimeStamp		|UTC_NOT_AVAILABLE		 | Default value - 0xFF				 |
+UTCTimeStamp
 
 ##### Related Requirements
 * REQ-DIR-27 v4
 
-### Static data
+### Application Software Identification and Build Version
 
-#### Application Software Identification and Build Version
+UFBL_MODULE_ID		|BOOTLOADER_PARTNUMBER	|None 			   |Bootloader Software				 |
+MSW_MODULE_ID		|MSW_PARTNUMBER			|BUILD_VERSION_MSW |Application Software				 | 
+CSW_MODULE_ID		|Part number			|None			   |optional module				 | 
 
-| Module ID			| Part Number			| Build Version    | Description	 |
-|:---				|:---:              	| :--:             | :---:        	 | 
-|UFBL_MODULE_ID		|BOOTLOADER_PARTNUMBER	|None 			   |Bootloader Software				 |
-|MSW_MODULE_ID		|MSW_PARTNUMBER			|BUILD_VERSION_MSW |Application Software				 | 
-|CSW_MODULE_ID		|Part number			|None			   |optional module				 | 
+#### Related Requirements
+* REQ-SS-19 v3
+* REQ-SS-11 v1
+* REQ-SS-42 v1
 		
-#### Application Data Identification and Buid ID
+### Application Data Identification and Buid ID
 
-| Module ID			| Part Number				  | Build Version    | Description	 														 | 
-|:---				|:---:              		  | :--:             | :---:        	 														 | 
-|APP_MODULE_ID		|DATASET_PARTNUMBER			  |DATASET_BUILD_ID  |Data set - Configuration parameters									 |
-|APP_MODULE_ID		|POSTBUILD_PARTNUMBER		  |POSTBUILD_BUILD_ID|Post build data area for Software Configuration						 | 
-|APP_MODULE_ID		|SOUND_PARTNUMBER			  |None			     |Data area to handle the Sound data on IC								 |
-|APP_MODULE_ID		|DWM_CONFIGURATION_PARTNUMBER |None			     |Diagnostic Warning Manager configuration | 
+
+APP_MODULE_ID		|DATASET_PARTNUMBER			  |DATASET_BUILD_ID  |Data set - Configuration parameters									 |
+APP_MODULE_ID		|POSTBUILD_PARTNUMBER		  |POSTBUILD_BUILD_ID|Post build data area for Software Configuration						 | 
+APP_MODULE_ID		|SOUND_PARTNUMBER			  |None			     |Data area to handle the Sound data on IC								 |
+APP_MODULE_ID		|DWM_CONFIGURATION_PARTNUMBER |None			     |Diagnostic Warning Manager configuration | 
 
 #### Related Requirements
 * REQ-SS-19 v3
