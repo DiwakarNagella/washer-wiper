@@ -62,6 +62,7 @@ TBD
 ## More Information
 
 ### Technical References
+
 Refer Vector technical references for functionality, API and configuration of BSW Module.
 
 The following documents were referred.
