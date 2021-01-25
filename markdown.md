@@ -7,7 +7,7 @@ This also functions as an alive signal.
 
 Dem updates the DTC list when the status for a DTC is changed.
 
-## Usecases
+## Use cases
 
 ### List with active DTCs
 
@@ -18,12 +18,12 @@ Dem updates the DTC list when the status for a DTC is changed.
 * This specific DTC set by this component is the last DTC of the 30 DTCs handled by this component.
 * There might be more than 30 DTCs set and active in the DEM, but this component will only send the 30 first DTCs.
 
-#### Related Requirements
+#### Related requirements
 
 * LD_Req-5622 v5
 * LD_Req-21508 v1 - DTCs are limited to 30 to fulfill the requirement of presenting DWM related messages to the driver within 3 seconds.
 
-#### Integration Notes
+#### Integration notes
 
 * DTCs configured in Dem with the WIB bit set (set by default by SEWS).
 * SEWS container with the DTC
@@ -31,17 +31,17 @@ Dem updates the DTC list when the status for a DTC is changed.
 * FEG needs to be initialized after the DEM is initialized.
 * Connect Serverice port of DEM to report D1BR9_68.
 
-### Send Diagnostic Fault Status
+### Send diagnostic fault status
 
 * The FEG cycles the internal list and initiates sending every 100 ms.
 * If there are no active faults, the signal is empty (the signal is used as a heartbeat too).
 * Note that the signal database will send the signal every 100 ms when it has been changed, otherwise the Com stack sends every 1000 ms to reduce bus load.
 
-#### Related Requirements
+#### Related requirements
 
 * LD_Req-5623 v7
 
-#### Integration Notes
+#### Integration notes
 
 Connect DiagFaultStat signal
 
@@ -51,18 +51,18 @@ Connect DiagFaultStat signal
 * This module broadcasts the fault status only during those modes where Diagnostic Warning Manager is active.
 * Default vehicle modes are Running and Pre-running
 
-#### Related Requirements
+#### Related requirements
 
 * LD_Req-7627 v2
 * LD_Req-5625 v4
 
-#### Integration Notes
+#### Integration notes
 
 TBD
 
-## More Information
+## More information
 
-### Technical References
+### Technical references
 
 Refer Vector technical references for functionality, API and configuration of BSW Module.
 
