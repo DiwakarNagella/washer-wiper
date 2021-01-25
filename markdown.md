@@ -4,7 +4,6 @@
 
 * The FEG keeps active DTC in a list and sends the DTCs to the DiagnosticWarningManager periodically.
 * This also functions as an alive signal.
-
 * Dem updates the DTC list when the status for a DTC is changed.
 
 ## Usecases
