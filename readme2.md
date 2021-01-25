@@ -4,20 +4,19 @@ VOL_DIDServer
 # Overview
 Module provides the following diagnostic data to Diagnostic Communication Manager and Diagnostic Event Manager when requested:
 
-* Application Software Identification
-* Application Data Identification
+* Application Software Identification(P1ALQ)
+* Application Data Identification(P1ALP)
 * Chassis Identification
 * Vehicle Identification Number
-* DescriptionFileSha256
-* ECU Hardware Number
-* Engine Type
-* Build ID
-* Boot Software Identification
-
-* Outdoor Temperature
-* Odometer 
-* Vehicle Mode
-* Active Diagnostic Session
+* DescriptionFileSha256(P1Q82)
+* ECU Hardware Number(P1ALA)
+* Engine Type(P1ALB)
+* Build ID(P1URK)
+* Boot Software Identification(P1B1O)
+* Outdoor Temperature(P1AFR)
+* Odometer(P1AFS)
+* Vehicle Mode(P1AFT)
+* Active Diagnostic Session(P1DIH)
 
 ## Usecases
 
