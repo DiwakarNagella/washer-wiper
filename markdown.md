@@ -29,7 +29,7 @@ Dem updates the DTC list when the status for a DTC is changed.
 * SEWS container with the DTC
 * Service port GeneralEventInfo (GetDTCOfEvent & GetEventStatus) connected to Dem
 * FEG needs to be initialized after the DEM is initialized.
-* Connect Serverice port of DEM to report D1BR9_68.
+* Connect Service port of DEM to report D1BR9_68.
 
 ### Send diagnostic fault status
 
@@ -64,10 +64,7 @@ TBD
 
 ### Technical references
 
-Refer Vector technical references for functionality, API and configuration of BSW Module.
-
-The following documents were referred.
-
+* Refer Vector technical references for functionality, API and configuration of BSW Module.
 * TechnicalReference_Dem.pdf (which can be found in ECU SIP)
 * Send DiagnosticFaultStatus, Read DTC, Vehicle Mode system specifications from Reg. no. 50269231 (LDS_FCIOM)
 
