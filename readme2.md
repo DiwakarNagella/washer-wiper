@@ -23,16 +23,26 @@ Module provides the following diagnostic data to DCM and DEM when requested:
 
 ### Snapshot data
  
-OutdoorTemperature	
-Odometer value (TOTAL_VEHICLE_DISTANCE_HIGH_RES) 
-Vehicle Mode		
+The following snapshot data is stored for all DTC's across all the ECUs:
 
-##### Related Requirements
+* Outdoor Temperature (P1AFR, 0x1102)
+* Total Vehicle Distance (P1AFS, 0x1104). The odometer value of distance driven since the assembly of the vehicle.
+* Vehicle Mode (P1AFT, 0x1100)
+
+This module periodically recieves (RTE) the above parameters, validates and protects them with CRC.
+DEM reads the data using callback functions
+
+#### Related Requirements
+
 * REQ-DIR-15 v6  
+
+#### Integration notes
 
 ### Extended data
 
-UTCTimeStamp
+The following Extended data is stored for all DTC’s across all the ECUs:
+
+UTCTimeStamp (Year, Month, Day, Hour, Minutes and Seconds) ...other data is also part of extended but not uder this module
 
 ##### Related Requirements
 * REQ-DIR-27 v4
