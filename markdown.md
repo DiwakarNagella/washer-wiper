@@ -36,29 +36,19 @@ Dem updates the DTC list when the status for a DTC is changed.
 * The FEG cycles the internal list and initiates sending every 100 ms.
 * If there are no active faults, the signal is empty (the signal is used as a heartbeat too).
 * Note that the signal database will send the signal every 100 ms when it has been changed, otherwise the Com stack sends every 1000 ms to reduce bus load.
+* P1BDU parameter is used to check the vehicle mode validity of Diagnostic Warning Manager.
+* This module broadcasts the fault status only during those modes where Diagnostic Warning Manager is active.
+* Default vehicle modes are Running and Pre-running.
 
 #### Related requirements
 
 * LD_Req-5623 v7
-
-#### Integration notes
-
-Connect DiagFaultStat signal
-
-### Configurability and Vehicle modes
-
-* P1BDU parameter is used to check the vehicle mode validity of Diagnostic Warning Manager.
-* This module broadcasts the fault status only during those modes where Diagnostic Warning Manager is active.
-* Default vehicle modes are Running and Pre-running
-
-#### Related requirements
-
 * LD_Req-7627 v2
 * LD_Req-5625 v4
 
 #### Integration notes
 
-TBD
+Connect DiagFaultStat signal
 
 ## More information
 
@@ -66,7 +56,8 @@ TBD
 
 * Refer Vector technical references for functionality, API and configuration of BSW Module.
 * TechnicalReference_Dem.pdf (which can be found in ECU SIP)
-* Send DiagnosticFaultStatus, Read DTC, Vehicle Mode system specifications from Reg. no. 50269231 (LDS_FCIOM)
+* LDS for ECU (For example LDS_FCIOM Reg. no. 50269231) for Send DiagnosticFaultStatus, Read DTC
+* Vehicle Mode system specifications
 
 ### SEWS
 
