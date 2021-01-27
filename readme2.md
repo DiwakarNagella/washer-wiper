@@ -10,7 +10,7 @@ Periodically recieves (from RTE) the following parameters, validates and protect
 * Vehicle Mode (P1AFT)
 * UTCTimeStamp
 
-Provides software build information, Vehicle, Chassis, ECU hardware and software identification data
+Provides software build information (ECU SW and data), Vehicle, Chassis and ECU hardware identification data
 
 ## Usecases
 
@@ -36,50 +36,27 @@ UTCTimeStamp  which is one of the extended diagnostic data used for all DTCs is 
 UTCTimeStamp is collection of various signals like Year, Month, Day, Hour, Minutes and Seconds.
 DEM reads the data using callback function.
 
-##### Related Requirements
+#### Related Requirements
 
 * REQ-DIR-27 v4
 
 #### Integration notes
 
-### Application Software Identification and Build Version
+### ECU Hardware Number
 
-UFBL_MODULE_ID		|BOOTLOADER_PARTNUMBER	|None 			   |Bootloader Software				 |
-MSW_MODULE_ID		|MSW_PARTNUMBER			|BUILD_VERSION_MSW |Application Software				 | 
-CSW_MODULE_ID		|Part number			|None			   |optional module				 | 
+* ECU hardware number includes the following information along with Sub node (LIN Slave) information.
+1 HW_MODULE_ID
+2 HARDWARE_PARTNUMBER
+3 HARDWARE_SERIAL_NO
+4 SUB_HW_MODULE_ID,Sub node Part number,Sub node serial number(LIN Slaves)
 
-#### Related Requirements
-* REQ-SS-19 v3
-* REQ-SS-11 v1
-* REQ-SS-42 v1
-		
-### Application Data Identification and Buid ID
-
-
-APP_MODULE_ID		|DATASET_PARTNUMBER			  |DATASET_BUILD_ID  |Data set - Configuration parameters									 |
-APP_MODULE_ID		|POSTBUILD_PARTNUMBER		  |POSTBUILD_BUILD_ID|Post build data area for Software Configuration						 | 
-APP_MODULE_ID		|SOUND_PARTNUMBER			  |None			     |Data area to handle the Sound data on IC								 |
-APP_MODULE_ID		|DWM_CONFIGURATION_PARTNUMBER |None			     |Diagnostic Warning Manager configuration | 
-
-#### Related Requirements
-* REQ-SS-19 v3
-* REQ-SS-11 v1
-* REQ-SS-42 v1
-
-#### ECU Hardware Number
-
-| Module ID			| Part Number				  | Serial Number    | Sub Module info	 | 
-|:---				|:---:              		  | :--:             | :---:        	 | 		 
-|HW_MODULE_ID		|HARDWARE_PARTNUMBER		  |HARDWARE_SERIAL_NO  |SUB_HW_MODULE_ID,Sub node Part number,Sub node serial number |
-
-* ECU hardware number includes the above information along with Sub node (LIN Slave) information.
 * It is assumed that VOL_DIDServer module is running on ECU which implements LIN Master server.
 * Number of Sub modules depends on number of LIN slave nodes configured in that LIN cluster.
-* Hardware Number includes ID, Part number and Serial number of those many LIN Slaves and main ECU hardware details.
 * This module waits for the LIN Master to respond back with LIN slave info untill the timeout.
 * If LIN master doesn't respond within the timeout, this module returns the ECU H/W info without LIN slave information.
 
-##### Related Requirements
+#### Related Requirements
+
 * REQ-LNI_verification-2 v2
 * REQ-LNI_SN-4 v3
 * REQ-LNI_SN-5 v3
@@ -90,6 +67,39 @@ APP_MODULE_ID		|DWM_CONFIGURATION_PARTNUMBER |None			     |Diagnostic Warning Ma
 * REQ-LNI_readout-3 v2
 * REQ-LNI_readout-7 v2
 * REQ-SS-9 v3
+
+#### Integration notes
+
+
+### Application Software Identification 
+
+Provides the following information about Bootloader, MSW and CSW modules:
+* Part number
+* Module ID
+* Build version
+
+#### Related Requirements
+
+* REQ-SS-19 v3
+* REQ-SS-11 v1
+* REQ-SS-42 v1
+
+#### Integration notes
+		
+### Application Data Identification
+
+Provides the following information about application data:
+* DATASET_PARTNUMBER DATASET_BUILD_ID
+* POSTBUILD_PARTNUMBER POSTBUILD_BUILD_ID
+* SOUND_PARTNUMBER
+* Diagnostic Warning Manager configuration data PARTNUMBER
+
+#### Related Requirements
+* REQ-SS-19 v3
+* REQ-SS-11 v1
+* REQ-SS-42 v1
+
+#### Integration notes
 
 ### DCM Use Case  
 Diagnostic Communication Manager can request above mentioned diagnostic data along with ChassisId and VIN. 
