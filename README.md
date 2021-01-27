@@ -15,8 +15,7 @@ P1EGD is a multiplexed DID used for debug purpose
 * Introduced before X-DIDs were allowed in production SW.
 * Most functionality has been moved to specialized DIDs.
 * Much of the functionality depends on the target ECU.
-
-Documentation for P1EGD is available in the source file.
+* Documentation for P1EGD is available in the source file.
 
 ## Use cases
 
