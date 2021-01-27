@@ -41,20 +41,21 @@ TBD
 
 ### CPU load measurement
 
-* Cpu load is measured in a periodic 10ms task and only for a specified period
+* For Chassis ECUs (MPC), cpu load is measured in a periodic 10ms task and only for a specified period
 which is selected from X1A2D address parameter.
 * Smoothing factor for cpu load is selected from X1AWT address parameter.
 * CPU load functionality is disabled from default dataset or parameters in production.
 
-TBD
+The reading of the cpu load is done using the DID P1EGD.
+For ZYNQ, the implementation is separate from the debug server.
 
 #### Related requirements
 
-TBD
+Internal testing.
 
 #### Integration notes
 
-Requires a counter in the idle loop.
+For chassis ECUs: Requires a counter in the idle loop.
 
 ### P1EGB - BuildVersionInfo
 
@@ -98,7 +99,7 @@ Connect service ports of ISSM to request the active Application Network Users.
 
 #### Related requirements
 
-TBD
+No formal requirements, used to debug production ECUs.
 
 #### Integration notes
 
@@ -115,7 +116,7 @@ TBD
 
 #### Related requirements
 
-TBD
+No formal requirements, used to debug production ECUs.
 
 #### Integration Notes
 
