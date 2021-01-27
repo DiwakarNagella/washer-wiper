@@ -74,11 +74,10 @@ Requires generation of build_info.h.
 
 ### P1F2A - Application Network Status
 
-* Only ISS status (transimtted in AnmMsg_ECUName_ISS, for ex: ISS is Backbone2)
-doesn't give any info about which ANW users are active.
+* ISS status transimtted in AnmMsg_ECUName_ISS doesn't give any info about which ANW users are active.
 * This service provides the following info:
     1. Number of active users (Corresponding to ANW) in the local ECU.
-    2. ISS(Communication Networks) status.
+    2. ISS (Communication Networks,for ex: Backbone2) status.
     3. ANW/ISS user info in an ECU, with information if the ECU keeps the networks active.
 
 #### Related requirements
