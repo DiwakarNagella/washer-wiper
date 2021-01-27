@@ -2,34 +2,26 @@
 
 ## Overview
 
-Module provides the following diagnostic data to DCM and DEM when requested:
+Module acts as a server and provides static and dynamic diagnostic data to DCM and DEM when requested. 
+Periodically recieves (from RTE) the following parameters, validates and protects the data with CRC.
 
-* Application Software Identification(P1ALQ)
-* Application Data Identification(P1ALP)
-* Chassis Identification
-* Vehicle Identification Number
-* DescriptionFileSha256(P1Q82)
-* ECU Hardware Number(P1ALA)
-* Engine Type(P1ALB)
-* Build ID(P1URK)
-* Boot Software Identification(P1B1O)
-* Outdoor Temperature(P1AFR)
-* Total Vehicle Distance(P1AFS)
-* Vehicle Mode(P1AFT)
-* Active Diagnostic Session(P1DIH)
+* Outdoor Temperature (P1AFR)
+* Total Vehicle Distance (P1AFS)
+* Vehicle Mode (P1AFT)
 * UTCTimeStamp
+
+Provides software build information, Vehicle, Chassis, ECU hardware and software identification data
 
 ## Usecases
 
 ### Snapshot data
  
-The following snapshot data is stored for all DTC's across all the ECUs:
+The following snapshot data is provided to DEM:
 
 * Outdoor Temperature (P1AFR, 0x1102)
 * Total Vehicle Distance (P1AFS, 0x1104). The odometer value of distance driven since the assembly of the vehicle.
 * Vehicle Mode (P1AFT, 0x1100)
 
-This module periodically recieves (RTE) the above parameters, validates and protects them with CRC.
 DEM reads the data using callback functions
 
 #### Related Requirements
@@ -40,12 +32,15 @@ DEM reads the data using callback functions
 
 ### Extended data
 
-The following Extended data is stored for all DTC’s across all the ECUs:
-
-UTCTimeStamp (Year, Month, Day, Hour, Minutes and Seconds) ...other data is also part of extended but not uder this module
+UTCTimeStamp  which is one of the extended diagnostic data used for all DTCs is provided to DEM.
+UTCTimeStamp is collection of various signals like Year, Month, Day, Hour, Minutes and Seconds.
+DEM reads the data using callback function.
 
 ##### Related Requirements
+
 * REQ-DIR-27 v4
+
+#### Integration notes
 
 ### Application Software Identification and Build Version
 
