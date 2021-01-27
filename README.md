@@ -11,27 +11,28 @@ Debug server module provides the following ECU internal debug data when requeste
 * Reset info for snapshots (P1VLE)
 * Build info (legacy, DID P1EGB)
 
-P1EGD (multiplexed DID used for debug purpose):
-* Introduced before X-DIDs were allowed in production SW.
-* Most functionality has been moved to specialized DIDs.
-* Much of the functionality depends on the target ECU.
-* Documentation for P1EGD is available in the source file.
+P1EGD is a multiplexed DID used for debug purpose.
+It is introduced before X-DIDs were allowed in production SW.
+Most functionality has been moved to specialized DIDs.
+Much of the functionality depends on the target ECU.
+Documentation for P1EGD is available in the source file.
 
 ## Use cases
 
 ### P1EGD - Debug Info DID
 
-* This will enable adding and removing of special functionality.
-* Most functionality will be disabled from default dataset or parameters in production.
-* Debug server needs to be configured to be in the preferred state to read the data.
+This will enable adding and removing of special functionality.
+Most functionality will be disabled from default dataset or parameters in production.
+Configure the debug server to be in the preferred state to read the data.
 
 * Reset the CPU load counters and CPU load data.
-* Possible to force generate the following types of MCU resets for CHASSIS ECUS
+* Possible to force generate the following types of MCU resets for CHASSIS
+  ECUS while the debug server is in reset state (only write to DID,
+  sets DTC D1AD0_49 and D1AD0_94).
     1. Controlled reset
     2. OS error reset
-    3. Other exception resets related to unaligned memory, illegal instruction and data write
-* Above resets are possible while the debug server is in reset state
-* Only write to DID, sets DTC D1AD0_49 and D1AD0_94.
+    3. Other exception resets related to unaligned memory,
+       illegal instruction and data write
 
 #### Related requirements
 
@@ -43,26 +44,26 @@ TBD
 
 ### CPU load measurement
 
-For Chassis ECUs (MPC)
-* cpu load is measured in a periodic 10ms task and only for a specified period.
-* Specified time window is selected from X1A2D address parameter.
+* Cpu load is measured in a periodic 10ms task and only for a specified period
+  which is selected from X1A2D address parameter.
 * Smoothing factor for cpu load is selected from X1AWT address parameter.
-* CPU load functionality is disabled from default dataset or parameters in production.
-* The reading of the cpu load is done using the DID P1EGD.
+* CPU load functionality is disabled from default dataset
+  or parameters in production.
 
-For ZYNQ, the implementation is separate from the debug server.
+TBD
 
 #### Related requirements
 
-Internal testing.
+TBD
 
 #### Integration notes
 
-For chassis ECUs: Requires a counter in the idle loop.
+Requires a counter in the idle loop.
 
 ### P1EGB - BuildVersionInfo
 
-Read the Development internal version information like build version, build time etc.
+Read the Development internal version information like build version,
+build time etc.
 
 #### Related requirements
 
@@ -74,22 +75,18 @@ Requires generation of build_info.h.
 
 ### P1F2A - Application Network Status
 
-* ISS status transimtted in AnmMsg_ECUName_ISS doesn't give any info about which ANW users are active.
+* Only ISS status (transimtted in AnmMsg_ECUName_ISS, for ex: ISS is Backbone2)
+  doesn't give any info about which ANW users are active.
 * This service provides the following info:
     1. Number of active users (Corresponding to ANW) in the local ECU.
-    2. ISS (Communication Networks,for ex: Backbone2) status.
-    3. ANW/ISS user info in an ECU, with information if the ECU keeps the networks active.
+    2. ISS(Communication Networks) status.
+    3. ANW/ISS user info in an ECU,
+       with information if the ECU keeps the networks active.
 
 #### Related requirements
 
-* Requirements related to the following are tested:
-    1. ISS REQ-ISS_11/01
-    2. REQ-ISS_11/01
-    3. REQ-ISS_18/01
-    4. REQ-ISS_20/01
-    5. REQ-ISS_24/01
-    6. REQ-ISS_XX/01
-    7. REQ-ISS_36/01 
+* Requirements related to ISS REQ-ISS_11/01,REQ-ISS_11/01,REQ-ISS_18/01,
+  REQ-ISS_20/01,REQ-ISS_24/01,REQ-ISS_XX/01,REQ-ISS_36/01 are tested
 
 #### Integration notes
 
@@ -100,16 +97,15 @@ Connect service ports of ISSM to request the active Application Network Users.
 * For ZYNQ based ECUs, this service provides ECU last reset type(reason).
 * For CHASSIS ECUS
     1. It provides last reset type,minimum free stack and task ID at reset.
-    2. Exception register values for resets related to
-        * Unaligned memory
-        * Illegal instruction
-        * Data write
-    3. Exception register values for unhandled IRQ reset and Software Watchdog reset.
+    2. Exception register values for resets related to unaligned memory,
+       illegal instruction, data write.
+    3. Exception register values for unhandled IRQ reset
+       and Software Watchdog reset.
     4. Stored Os error information
 
 #### Related requirements
 
-No formal requirements, used to debug production ECUs.
+TBD
 
 #### Integration notes
 
@@ -120,13 +116,13 @@ TBD
 * This service provides the following stored error counters info:
     1. RAM error counter updated each time due to for example ECC errors.
     2. ROM error counter updated each time due to NvM time out (60 s).
-    3. Reset counter includes software resets and Hardware resets
-	(except WDG supervised entity resets)
+    3. Reset counter that includes software resets and Hardware resets
+       except WDG supervised entity resets.
     4. Software error counters
 
 #### Related requirements
 
-No formal requirements, used to debug production ECUs.
+TBD
 
 #### Integration Notes
 
