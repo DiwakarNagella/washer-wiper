@@ -11,7 +11,8 @@ Debug server module provides the following ECU internal debug data when requeste
 * Reset info for snapshots (P1VLE)
 * Build info (legacy, DID P1EGB)
 
-P1EGD is a multiplexed DID used for debug purpose
+P1EGD:
+* It is a multiplexed DID used for debug purpose.
 * Introduced before X-DIDs were allowed in production SW.
 * Most functionality has been moved to specialized DIDs.
 * Much of the functionality depends on the target ECU.
@@ -21,9 +22,9 @@ P1EGD is a multiplexed DID used for debug purpose
 
 ### P1EGD - Debug Info DID
 
-This will enable adding and removing of special functionality.
-Most functionality will be disabled from default dataset or parameters in production.
-Configure the debug server to be in the preferred state to read the data.
+* This will enable adding and removing of special functionality.
+* Most functionality will be disabled from default dataset or parameters in production.
+* Debug server needs to be configured to be in the preferred state to read the data.
 
 * Reset the CPU load counters and CPU load data.
 * Possible to force generate the following types of MCU resets for CHASSIS
@@ -42,8 +43,8 @@ TBD
 
 ### CPU load measurement
 
-* For Chassis ECUs (MPC), cpu load is measured in a periodic 10ms task and only for a specified period
-which is selected from X1A2D address parameter.
+* For Chassis ECUs (MPC), cpu load is measured in a periodic 10ms task and only for a specified period.
+* Specifid time window is selected from X1A2D address parameter.
 * Smoothing factor for cpu load is selected from X1AWT address parameter.
 * CPU load functionality is disabled from default dataset or parameters in production.
 
