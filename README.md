@@ -11,9 +11,8 @@ Debug server module provides the following ECU internal debug data when requeste
 * Reset info for snapshots (P1VLE)
 * Build info (legacy, DID P1EGB)
 
-P1EGD is a multiplexed DID used for debug purpose.
-
-P1EGD is introduced before X-DIDs were allowed in production SW.
+P1EGD is a multiplexed DID used for debug purpose,
+* introduced before X-DIDs were allowed in production SW.
 
 Most functionality has been moved to specialized DIDs.
 
