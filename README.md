@@ -44,21 +44,22 @@ TBD
 
 ### CPU load measurement
 
-* Cpu load is measured in a periodic 10ms task and only for a specified period
-  which is selected from X1A2D address parameter.
+* Chassis ECUs (MPC): Cpu load is measured in a periodic 10ms task and only for
+  a specified period which is selected from X1A2D address parameter.
 * Smoothing factor for cpu load is selected from X1AWT address parameter.
 * CPU load functionality is disabled from default dataset
   or parameters in production.
 
-TBD
+The reading of the cpu load is done using the DID P1EGD.
+For ZYNQ, the implementation is separate from the debug server.
 
 #### Related requirements
 
-TBD
+Internal testing.
 
 #### Integration notes
 
-Requires a counter in the idle loop.
+For chassis ECUs: Requires a counter in the idle loop.
 
 ### P1EGB - BuildVersionInfo
 
@@ -80,8 +81,8 @@ Requires generation of build_info.h.
 * This service provides the following info:
     1. Number of active users (Corresponding to ANW) in the local ECU.
     2. ISS(Communication Networks) status.
-    3. ANW/ISS user info in an ECU,
-       with information if the ECU keeps the networks active.
+    3. ANW/ISS user info in an ECU, 
+	     with information if the ECU keeps the networks active.
 
 #### Related requirements
 
@@ -99,13 +100,13 @@ Connect service ports of ISSM to request the active Application Network Users.
     1. It provides last reset type,minimum free stack and task ID at reset.
     2. Exception register values for resets related to unaligned memory,
        illegal instruction, data write.
-    3. Exception register values for unhandled IRQ reset
-       and Software Watchdog reset.
+    3. Exception register values for unhandled IRQ reset 
+	     and Software Watchdog reset.
     4. Stored Os error information
 
 #### Related requirements
 
-TBD
+No formal requirements, used to debug production ECUs.
 
 #### Integration notes
 
@@ -126,7 +127,7 @@ TBD
 
 #### Integration Notes
 
-TBD
+No formal requirements, used to debug production ECUs.
 
 ## More Information
 
