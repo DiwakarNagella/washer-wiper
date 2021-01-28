@@ -103,12 +103,26 @@ Accessing through only DID is supported in this module. All the DIDs are readonl
 #### Integration notes
 
 
-### Application Software Identification 
+### DCM Use Case  
+Diagnostic Communication Manager can request above mentioned diagnostic data along with ChassisId and VIN. 
+However Diagnostic Data Write services are not part of this module.
+
+#### Related Requirements
+* REQ-OBD-115 v1 - for OBD ECUs
+* REQ-EOALP-18 v1 - Non OBD ECUs
+
+### Application Software and data identification
 
 Provides the following information about Bootloader, MSW and CSW modules:
 * Part number
 * Module ID
 * Build version
+
+Provides the following information about application data:
+* DATASET_PARTNUMBER DATASET_BUILD_ID
+* POSTBUILD_PARTNUMBER POSTBUILD_BUILD_ID
+* SOUND_PARTNUMBER
+* Diagnostic Warning Manager configuration data PARTNUMBER
 
 #### Related Requirements
 
@@ -119,31 +133,6 @@ Provides the following information about Bootloader, MSW and CSW modules:
 #### Integration notes
 
 Requires generation of build_info.h.
-
-### Application Data Identification
-
-Provides the following information about application data:
-* DATASET_PARTNUMBER DATASET_BUILD_ID
-* POSTBUILD_PARTNUMBER POSTBUILD_BUILD_ID
-* SOUND_PARTNUMBER
-* Diagnostic Warning Manager configuration data PARTNUMBER
-
-#### Related Requirements
-* REQ-SS-19 v3
-* REQ-SS-11 v1
-* REQ-SS-42 v1
-
-#### Integration notes
-
-### DCM Use Case  
-Diagnostic Communication Manager can request above mentioned diagnostic data along with ChassisId and VIN. 
-However Diagnostic Data Write services are not part of this module.
-
-#### Related Requirements
-* REQ-OBD-115 v1 - for OBD ECUs
-* REQ-EOALP-18 v1 - Non OBD ECUs
-
-### Application Software and data identification
 
 ## More Information
 
