@@ -72,9 +72,7 @@ ECU HW part number and HW serial number are stored in flash memory and available
 * REQ-LNI_readout-3 v2
 * REQ-LNI_readout-7 v2
 * REQ-SS-9 v3
-
 * REQ-RW-32 v2
-* REQ-RW-33 v5
 
 #### Integration notes
 
