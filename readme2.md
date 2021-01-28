@@ -2,33 +2,52 @@
 
 ## Overview
 
-Module acts as a server and provides static and dynamic diagnostic data to DCM and DEM when requested. 
-Periodically recieves (from RTE) the following parameters, validates and protects the data with CRC.
+DID server module provides the following diagnostic data when requested using corresponding DIDs: 
 
-* Outdoor Temperature (P1AFR)
-* Total Vehicle Distance (P1AFS)
-* Vehicle Mode (P1AFT)
-* UTCTimeStamp
+* Application Software Identification (DID P1ALQ)
+* Application Data Identification (DID P1ALP)
+* Chassis Identification (DID)
+* Vehicle Identification Number (DID)
+* DescriptionFileSha256 (DID P1Q82)
+* ECU Hardware Number (DID P1ALA)
+* Engine Type (DID P1ALB)
+* Build ID (DID P1URK)
+* Boot Software Identification (DID P1B1O)
+* Outdoor Temperature (DID P1AFR)
+* Total Vehicle Distance (DID P1AFS)
+* Vehicle Mode (DID P1AFT)
+* Active Diagnostic Session (DID P1DIH)
+* UTC TimeStamp (Signal)
 
+Chassis Identification and Vehicle Identification are accessed both by using DID and address parameters.
+All the DIDs are readonly.
 Provides software build information (ECU SW and data), Vehicle, Chassis and ECU hardware identification data
 
 ## Usecases
 
-### Snapshot data
- 
-The following snapshot data is provided to DEM:
+### Dynamic data
 
-* Outdoor Temperature (P1AFR, 0x1102)
-* Total Vehicle Distance (P1AFS, 0x1104). The odometer value of distance driven since the assembly of the vehicle.
-* Vehicle Mode (P1AFT, 0x1100)
+The following parameters are read periodically from RTE and stored locally along with calculated CRC.
+Accessed by DEM as DTC snapshot data/Extended data and also by DCM when requested from external tool with corresponding DID:
 
-DEM reads the data using callback functions
+*   Outdoor Temperature (DTC snapshot data)
+*   Total Vehicle Distance (DTC snapshot data). The odometer value of distance
+    driven since the assembly of the vehicle.
+*   Vehicle Mode (DTC snapshot data)
+*   UTCTimeStamp (DTC Extended Diagnostic Data)
+
+Active Diagnostic Session is updated when there is a change in the diagnostic session triggered by Diagnostic session control mode machine.
 
 #### Related Requirements
 
-* REQ-DIR-15 v6  
+* REQ-DIR-15 v6
+* REQ-DIR-27 v4
 
 #### Integration notes
+
+Read by DEM using corresponding callback functions:
+DCM reads the data using callback functions when requested
+RTE ports for signals
 
 ### Extended data
 
