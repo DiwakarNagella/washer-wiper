@@ -19,7 +19,7 @@ DID server module provides the following diagnostic data when requested using co
 * Active Diagnostic Session (DID P1DIH)
 * UTC TimeStamp (Signal)
 
-Chassis Identification and Vehicle Identification are accessed both by using DID and address parameters.
+Chassis Identification and Vehicle Identification data is accessed both by using DID and address parameters.
 All the DIDs are readonly.
 Provides software build information (ECU SW and data), Vehicle, Chassis and ECU hardware identification data
 
@@ -28,7 +28,7 @@ Provides software build information (ECU SW and data), Vehicle, Chassis and ECU 
 ### Dynamic data
 
 The following parameters are read periodically from RTE and stored locally along with calculated CRC.
-Accessed by DEM as DTC snapshot data/Extended data and also by DCM when requested from external tool with corresponding DID:
+Accessed by DEM as DTC snapshot data/Extended data and also by DCM when requested from external tool with corresponding DIDs:
 
 *   Outdoor Temperature (DTC snapshot data)
 *   Total Vehicle Distance (DTC snapshot data). The odometer value of distance
@@ -49,30 +49,18 @@ Read by DEM using corresponding callback functions:
 DCM reads the data using callback functions when requested
 RTE ports for signals
 
-### Extended data
-
-UTCTimeStamp  which is one of the extended diagnostic data used for all DTCs is provided to DEM.
-UTCTimeStamp is collection of various signals like Year, Month, Day, Hour, Minutes and Seconds.
-DEM reads the data using callback function.
-
-#### Related Requirements
-
-* REQ-DIR-27 v4
-
-#### Integration notes
-
 ### ECU Hardware Number
 
-* ECU hardware number includes the following information along with Sub node (LIN Slave) information.
-1 HW_MODULE_ID
-2 HARDWARE_PARTNUMBER
-3 HARDWARE_SERIAL_NO
-4 SUB_HW_MODULE_ID,Sub node Part number,Sub node serial number(LIN Slaves)
+ECU hardware number includes the following information:
+* HW module ID
+* HW Partnumber
+* HW Serial number
+* Sub node info (module id, Part number, serial number for LIN Slaves)
 
-* It is assumed that VOL_DIDServer module is running on ECU which implements LIN Master server.
-* Number of Sub modules depends on number of LIN slave nodes configured in that LIN cluster.
-* This module waits for the LIN Master to respond back with LIN slave info untill the timeout.
-* If LIN master doesn't respond within the timeout, this module returns the ECU H/W info without LIN slave information.
+It is assumed that VOL_DIDServer module is running on ECU which implements LIN Master server.
+Number of Sub modules depends on number of LIN slave nodes configured in that LIN cluster.
+This module waits for the LIN Master to respond back with LIN slave info untill the timeout.
+If LIN master doesn't respond within the timeout, this module returns the ECU H/W info without LIN slave information.
 
 #### Related Requirements
 
