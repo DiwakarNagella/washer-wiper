@@ -34,7 +34,7 @@ Accessed by DEM as DTC snapshot data/Extended data and also by DCM when requeste
 *   Vehicle Mode (DTC snapshot data)
 *   UTCTimeStamp (DTC Extended Diagnostic Data)
 
-Active Diagnostic Session (P1DIH) is updated when there is a change in the diagnostic session triggered by Diagnostic session control mode machine.
+Active Diagnostic Session (P1DIH) is updated when there is a change in the diagnostic session, it is triggered by Diagnostic session control mode machine. This is an optional DID not supported by VOLVO tester.
 
 #### Related Requirements
 
@@ -43,10 +43,9 @@ Active Diagnostic Session (P1DIH) is updated when there is a change in the diagn
 
 #### Integration notes
 
-Read by DEM using corresponding callback functions:
-DCM reads the data using callback functions when requested
-RTE ports for signals
-SEWS2 parameters are assigned to Application SWC containers
+* Service ports connected to DEM and DCM
+* connect RTE ports for signals
+* SEWS2 parameters are assigned to Application SWC containers
 
 ### ECU hardware identification
 
