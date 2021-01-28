@@ -61,9 +61,17 @@ ECU HW part number and HW serial number are stored in flash memory and available
 For both Chassis ECUs and ZYNQ, the corresponding linker files specify the execution region.
 Module reads the data from the RAM address. 
 
-Chassis Identification and Vehicle Identification data is accessed both by using DID and address parameters.
+Chassis Identification :
+Returns VOLVO proprietary chassis-id. Available in only default and Extended diagnostic sessions
+The data connected to this identifier shall be configured using
+address based parameter code CHANO
+
+Vehicle Identification:
+The data connected to this identifier shall be configured using address based parameter code
+VINNO.data is accessed both by using DID and address parameters.
 Accessing through only DID is supported in this module. All the DIDs are readonly.
 
+systemNameOrEngineTypeDataIdentifier:
 
 #### Related Requirements
 
