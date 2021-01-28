@@ -53,15 +53,18 @@ RTE ports for signals
 
 ### ECU Hardware Number
 
-ECU hardware number includes the following information:
+This service provides ECU hardware number which includes the following information:
 * HW module ID
 * HW Partnumber
 * HW Serial number
 * Sub node info (module id, serial number and slave node part number for LIN Slaves)
 
-Number of Sub modules depends on number of LIN slave nodes configured in that LIN cluster. Configured
+HW partnumber and serial number are stored in flash memory.
+For both Chassis ECUs and ZYNQ, the corresponding linker files copy this into execution region.
+
+Number of Sub modules depends on number of LIN slave nodes configured in LIN Manager.
 Requests LIN manager service for slave node information and waits for the server to respond back with LIN slave info untill the timeout.
-If LIN master doesn't respond within the timeout, this module returns the ECU H/W info without LIN slave information.
+If LIN manager doesn't respond within the timeout, this module returns the ECU H/W info without LIN slave information.
 It also handles reading of serial number
 and slave node part number from each node using diagnostic requests.
 It is assumed that VOL_DIDServer module is running on ECU which implements LIN Master server.
@@ -82,6 +85,7 @@ It is assumed that VOL_DIDServer module is running on ECU which implements LIN M
 #### Integration notes
 
 
+
 ### Application Software Identification 
 
 Provides the following information about Bootloader, MSW and CSW modules:
@@ -96,7 +100,9 @@ Provides the following information about Bootloader, MSW and CSW modules:
 * REQ-SS-42 v1
 
 #### Integration notes
-		
+
+Requires generation of build_info.h.
+
 ### Application Data Identification
 
 Provides the following information about application data:
