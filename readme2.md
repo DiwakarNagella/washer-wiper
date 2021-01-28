@@ -171,7 +171,11 @@ data part numbers for IC.
 
 Requires generation of build_info.h.
 
-### Build ID
+###  P1URK - Build ID
+
+Returns the Build ID for software (MSW). Build ID can uniquely identify any version of the downloadable software comaped to the part-number.
+
+
 
 #### Related Requirements
 
