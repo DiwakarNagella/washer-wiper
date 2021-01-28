@@ -57,7 +57,7 @@ This module provides ECU hardware number which includes
   2. Requests LIN manager service for slave node information and waits for the server to respond back.
   3. If LIN manager doesn't respond within the timeout, this module returns the ECU H/W info without LIN slave information.
 
-ECU HW part number and HW serial number are stored in flash memory.
+ECU HW part number and HW serial number are stored in flash memory and available in all diagnostic sessions.
 For both Chassis ECUs and ZYNQ, the corresponding linker files specify the execution region.
 Module reads the data from the RAM address. 
 
@@ -77,6 +77,9 @@ Accessing through only DID is supported in this module. All the DIDs are readonl
 * REQ-LNI_readout-3 v2
 * REQ-LNI_readout-7 v2
 * REQ-SS-9 v3
+
+* REQ-RW-32 v2
+* REQ-RW-33 v5
 
 #### Integration notes
 
