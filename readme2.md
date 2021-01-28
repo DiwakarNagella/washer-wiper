@@ -51,7 +51,7 @@ Active Diagnostic Session (P1DIH) is updated when there is a change in the diagn
 Read by DEM using corresponding callback functions:
 DCM reads the data using callback functions when requested
 RTE ports for signals
-
+SEWS2 parameters are assigned to Application SWC containers
 ### ECU Hardware Number (P1ALA)
 
 This service provides ECU hardware number which includes the following information:
@@ -85,6 +85,7 @@ If LIN manager doesn't respond within the timeout, this module returns the ECU H
 
 manufacturing info.h
 linker_symbols.h
+SEWS2 parameters are assigned to Application SWC containers
 
 ### Application Software Identification 
 
