@@ -95,7 +95,7 @@ SEWS2
 
 * Requires manufacturing info.h for ZYNQ based ECUs
 * Requires linker_symbols.h for symbols
-* SEWS2 parameters are assigned to Application SWC containers
+* SEWS2 parameters assigned
 
 ### Vehicle identification
 
@@ -105,6 +105,8 @@ VINNO. Available in only default and Extended diagnostic sessions
 #### Related Requirements
 
 * REQ-RW-33 v5
+* REQ-OBD-115 v1 
+* REQ-EOALP-18 v1
 
 #### Integration notes
 
@@ -123,54 +125,40 @@ Available in only default and Extended diagnostic sessions.
 
 Connect Address parameter Rte_AddrPar_0x2F_CHANO
 
-### Application Software and data identification
+### Application Software identification
 
-Returns number of application software modules (Bootloader, MSW and CSW) and their identities.
-Part number, Module ID and Build version.
-CSW bitstream 
+Returns number of application software modules (Bootloader, MSW and CSW) and 
+their identities (Part number, Module ID and Build version).
+For ZYNQ based ECUs, bitstream partnumber is used for CSW module. 
 
 #### Related Requirements
 
 * REQ-SS-19 v3
 * REQ-SS-11 v1
 * REQ-SS-42 v1
+* REQ-RW-33 v5
 
 #### Integration notes
 
-Requires generation of build_info.h.
+* Requires generation of build_info.h.
+* Requires linker_symbols.h for symbols
 
 ### Application data identification
 
-Returns number of application software modules and their identities.
-
-Provides the following information about Bootloader, MSW and CSW modules:
-* Part number
-* Module ID
-* Build version
-
-Provides the following information about application data:
-* DATASET_PARTNUMBER DATASET_BUILD_ID
-* POSTBUILD_PARTNUMBER POSTBUILD_BUILD_ID
-* SOUND_PARTNUMBER
-* Diagnostic Warning Manager configuration data PARTNUMBER
+Returns Number of application data modules present in the ECU and their part numbers.
+Dataset and post build data by default for all ECUS.
+Sound data module and Diagnostic Warning Manager configuration data part numbers for IC.
 
 #### Related Requirements
 
 * REQ-SS-19 v3
 * REQ-SS-11 v1
 * REQ-SS-42 v1
+* REQ-RW-33 v5
 
 #### Integration notes
 
 Requires generation of build_info.h.
-
-### DCM Use Case  
-Diagnostic Communication Manager can request above mentioned diagnostic data along with ChassisId and VIN. 
-However Diagnostic Data Write services are not part of this module.
-
-#### Related Requirements
-* REQ-OBD-115 v1 - for OBD ECUs
-* REQ-EOALP-18 v1 - Non OBD ECUs
 
 ## More Information
 
