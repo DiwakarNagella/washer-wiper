@@ -48,7 +48,7 @@ SEWS2 parameters are assigned to Application SWC containers
 
 ### ECU hardware identification
 
-This module provides ECU hardware number which includes 
+This module provides vehicleManufacturerECU HardwareNumber which includes 
 * HW module ID
 * HW Partnumber
 * HW Serial number
@@ -62,6 +62,11 @@ For both Chassis ECUs and ZYNQ, the corresponding linker files specify the execu
 Module reads the data from the RAM address. 
 
 systemNameOrEngineTypeDataIdentifier:
+This uniquely identifies the Node name of the ECU in the network, and provides information on the
+main vehicle function of the node. Node Family, Node Type and Node position are assigned by
+Volvo globally
+Values for Node Family, Node Type and Node Position are assigned according to definition on
+SEWS2
 
 #### Related Requirements
 
