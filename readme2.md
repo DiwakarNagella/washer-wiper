@@ -52,7 +52,7 @@ Read by DEM using corresponding callback functions:
 DCM reads the data using callback functions when requested
 RTE ports for signals
 
-### ECU Hardware Number
+### ECU Hardware Number (P1ALA)
 
 This service provides ECU hardware number which includes the following information:
 * HW module ID
