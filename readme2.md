@@ -20,9 +20,6 @@ when requested using corresponding DIDs:
 * Active Diagnostic Session (DID P1DIH)
 * UTC TimeStamp
 
-P1B1O is an optional did for development purpose.
-Not supported by Volvo tester
-
 ## Usecases
 
 ### Dynamic data
@@ -184,11 +181,15 @@ Requires generation of build_info.h.
 
 ### Boot Software Identification
 
+P1B1O is an optional did for development purpose. Not supported by Volvo tester
 
 #### Related Requirements
 
+TBD
 
 #### Integration notes
+
+* Requires linker_symbols.h for symbols
 
 ## More Information
 
