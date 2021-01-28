@@ -2,7 +2,8 @@
 
 ## Overview
 
-DID server module provides the following diagnostic data when requested using corresponding DIDs: 
+DID server module provides the following diagnostic data
+when requested using corresponding DIDs: 
 
 * Application Software Identification (DID P1ALQ)
 * Application Data Identification (DID P1ALP)
@@ -19,14 +20,17 @@ DID server module provides the following diagnostic data when requested using co
 * Active Diagnostic Session (DID P1DIH)
 * UTC TimeStamp
 
-P1B1O is an optional did for development purpose. Not supported by Volvo tester
+P1B1O is an optional did for development purpose.
+Not supported by Volvo tester
 
 ## Usecases
 
 ### Dynamic data
 
-The following parameters are read periodically from RTE and stored locally along with calculated CRC.
-Accessed by DEM as DTC snapshot data/Extended data and also by DCM when requested from external tool with corresponding DIDs:
+The following parameters are read periodically from RTE and stored locally
+along with calculated CRC.
+DEM uses callback functions to read DTC snapshot/Extended data.
+DCM reads the data when requested from external tool with corresponding DIDs:
 
 *   Outdoor Temperature (DTC snapshot data)
 *   Total Vehicle Distance (DTC snapshot data). The odometer value of distance
@@ -34,7 +38,8 @@ Accessed by DEM as DTC snapshot data/Extended data and also by DCM when requeste
 *   Vehicle Mode (DTC snapshot data)
 *   UTCTimeStamp (DTC Extended Diagnostic Data)
 
-Active Diagnostic Session (P1DIH) is updated when there is a change in the diagnostic session, it is triggered by Diagnostic session control mode machine. This is an optional DID not supported by VOLVO tester.
+Active Diagnostic Session is updated by diagnostic session control
+mode machine. This is an optional DID not supported by VOLVO tester.
 
 #### Related Requirements
 
@@ -49,16 +54,20 @@ Active Diagnostic Session (P1DIH) is updated when there is a change in the diagn
 
 ### ECU hardware identification
 
-This module provides vehicle Manufacturer ECU Hardware number which includes 
+This service provides vehicle Manufacturer ECU Hardware number which includes 
 * HW module ID
 * HW Partnumber
 * HW Serial number
-* Sub node info (module id, serial number and slave node part number for LIN Slaves)
-  1. Number of Sub modules depends on number of LIN slave nodes configured in LIN Manager.
-  2. Requests LIN manager service for slave node information and waits for the server to respond back.
-  3. If LIN manager doesn't respond within the timeout, this module returns the ECU H/W info without LIN slave information.
+* Sub node info (serial number and slave node part number for LIN Slaves)
+  1. Number of Sub modules depends on number of LIN slave nodes
+     configured in LIN Manager.
+  2. Requests LIN manager service for slave node information and waits for
+     the server to respond back.
+  3. If LIN manager doesn't respond within the timeout, this module returns
+     the ECU H/W info without LIN slave information.
 
-ECU HW part number and HW serial number are stored in flash memory and available in all diagnostic sessions.
+ECU HW part number and HW serial number are stored in flash memory and
+available in all diagnostic sessions.
 
 #### Related Requirements
 
@@ -76,16 +85,17 @@ ECU HW part number and HW serial number are stored in flash memory and available
 
 #### Integration notes
 
-* Requires manufacturing info.h for ZYNQ based ECUs
-* Requires linker_symbols.h for symbols
-* SEWS2 parameters are assigned to Application SWC containers
-* Connect to service ports of VOL_LINManger for slave info
+* Requires manufacturing_info.h for ZYNQ based ECUs.
+* Requires linker_symbols.h for symbols.
+* SEWS2 parameters are assigned to Application SWC containers.
+* Connect service ports of VOL_LINManger for slave info.
 
 ### SystemNameOrEngineTypeDataIdentifier
 
-This uniquely identifies the Node name of the ECU in the network, and provides information on the
-main vehicle function of the node. Values for Node Family, Node Type and Node Position are assigned according to definition on
-SEWS2
+System Name uniquely identifies the Node name of the ECU in the network,
+and provides information on the main vehicle function of the node.
+Values for Node Family, Node Type and Node Position are assigned 
+according to definition on SEWS2
 
 #### Related Requirements
 
@@ -99,8 +109,9 @@ SEWS2
 
 ### Vehicle identification
 
-Returns vehicle identification number. The data connected to this identifier shall be configured using address based parameter code
-VINNO. Available in only default and Extended diagnostic sessions
+Returns vehicle identification number. The data connected to this identifier
+can be configured using address based parameter code VINNO.
+Available in only default and Extended diagnostic sessions
 
 #### Related Requirements
 
@@ -114,7 +125,8 @@ Connect Address parameter Rte_AddrPar_0x2F_VINNO
 
 ### Chassis identification
 
-Returns VOLVO proprietary chassis-id. The data connected to this identifier shall be configured using address based parameter code CHANO
+Returns VOLVO proprietary chassis-id. The data connected to this identifier
+can be configured using address based parameter code CHANO.
 Available in only default and Extended diagnostic sessions.
 
 #### Related Requirements
@@ -145,9 +157,11 @@ For ZYNQ based ECUs, bitstream partnumber is used for CSW module.
 
 ### Application data identification
 
-Returns Number of application data modules present in the ECU and their part numbers.
+Returns Number of application data modules present in the ECU
+and their part numbers.
 Dataset and post build data by default for all ECUS.
-Sound data module and Diagnostic Warning Manager configuration data part numbers for IC.
+Sound data and Diagnostic Warning Manager configuration
+data part numbers for IC.
 
 #### Related Requirements
 
@@ -179,11 +193,14 @@ Requires generation of build_info.h.
 ## More Information
 
 ### Technical References
-For functionality, API and configuration of the AUTOSAR BSW module, refer Vector technical references which can be found in ECU SIP. The following documents were referred.
+For functionality, API and configuration of the AUTOSAR BSW module, refer
+Vector technical references which can be found in ECU SIP.
+The following documents were referred.
 
 * TechnicalReference_Dem.pdf
 * TechnicalReference_Dcm.pdf
 
 ### SEWS
 
-See the actual version used in ContainerInfo.xml, convenience link to version [10.0](https://sews.volvo.net/Sews2/ViewData/ViewContainerData.aspx?ContainerId=27734)
+See the actual version used in ContainerInfo.xml, convenience link to version
+[10.0](https://sews.volvo.net/Sews2/ViewData/ViewContainerData.aspx?ContainerId=27734).
