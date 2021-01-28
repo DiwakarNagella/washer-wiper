@@ -160,6 +160,22 @@ Sound data module and Diagnostic Warning Manager configuration data part numbers
 
 Requires generation of build_info.h.
 
+### Build ID
+
+#### Related Requirements
+
+
+#### Integration notes
+
+
+### Boot Software Identification
+
+
+#### Related Requirements
+
+
+#### Integration notes
+
 ## More Information
 
 ### Technical References
