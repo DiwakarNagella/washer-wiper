@@ -61,6 +61,7 @@ This service provides ECU hardware number which includes the following informati
 
 HW partnumber and serial number are stored in flash memory.
 For both Chassis ECUs and ZYNQ, the corresponding linker files copy this into execution region.
+Module reads the data from the RAM address. 
 
 Number of Sub modules depends on number of LIN slave nodes configured in LIN Manager.
 Requests LIN manager service for slave node information and waits for the server to respond back with LIN slave info untill the timeout.
@@ -84,7 +85,8 @@ It is assumed that VOL_DIDServer module is running on ECU which implements LIN M
 
 #### Integration notes
 
-
+manufacturing info.h
+linker_symbols.h
 
 ### Application Software Identification 
 
