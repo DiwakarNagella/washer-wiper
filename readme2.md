@@ -6,8 +6,8 @@ DID server module provides the following diagnostic data when requested using co
 
 * Application Software Identification (DID P1ALQ)
 * Application Data Identification (DID P1ALP)
-* Chassis Identification (DID)
-* Vehicle Identification Number (DID)
+* Chassis Identification (DID CHANO)
+* Vehicle Identification Number (DID VINNO)
 * DescriptionFileSha256 (DID P1Q82)
 * ECU Hardware Number (DID P1ALA)
 * Engine Type (DID P1ALB)
@@ -17,12 +17,14 @@ DID server module provides the following diagnostic data when requested using co
 * Total Vehicle Distance (DID P1AFS)
 * Vehicle Mode (DID P1AFT)
 * Active Diagnostic Session (DID P1DIH)
-* UTC TimeStamp (Signal)
+* UTC TimeStamp
 
 Chassis Identification and Vehicle Identification data is accessed both by using DID and address parameters.
-All the DIDs are readonly.
-Provides software build information (ECU SW and data), Vehicle, Chassis and ECU hardware identification data
+Accessing through DID is supported in this module. All the DIDs are readonly.
 
+UTC TimeStamp is accessed internally by DEM using callback functions.
+Provides software build information (ECU SW and data), Vehicle, Chassis and ECU hardware identification data
+SEWS2 parameters are assigned to Application SWC containers
 ## Usecases
 
 ### Dynamic data
@@ -55,12 +57,14 @@ ECU hardware number includes the following information:
 * HW module ID
 * HW Partnumber
 * HW Serial number
-* Sub node info (module id, Part number, serial number for LIN Slaves)
+* Sub node info (module id, serial number and slave node part number for LIN Slaves)
 
-It is assumed that VOL_DIDServer module is running on ECU which implements LIN Master server.
-Number of Sub modules depends on number of LIN slave nodes configured in that LIN cluster.
-This module waits for the LIN Master to respond back with LIN slave info untill the timeout.
+Number of Sub modules depends on number of LIN slave nodes configured in that LIN cluster. Configured
+Requests LIN manager service for slave node information and waits for the server to respond back with LIN slave info untill the timeout.
 If LIN master doesn't respond within the timeout, this module returns the ECU H/W info without LIN slave information.
+It also handles reading of serial number
+and slave node part number from each node using diagnostic requests.
+It is assumed that VOL_DIDServer module is running on ECU which implements LIN Master server.
 
 #### Related Requirements
 
