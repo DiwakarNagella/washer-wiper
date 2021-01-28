@@ -8,7 +8,7 @@ DID server module provides the following diagnostic data when requested using co
 * Application Data Identification (DID P1ALP)
 * Chassis Identification (DID CHANO)
 * Vehicle Identification Number (DID VINNO)
-* DescriptionFileSha256 (DID P1Q82)
+* Description File Sha256 (DID P1Q82)
 * ECU Hardware Number (DID P1ALA)
 * Engine Type (DID P1ALB)
 * Build ID (DID P1URK)
@@ -49,7 +49,7 @@ Active Diagnostic Session (P1DIH) is updated when there is a change in the diagn
 
 ### ECU hardware identification
 
-This module provides vehicleManufacturerECU HardwareNumber which includes 
+This module provides vehicle Manufacturer ECU Hardware number which includes 
 * HW module ID
 * HW Partnumber
 * HW Serial number
