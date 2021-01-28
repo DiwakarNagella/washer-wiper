@@ -83,53 +83,42 @@ ECU HW part number and HW serial number are stored in flash memory and available
 * SEWS2 parameters are assigned to Application SWC containers
 * Connect to service ports of VOL_LINManger for slave info
 
-### systemNameOrEngineTypeDataIdentifier
+### SystemNameOrEngineTypeDataIdentifier
 
 This uniquely identifies the Node name of the ECU in the network, and provides information on the
-main vehicle function of the node. Node Family, Node Type and Node position are assigned by
-Volvo globally
-Values for Node Family, Node Type and Node Position are assigned according to definition on
+main vehicle function of the node. Values for Node Family, Node Type and Node Position are assigned according to definition on
 SEWS2
 
 #### Related Requirements
 
-* REQ-LNI_verification-2 v2
-* REQ-LNI_SN-4 v3
-* REQ-LNI_SN-5 v3
-* REQ-LNI_SNPN-4 v2
-* REQ-LNI_readout-10 v1
-* REQ-LNI_readout-1 v1
-* REQ-LNI_readout-2 v2
-* REQ-LNI_readout-3 v2
-* REQ-LNI_readout-7 v2
-* REQ-SS-9 v3
-
 * REQ-RW-32 v2
-* REQ-RW-33 v5
 
 #### Integration notes
 
-manufacturing info.h
-linker_symbols.h
-SEWS2 parameters are assigned to Application SWC containers
+* Requires manufacturing info.h for ZYNQ based ECUs
+* Requires linker_symbols.h for symbols
+* SEWS2 parameters are assigned to Application SWC containers
 
-### Vehicle and Chassis identification
+### Vehicle identification
 
-Chassis Identification :
-Returns VOLVO proprietary chassis-id. Available in only default and Extended diagnostic sessions
-The data connected to this identifier shall be configured using
-address based parameter code CHANO
-
-Vehicle Identification:
-The data connected to this identifier shall be configured using address based parameter code
-VINNO.data is accessed both by using DID and address parameters.
-Accessing through only DID is supported in this module. All the DIDs are readonly.
+Returns vehicle identification number. The data connected to this identifier shall be configured using address based parameter code
+VINNO. Available in only default and Extended diagnostic sessions
 
 #### Related Requirements
 
 
 #### Integration notes
 
+
+### Chassis identification
+
+Returns VOLVO proprietary chassis-id. The data connected to this identifier shall be configured using address based parameter code CHANO
+Available in only default and Extended diagnostic sessions.
+
+#### Related Requirements
+
+
+#### Integration notes
 
 ### DCM Use Case  
 Diagnostic Communication Manager can request above mentioned diagnostic data along with ChassisId and VIN. 
