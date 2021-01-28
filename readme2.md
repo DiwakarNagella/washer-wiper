@@ -67,9 +67,6 @@ Module reads the data from the RAM address.
 Number of Sub modules depends on number of LIN slave nodes configured in LIN Manager.
 Requests LIN manager service for slave node information and waits for the server to respond back.
 If LIN manager doesn't respond within the timeout, this module returns the ECU H/W info without LIN slave information.
-It also handles reading of serial number
-and slave node part number from each node using diagnostic requests.
-It is assumed that VOL_DIDServer module is running on ECU which implements LIN Master server.
 
 #### Related Requirements
 
