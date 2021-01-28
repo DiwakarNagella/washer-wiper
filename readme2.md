@@ -20,9 +20,10 @@ DID server module provides the following diagnostic data when requested using co
 * UTC TimeStamp
 
 Chassis Identification and Vehicle Identification data is accessed both by using DID and address parameters.
-Accessing through DID is supported in this module. All the DIDs are readonly.
+Accessing through only DID is supported in this module. All the DIDs are readonly.
 
 UTC TimeStamp is accessed internally by DEM using callback functions.
+
 Provides software build information (ECU SW and data), Vehicle, Chassis and ECU hardware identification data
 SEWS2 parameters are assigned to Application SWC containers
 ## Usecases
@@ -38,7 +39,7 @@ Accessed by DEM as DTC snapshot data/Extended data and also by DCM when requeste
 *   Vehicle Mode (DTC snapshot data)
 *   UTCTimeStamp (DTC Extended Diagnostic Data)
 
-Active Diagnostic Session is updated when there is a change in the diagnostic session triggered by Diagnostic session control mode machine.
+Active Diagnostic Session (P1DIH) is updated when there is a change in the diagnostic session triggered by Diagnostic session control mode machine.
 
 #### Related Requirements
 
@@ -59,12 +60,12 @@ This service provides ECU hardware number which includes the following informati
 * HW Serial number
 * Sub node info (module id, serial number and slave node part number for LIN Slaves)
 
-HW partnumber and serial number are stored in flash memory.
+HW part number and HW serial number are stored in flash memory.
 For both Chassis ECUs and ZYNQ, the corresponding linker files copy this into execution region.
 Module reads the data from the RAM address. 
 
 Number of Sub modules depends on number of LIN slave nodes configured in LIN Manager.
-Requests LIN manager service for slave node information and waits for the server to respond back with LIN slave info untill the timeout.
+Requests LIN manager service for slave node information and waits for the server to respond back.
 If LIN manager doesn't respond within the timeout, this module returns the ECU H/W info without LIN slave information.
 It also handles reading of serial number
 and slave node part number from each node using diagnostic requests.
