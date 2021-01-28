@@ -46,7 +46,7 @@ DCM reads the data using callback functions when requested
 RTE ports for signals
 SEWS2 parameters are assigned to Application SWC containers
 
-### Vehicle and ECU hardware identification
+### ECU hardware identification
 
 This module provides ECU hardware number which includes 
 * HW module ID
@@ -60,16 +60,6 @@ This module provides ECU hardware number which includes
 ECU HW part number and HW serial number are stored in flash memory and available in all diagnostic sessions.
 For both Chassis ECUs and ZYNQ, the corresponding linker files specify the execution region.
 Module reads the data from the RAM address. 
-
-Chassis Identification :
-Returns VOLVO proprietary chassis-id. Available in only default and Extended diagnostic sessions
-The data connected to this identifier shall be configured using
-address based parameter code CHANO
-
-Vehicle Identification:
-The data connected to this identifier shall be configured using address based parameter code
-VINNO.data is accessed both by using DID and address parameters.
-Accessing through only DID is supported in this module. All the DIDs are readonly.
 
 systemNameOrEngineTypeDataIdentifier:
 
@@ -94,6 +84,24 @@ systemNameOrEngineTypeDataIdentifier:
 manufacturing info.h
 linker_symbols.h
 SEWS2 parameters are assigned to Application SWC containers
+
+### Vehicle and Chassis identification
+
+Chassis Identification :
+Returns VOLVO proprietary chassis-id. Available in only default and Extended diagnostic sessions
+The data connected to this identifier shall be configured using
+address based parameter code CHANO
+
+Vehicle Identification:
+The data connected to this identifier shall be configured using address based parameter code
+VINNO.data is accessed both by using DID and address parameters.
+Accessing through only DID is supported in this module. All the DIDs are readonly.
+
+#### Related Requirements
+
+
+#### Integration notes
+
 
 ### Application Software Identification 
 
