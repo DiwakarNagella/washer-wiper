@@ -27,7 +27,7 @@ when requested using corresponding DIDs:
 The following parameters are read periodically from RTE and stored locally
 along with calculated CRC.
 DEM uses callback functions to read DTC snapshot/Extended data.
-DCM reads the data when requested from external tool with corresponding DIDs:
+DCM reads the data when requested from external tool with corresponding DIDs.
 
 *   Outdoor Temperature (DTC snapshot data)
 *   Total Vehicle Distance (DTC snapshot data). The odometer value of distance
@@ -52,16 +52,16 @@ mode machine. This is an optional DID not supported by VOLVO tester.
 ### ECU hardware identification
 
 This service provides vehicle Manufacturer ECU Hardware number which includes 
-* HW module ID
-* HW Partnumber
-* HW Serial number
-* Sub node info (serial number and slave node part number for LIN Slaves)
-  1. Number of Sub modules depends on number of LIN slave nodes
-     configured in LIN Manager.
-  2. Requests LIN manager service for slave node information and waits for
-     the server to respond back.
-  3. If LIN manager doesn't respond within the timeout, this module returns
-     the ECU H/W info without LIN slave information.
+*   HW module ID
+*   HW Partnumber
+*   HW Serial number
+*   Sub node info (serial number and slave node part number for LIN Slaves)
+    1.  Number of Sub modules depends on number of LIN slave nodes
+        configured in LIN Manager.
+    2.  Requests LIN manager service for slave node information and waits for
+        the server to respond back.
+    3.  If LIN manager doesn't respond within the timeout, this module returns
+        the ECU H/W info without LIN slave information.
 
 ECU HW part number and HW serial number are stored in flash memory and
 available in all diagnostic sessions.
@@ -173,19 +173,21 @@ Requires generation of build_info.h.
 
 ###  P1URK - Build ID
 
-Returns the Build ID for software (MSW). Build ID can uniquely identify any version of the downloadable software comaped to the part-number.
-
-
+Returns the Build ID for software (MSW). Build ID can uniquely identify any
+version of the downloadable software compared to the part-number.
 
 #### Related Requirements
 
+* REQ-RW-68 v2
 
 #### Integration notes
 
+* Requires linker_symbols.h for symbols
+* Requires generation of build_info.h
 
-### Boot Software Identification
+### P1B1O - Boot Software Identification
 
-P1B1O is an optional did for development purpose. Not supported by Volvo tester
+ An optional did for development purpose. Not supported in production
 
 #### Related Requirements
 
