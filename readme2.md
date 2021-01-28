@@ -104,9 +104,11 @@ VINNO. Available in only default and Extended diagnostic sessions
 
 #### Related Requirements
 
+* REQ-RW-33 v5
 
 #### Integration notes
 
+Connect Address parameter Rte_AddrPar_0x2F_VINNO
 
 ### Chassis identification
 
@@ -115,18 +117,31 @@ Available in only default and Extended diagnostic sessions.
 
 #### Related Requirements
 
+* REQ-RW-33 v5
 
 #### Integration notes
 
-### DCM Use Case  
-Diagnostic Communication Manager can request above mentioned diagnostic data along with ChassisId and VIN. 
-However Diagnostic Data Write services are not part of this module.
-
-#### Related Requirements
-* REQ-OBD-115 v1 - for OBD ECUs
-* REQ-EOALP-18 v1 - Non OBD ECUs
+Connect Address parameter Rte_AddrPar_0x2F_CHANO
 
 ### Application Software and data identification
+
+Returns number of application software modules (Bootloader, MSW and CSW) and their identities.
+Part number, Module ID and Build version.
+CSW bitstream 
+
+#### Related Requirements
+
+* REQ-SS-19 v3
+* REQ-SS-11 v1
+* REQ-SS-42 v1
+
+#### Integration notes
+
+Requires generation of build_info.h.
+
+### Application data identification
+
+Returns number of application software modules and their identities.
 
 Provides the following information about Bootloader, MSW and CSW modules:
 * Part number
@@ -148,6 +163,14 @@ Provides the following information about application data:
 #### Integration notes
 
 Requires generation of build_info.h.
+
+### DCM Use Case  
+Diagnostic Communication Manager can request above mentioned diagnostic data along with ChassisId and VIN. 
+However Diagnostic Data Write services are not part of this module.
+
+#### Related Requirements
+* REQ-OBD-115 v1 - for OBD ECUs
+* REQ-EOALP-18 v1 - Non OBD ECUs
 
 ## More Information
 
