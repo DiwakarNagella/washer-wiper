@@ -59,8 +59,6 @@ This module provides vehicle Manufacturer ECU Hardware number which includes
   3. If LIN manager doesn't respond within the timeout, this module returns the ECU H/W info without LIN slave information.
 
 ECU HW part number and HW serial number are stored in flash memory and available in all diagnostic sessions.
-For both Chassis ECUs and ZYNQ, the corresponding linker files specify the execution region.
-Module reads the data from the RAM address. 
 
 #### Related Requirements
 
