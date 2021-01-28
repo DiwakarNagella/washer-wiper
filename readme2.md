@@ -78,9 +78,10 @@ ECU HW part number and HW serial number are stored in flash memory and available
 
 #### Integration notes
 
-manufacturing info.h
-linker_symbols.h
-SEWS2 parameters are assigned to Application SWC containers
+* Requires manufacturing info.h for ZYNQ based ECUs
+* Requires linker_symbols.h for symbols
+* SEWS2 parameters are assigned to Application SWC containers
+* Connect to service ports of VOL_LINManger for slave info
 
 ### systemNameOrEngineTypeDataIdentifier
 
