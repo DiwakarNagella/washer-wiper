@@ -11,7 +11,7 @@ when requested using corresponding DIDs:
 * Vehicle Identification Number (DID VINNO)
 * Description File Sha256 (DID P1Q82)
 * ECU Hardware Number (DID P1ALA)
-* Engine Type (DID P1ALB)
+* System Name or Engine Type (DID P1ALB)
 * Build ID (DID P1URK)
 * Boot Software Identification (DID P1B1O)
 * Outdoor Temperature (DID P1AFR)
@@ -49,7 +49,7 @@ mode machine. This is an optional DID not supported by VOLVO tester.
 * connect RTE ports for signals
 * SEWS2 parameters are assigned to Application SWC containers
 
-### ECU hardware identification
+### P1ALA - ECU hardware identification
 
 This service provides vehicle Manufacturer ECU Hardware number which includes 
 *   HW module ID
@@ -87,7 +87,7 @@ available in all diagnostic sessions.
 * SEWS2 parameters are assigned to Application SWC containers.
 * Connect service ports of VOL_LINManger for slave info.
 
-### SystemNameOrEngineTypeDataIdentifier
+### P1ALB - SystemNameOrEngineTypeDataIdentifier
 
 System Name uniquely identifies the Node name of the ECU in the network,
 and provides information on the main vehicle function of the node.
@@ -104,7 +104,7 @@ according to definition on SEWS2
 * Requires linker_symbols.h for symbols
 * SEWS2 parameters assigned
 
-### Vehicle identification
+### VINNO - Vehicle identification
 
 Returns vehicle identification number. The data connected to this identifier
 can be configured using address based parameter code VINNO.
@@ -120,7 +120,7 @@ Available in only default and Extended diagnostic sessions
 
 Connect Address parameter Rte_AddrPar_0x2F_VINNO
 
-### Chassis identification
+### CHANO - Chassis identification
 
 Returns VOLVO proprietary chassis-id. The data connected to this identifier
 can be configured using address based parameter code CHANO.
@@ -134,7 +134,7 @@ Available in only default and Extended diagnostic sessions.
 
 Connect Address parameter Rte_AddrPar_0x2F_CHANO
 
-### Application Software identification
+### P1ALQ - Application Software identification
 
 Returns number of application software modules (Bootloader, MSW and CSW) and 
 their identities (Part number, Module ID and Build version).
@@ -152,7 +152,7 @@ For ZYNQ based ECUs, bitstream partnumber is used for CSW module.
 * Requires generation of build_info.h.
 * Requires linker_symbols.h for symbols
 
-### Application data identification
+### P1ALP - Application data identification
 
 Returns Number of application data modules present in the ECU
 and their part numbers.
@@ -200,12 +200,13 @@ TBD
 ## More Information
 
 ### Technical References
-For functionality, API and configuration of the AUTOSAR BSW module, refer
-Vector technical references which can be found in ECU SIP.
-The following documents were referred.
 
-* TechnicalReference_Dem.pdf
-* TechnicalReference_Dcm.pdf
+*   Refer Vector technical references for functionality,
+    API and configuration of BSW Module.
+*   TechnicalReference_Dem.pdf (which can be found in ECU SIP)
+*   Vehicle Mode system specifications
+*   SYS - ReadAndWriteSpecifiction(Reg. no. 50135952)
+*   ECU Software Structure (Reg. no. 50136492)
 
 ### SEWS
 
