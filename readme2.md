@@ -19,13 +19,6 @@ DID server module provides the following diagnostic data when requested using co
 * Active Diagnostic Session (DID P1DIH)
 * UTC TimeStamp
 
-Chassis Identification and Vehicle Identification data is accessed both by using DID and address parameters.
-Accessing through only DID is supported in this module. All the DIDs are readonly.
-
-UTC TimeStamp is accessed internally by DEM using callback functions.
-
-Provides software build information (ECU SW and data), Vehicle, Chassis and ECU hardware identification data
-SEWS2 parameters are assigned to Application SWC containers
 ## Usecases
 
 ### Dynamic data
@@ -55,19 +48,22 @@ SEWS2 parameters are assigned to Application SWC containers
 
 ### Vehicle and ECU hardware identification
 
-This service provides ECU hardware number which includes the following information:
+This module provides ECU hardware number which includes 
 * HW module ID
 * HW Partnumber
 * HW Serial number
 * Sub node info (module id, serial number and slave node part number for LIN Slaves)
+  1. Number of Sub modules depends on number of LIN slave nodes configured in LIN Manager.
+  2. Requests LIN manager service for slave node information and waits for the server to respond back.
+  3. If LIN manager doesn't respond within the timeout, this module returns the ECU H/W info without LIN slave information.
 
-HW part number and HW serial number are stored in flash memory.
+ECU HW part number and HW serial number are stored in flash memory.
 For both Chassis ECUs and ZYNQ, the corresponding linker files specify the execution region.
 Module reads the data from the RAM address. 
 
-Number of Sub modules depends on number of LIN slave nodes configured in LIN Manager.
-Requests LIN manager service for slave node information and waits for the server to respond back.
-If LIN manager doesn't respond within the timeout, this module returns the ECU H/W info without LIN slave information.
+Chassis Identification and Vehicle Identification data is accessed both by using DID and address parameters.
+Accessing through only DID is supported in this module. All the DIDs are readonly.
+
 
 #### Related Requirements
 
