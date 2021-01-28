@@ -52,7 +52,8 @@ Read by DEM using corresponding callback functions:
 DCM reads the data using callback functions when requested
 RTE ports for signals
 SEWS2 parameters are assigned to Application SWC containers
-### ECU Hardware Number (P1ALA)
+
+### Vehicle and ECU hardware identification
 
 This service provides ECU hardware number which includes the following information:
 * HW module ID
@@ -61,7 +62,7 @@ This service provides ECU hardware number which includes the following informati
 * Sub node info (module id, serial number and slave node part number for LIN Slaves)
 
 HW part number and HW serial number are stored in flash memory.
-For both Chassis ECUs and ZYNQ, the corresponding linker files copy this into execution region.
+For both Chassis ECUs and ZYNQ, the corresponding linker files specify the execution region.
 Module reads the data from the RAM address. 
 
 Number of Sub modules depends on number of LIN slave nodes configured in LIN Manager.
@@ -126,6 +127,8 @@ However Diagnostic Data Write services are not part of this module.
 #### Related Requirements
 * REQ-OBD-115 v1 - for OBD ECUs
 * REQ-EOALP-18 v1 - Non OBD ECUs
+
+### Application Software and data identification
 
 ## More Information
 
