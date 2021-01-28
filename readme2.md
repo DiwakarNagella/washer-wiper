@@ -19,6 +19,8 @@ DID server module provides the following diagnostic data when requested using co
 * Active Diagnostic Session (DID P1DIH)
 * UTC TimeStamp
 
+P1B1O is an optional did for development purpose. Not supported by Volvo tester
+
 ## Usecases
 
 ### Dynamic data
@@ -61,7 +63,30 @@ ECU HW part number and HW serial number are stored in flash memory and available
 For both Chassis ECUs and ZYNQ, the corresponding linker files specify the execution region.
 Module reads the data from the RAM address. 
 
-systemNameOrEngineTypeDataIdentifier:
+#### Related Requirements
+
+* REQ-LNI_verification-2 v2
+* REQ-LNI_SN-4 v3
+* REQ-LNI_SN-5 v3
+* REQ-LNI_SNPN-4 v2
+* REQ-LNI_readout-10 v1
+* REQ-LNI_readout-1 v1
+* REQ-LNI_readout-2 v2
+* REQ-LNI_readout-3 v2
+* REQ-LNI_readout-7 v2
+* REQ-SS-9 v3
+
+* REQ-RW-32 v2
+* REQ-RW-33 v5
+
+#### Integration notes
+
+manufacturing info.h
+linker_symbols.h
+SEWS2 parameters are assigned to Application SWC containers
+
+### systemNameOrEngineTypeDataIdentifier
+
 This uniquely identifies the Node name of the ECU in the network, and provides information on the
 main vehicle function of the node. Node Family, Node Type and Node position are assigned by
 Volvo globally
