@@ -3,7 +3,7 @@
 ## Overview
 
 DID server module provides the following diagnostic data
-when requested using corresponding DIDs: 
+when requested using corresponding DIDs:
 
 * Application Software Identification (DID P1ALQ)
 * Application Data Identification (DID P1ALP)
@@ -51,7 +51,7 @@ mode machine. This is an optional DID not supported in production.
 
 ### P1ALA - ECU hardware identification
 
-This service provides vehicle Manufacturer ECU Hardware number which includes 
+This service provides vehicle Manufacturer ECU Hardware number which includes
 *   HW module ID
 *   HW Partnumber
 *   HW Serial number
@@ -91,7 +91,7 @@ available in all diagnostic sessions.
 
 System Name uniquely identifies the Node name of the ECU in the network,
 and provides information on the main vehicle function of the node.
-Values for Node Family, Node Type and Node Position are assigned 
+Values for Node Family, Node Type and Node Position are assigned
 according to definition on SEWS2
 
 #### Related requirements
@@ -138,7 +138,7 @@ Connect Address parameter Rte_AddrPar_0x2F_CHANO
 
 Returns number of application software modules (Bootloader, MSW and CSW) and 
 their identities (Part number, Module ID and Build version).
-For ZYNQ based ECUs, bitstream partnumber is used for CSW module. 
+For ZYNQ based ECUs, bitstream partnumber is used for CSW module.
 
 #### Related requirements
 
@@ -173,8 +173,10 @@ Requires generation of build_info.h.
 
 ###  P1URK - Build ID
 
-Returns the Build ID for software structure components (MSW/CSW/DST). Build ID can uniquely identify any
-version of the downloadable software compared to the part-number.
+Returns the Build ID for software structure components (MSW/CSW/DST).
+Build ID can uniquely identify any version of the downloadable software
+compared to the part-number.
+
 Example: 2.14.0.48-g1d621746
 
 #### Related requirements
