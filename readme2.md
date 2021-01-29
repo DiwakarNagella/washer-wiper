@@ -36,7 +36,7 @@ DCM reads the data when requested from external tool with corresponding DIDs.
 *   UTCTimeStamp (DTC Extended Diagnostic Data)
 
 Active Diagnostic Session is updated by diagnostic session control
-mode machine. This is an optional DID not supported in production.
+mode machine. This is an optional DID not required by system specification.
 
 #### Related requirements
 
@@ -47,7 +47,6 @@ mode machine. This is an optional DID not supported in production.
 
 * Service ports connected to DEM and DCM
 * connect RTE ports for signals
-* SEWS2 parameters are assigned to Application SWC containers
 
 ### P1ALA - ECU hardware identification
 
@@ -84,7 +83,6 @@ available in all diagnostic sessions.
 
 * Requires manufacturing_info.h for ZYNQ based ECUs.
 * Requires linker_symbols.h for symbols.
-* SEWS2 parameters are assigned to Application SWC containers.
 * Connect service ports of VOL_LINManger for slave info.
 
 ### P1ALB - System name
@@ -92,7 +90,7 @@ available in all diagnostic sessions.
 System Name uniquely identifies the Node name of the ECU in the network,
 and provides information on the main vehicle function of the node.
 Values for Node Family, Node Type and Node Position are assigned
-according to definition on SEWS2
+according to definition in [SEWS2](https://sews.volvo.net/Sews2/ViewData/ViewNode.aspx)
 
 #### Related requirements
 
@@ -108,7 +106,7 @@ according to definition on SEWS2
 
 Returns vehicle identification number. The data connected to this identifier
 can be configured using address based parameter code VINNO.
-Available in only default and Extended diagnostic sessions
+Available in all diagnostic sessions
 
 #### Related requirements
 
@@ -124,7 +122,7 @@ Connect Address parameter Rte_AddrPar_0x2F_VINNO
 
 Returns VOLVO proprietary chassis-id. The data connected to this identifier
 can be configured using address based parameter code CHANO.
-Available in only default and Extended diagnostic sessions.
+Available in all diagnostic sessions.
 
 #### Related requirements
 
@@ -137,8 +135,8 @@ Connect Address parameter Rte_AddrPar_0x2F_CHANO
 ### P1ALQ - Application software identification
 
 Returns number of application software modules (Bootloader, MSW and CSW) and 
-their identities (Part number, Module ID and Build version).
-For ZYNQ based ECUs, bitstream partnumber is used for CSW module.
+their identities (Part number and Module ID).
+For ZYNQ based ECUs, one CSW module may be the bitstream.
 
 #### Related requirements
 
@@ -154,8 +152,7 @@ For ZYNQ based ECUs, bitstream partnumber is used for CSW module.
 
 ### P1ALP - Application data identification
 
-Returns Number of application data modules present in the ECU
-and their part numbers.
+part numbers.
 Dataset and post build data by default for all ECUS.
 Sound data and Diagnostic Warning Manager configuration
 data part numbers for IC.
@@ -173,7 +170,7 @@ Requires generation of build_info.h.
 
 ###  P1URK - Build ID
 
-Returns the Build ID for software structure components (MSW/CSW/DST).
+P1URK contains all info in from P1ALP, P1ALQ
 Build ID can uniquely identify any version of the downloadable software
 compared to the part-number.
 
@@ -190,8 +187,7 @@ Example: 2.14.0.48-g1d621746
 
 ### P1Q82 - Description File Sha256
 
-Description File sha256 number to partnumber corresponds to MSW/CSW/DST.
-Not used for released description files.
+Description File sha256 number compatible with the MSW.
 
 #### Related requirements
 
