@@ -36,7 +36,7 @@ DCM reads the data when requested from external tool with corresponding DIDs.
 *   UTCTimeStamp (DTC Extended Diagnostic Data)
 
 Active Diagnostic Session is updated by diagnostic session control
-mode machine. This is an optional DID not supported by VOLVO tester.
+mode machine. This is an optional DID not supported in production.
 
 #### Related Requirements
 
