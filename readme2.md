@@ -20,7 +20,7 @@ when requested using corresponding DIDs:
 * Active Diagnostic Session (DID P1DIH)
 * UTC TimeStamp
 
-## Usecases
+## Use cases
 
 ### Dynamic data
 
@@ -38,7 +38,7 @@ DCM reads the data when requested from external tool with corresponding DIDs.
 Active Diagnostic Session is updated by diagnostic session control
 mode machine. This is an optional DID not supported in production.
 
-#### Related Requirements
+#### Related requirements
 
 * REQ-DIR-15 v6
 * REQ-DIR-27 v4
@@ -66,7 +66,7 @@ This service provides vehicle Manufacturer ECU Hardware number which includes
 ECU HW part number and HW serial number are stored in flash memory and
 available in all diagnostic sessions.
 
-#### Related Requirements
+#### Related requirements
 
 * REQ-LNI_verification-2 v2
 * REQ-LNI_SN-4 v3
@@ -87,14 +87,14 @@ available in all diagnostic sessions.
 * SEWS2 parameters are assigned to Application SWC containers.
 * Connect service ports of VOL_LINManger for slave info.
 
-### P1ALB - SystemNameOrEngineTypeDataIdentifier
+### P1ALB - System name
 
 System Name uniquely identifies the Node name of the ECU in the network,
 and provides information on the main vehicle function of the node.
 Values for Node Family, Node Type and Node Position are assigned 
 according to definition on SEWS2
 
-#### Related Requirements
+#### Related requirements
 
 * REQ-RW-32 v2
 
@@ -110,7 +110,7 @@ Returns vehicle identification number. The data connected to this identifier
 can be configured using address based parameter code VINNO.
 Available in only default and Extended diagnostic sessions
 
-#### Related Requirements
+#### Related requirements
 
 * REQ-RW-33 v5
 * REQ-OBD-115 v1 
@@ -126,7 +126,7 @@ Returns VOLVO proprietary chassis-id. The data connected to this identifier
 can be configured using address based parameter code CHANO.
 Available in only default and Extended diagnostic sessions.
 
-#### Related Requirements
+#### Related requirements
 
 * REQ-RW-33 v5
 
@@ -134,13 +134,13 @@ Available in only default and Extended diagnostic sessions.
 
 Connect Address parameter Rte_AddrPar_0x2F_CHANO
 
-### P1ALQ - Application Software identification
+### P1ALQ - Application software identification
 
 Returns number of application software modules (Bootloader, MSW and CSW) and 
 their identities (Part number, Module ID and Build version).
 For ZYNQ based ECUs, bitstream partnumber is used for CSW module. 
 
-#### Related Requirements
+#### Related requirements
 
 * REQ-SS-19 v3
 * REQ-SS-11 v1
@@ -160,7 +160,7 @@ Dataset and post build data by default for all ECUS.
 Sound data and Diagnostic Warning Manager configuration
 data part numbers for IC.
 
-#### Related Requirements
+#### Related requirements
 
 * REQ-SS-19 v3
 * REQ-SS-11 v1
@@ -176,7 +176,7 @@ Requires generation of build_info.h.
 Returns the Build ID for software (MSW). Build ID can uniquely identify any
 version of the downloadable software compared to the part-number.
 
-#### Related Requirements
+#### Related requirements
 
 * REQ-RW-68 v2
 
@@ -185,11 +185,11 @@ version of the downloadable software compared to the part-number.
 * Requires linker_symbols.h for symbols
 * Requires generation of build_info.h
 
-### P1B1O - Boot Software Identification
+### P1B1O - Boot software identification
 
  An optional did for development purpose. Not supported in production
 
-#### Related Requirements
+#### Related requirements
 
 TBD
 
@@ -197,9 +197,9 @@ TBD
 
 * Requires linker_symbols.h for symbols
 
-## More Information
+## More information
 
-### Technical References
+### Technical references
 
 *   Refer Vector technical references for functionality,
     API and configuration of BSW Module.
