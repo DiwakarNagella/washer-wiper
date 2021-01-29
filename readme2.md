@@ -173,8 +173,9 @@ Requires generation of build_info.h.
 
 ###  P1URK - Build ID
 
-Returns the Build ID for software (MSW). Build ID can uniquely identify any
+Returns the Build ID for software structure components (MSW/CSW/DST). Build ID can uniquely identify any
 version of the downloadable software compared to the part-number.
+Example: 2.14.0.48-g1d621746
 
 #### Related requirements
 
@@ -184,6 +185,19 @@ version of the downloadable software compared to the part-number.
 
 * Requires linker_symbols.h for symbols
 * Requires generation of build_info.h
+
+### P1Q82 - Description File Sha256
+
+Description File sha256 number to partnumber corresponds to MSW/CSW/DST.
+Not used for released description files.
+
+#### Related requirements
+
+TBD
+
+#### Integration notes
+
+TBD
 
 ### P1B1O - Boot software identification
 
