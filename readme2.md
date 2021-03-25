@@ -153,8 +153,7 @@ Connect Address parameter Rte_AddrPar_0x2F_CHANO
 
 ### P1ALQ - Application software identification
 
-Returns number of application software modules (Bootloader, MSW and CSW) and 
-their identities (Part number and Module ID).
+Returns application software modules (Bootloader, MSW and CSW) Part numbers.
 For ZYNQ based ECUs, one CSW module may be the bitstream.
 
 #### Related requirements
