@@ -153,7 +153,7 @@ Connect Address parameter Rte_AddrPar_0x2F_CHANO
 
 ### P1ALQ - Application software identification
 
-Returns application software modules (Bootloader, MSW and CSW) Part numbers.
+Returns application software module (Bootloader, MSW and CSW) Part numbers.
 For ZYNQ based ECUs, one CSW module may be the bitstream.
 
 #### Related requirements
@@ -170,10 +170,10 @@ For ZYNQ based ECUs, one CSW module may be the bitstream.
 
 ### P1ALP - Application data identification
 
-part numbers.
+Returns application data part numbers. It includes 
 Dataset and post build data by default for all ECUS.
 Sound data and Diagnostic Warning Manager configuration
-data part numbers for IC.
+data for IC.
 
 #### Related requirements
 
@@ -188,9 +188,9 @@ Requires generation of build_info.h.
 
 ###  P1URK - Build ID
 
-P1URK contains all info in from P1ALP, P1ALQ
-Build ID can uniquely identify any version of the downloadable software
-compared to the part-number.
+P1URK provides the build id along with all the info that is
+provided by P1ALP and P1ALQ. Build ID can uniquely identify 
+any version of the downloadable software compared to the part-number.
 
 Example: 2.14.0.48-g1d621746
 
