@@ -22,30 +22,35 @@ when requested using corresponding DIDs:
 
 ## Use cases
 
-### Dynamic data
+### Snapshot data
 
-The following parameters are read periodically from RTE and stored locally
-along with calculated CRC.
-DEM uses callback functions to read DTC snapshot/Extended data.
-DCM reads the data when requested from external tool with corresponding DIDs.
+The following parameters are provided for common snapshot data 
 
-*   Outdoor Temperature (DTC snapshot data)
-*   Total Vehicle Distance (DTC snapshot data). The odometer value of distance
+*   Outdoor Temperature (DID P1AFR)
+*   Total Vehicle Distance (DID P1AFS). The odometer value of distance
     driven since the assembly of the vehicle.
-*   Vehicle Mode (DTC snapshot data)
-*   UTCTimeStamp (DTC Extended Diagnostic Data)
-
-Active Diagnostic Session is updated by diagnostic session control
-mode machine. This is an optional DID not required by system specification.
+*   Vehicle Mode (DID P1AFT)
 
 #### Related requirements
 
 * REQ-DIR-15 v6
-* REQ-DIR-27 v4
 
 #### Integration notes
 
 * Service ports connected to DEM and DCM
+* connect RTE ports for signals
+
+### Extended diagnostic data
+
+UTCTimeStamp data is provided as extended diagnostic data.
+
+#### Related requirements
+
+* REQ-DIR-27 v4
+
+#### Integration notes
+
+* Service ports connected to DEM
 * connect RTE ports for signals
 
 ### P1ALA - ECU hardware identification
