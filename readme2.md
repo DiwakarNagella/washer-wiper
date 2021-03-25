@@ -53,6 +53,20 @@ UTCTimeStamp data is provided as extended diagnostic data.
 * Service ports connected to DEM
 * connect RTE ports for signals
 
+### P1DIH - Active Diagnostic Session
+
+Active Diagnostic Session is updated by diagnostic session control
+mode machine. This is an optional DID not required by system specification.
+
+#### Related requirements
+
+* TBD
+
+#### Integration notes
+
+* Service port connected to DCM
+* connect RTE port for signal
+
 ### P1ALA - ECU hardware identification
 
 This service provides vehicle Manufacturer ECU Hardware number which includes
