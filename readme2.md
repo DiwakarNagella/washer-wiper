@@ -205,7 +205,7 @@ Example: 2.14.0.48-g1d621746
 
 ### P1Q82 - Description File Sha256
 
-Description File sha256 number compatible with the MSW.
+The SHA256 checksum for the description file for the MSW.
 
 #### Related requirements
 
