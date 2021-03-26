@@ -61,6 +61,7 @@ mode machine.
 #### Related requirements
 
 * This is an optional DID not required by system specification.
+* See optional identifier F186 in ReadAndWrite specification
 
 #### Integration notes
 
@@ -221,7 +222,7 @@ TBD
 
 #### Related requirements
 
-TBD
+See optional identifier F180 in ReadAndWrite specification
 
 #### Integration notes
 
