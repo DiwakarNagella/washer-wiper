@@ -64,8 +64,7 @@ This service provides vehicle Manufacturer ECU Hardware number which includes
     3.  If LIN manager doesn't respond within the timeout, this module returns
         the ECU H/W info without LIN slave information.
 
-ECU HW part number and HW serial number are stored in flash memory and
-available in extended diagnostic session.
+ECU HW part number and HW serial number are stored in flash memory.
 
 #### Related requirements
 
@@ -106,7 +105,6 @@ according to definition in [SEWS2](https://sews.volvo.net/Sews2/ViewData/ViewNod
 
 Returns vehicle identification number. The data connected to this identifier
 can be configured using address based parameter code VINNO.
-Available in extended diagnostic session.
 
 #### Related requirements
 
@@ -123,7 +121,6 @@ Available in extended diagnostic session.
 
 Returns VOLVO proprietary chassis-id. The data connected to this identifier
 can be configured using address based parameter code CHANO.
-Available in extended diagnostic session.
 
 #### Related requirements
 
