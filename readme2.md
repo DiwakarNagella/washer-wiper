@@ -2,8 +2,8 @@
 
 ## Overview
 
-DID server module provides the following diagnostic data
-when requested using corresponding DIDs:
+The DID server implements many of the common mandatory DIDs
+(and extended data) used by most ECUs.
 
 * Application Software Identification (DID P1ALQ)
 * Application Data Identification (DID P1ALP)
@@ -227,6 +227,18 @@ See optional identifier F180 in ReadAndWrite specification
 #### Integration notes
 
 * Requires linker_symbols.h for symbols
+
+## Integration
+
+To handle the various ECU specific configurations,
+there are a number of #ifdef configurations.
+Also add the header files _VOL_DIDServer_cfg.h_ and _LinkerSymbols.h_.
+DIDs, extended data and signals are connected in a standard way.
+If the ECU has a LIN slave, the LIN Master on the ECU
+must support the C/S port to retrieve partnumbers etc.
+If the ECU has no LIN slave, leave the port unconnected.
+To store information for mandatory and extended data in
+"no init" RAM (to preserve it at a reboot), see source code for configuration details.
 
 ## More information
 
