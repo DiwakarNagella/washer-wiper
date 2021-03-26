@@ -56,11 +56,11 @@ UTCTimeStamp data is provided as extended diagnostic data.
 ### P1DIH - Active Diagnostic Session
 
 Active Diagnostic Session is updated by diagnostic session control
-mode machine. This is an optional DID not required by system specification.
+mode machine.
 
 #### Related requirements
 
-* TBD
+* This is an optional DID not required by system specification.
 
 #### Integration notes
 
