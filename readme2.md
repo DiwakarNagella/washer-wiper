@@ -5,20 +5,7 @@
 The DID server implements many of the common mandatory DIDs
 (and extended data) used by most ECUs.
 
-* Application Software Identification (DID P1ALQ)
-* Application Data Identification (DID P1ALP)
-* Chassis Identification (DID CHANO)
-* Vehicle Identification Number (DID VINNO)
-* Description File Sha256 (DID P1Q82)
-* ECU Hardware Number (DID P1ALA)
-* System Name or Engine Type (DID P1ALB)
-* Build ID (DID P1URK)
-* Boot Software Identification (DID P1B1O)
-* Outdoor Temperature (DID P1AFR)
-* Total Vehicle Distance (DID P1AFS)
-* Vehicle Mode (DID P1AFT)
-* Active Diagnostic Session (DID P1DIH)
-* UTC TimeStamp
+* See [Integration](#integration)
 
 ## Use cases
 
