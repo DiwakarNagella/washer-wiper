@@ -82,7 +82,7 @@ This service provides vehicle Manufacturer ECU Hardware number which includes
         the ECU H/W info without LIN slave information.
 
 ECU HW part number and HW serial number are stored in flash memory and
-available in all diagnostic sessions.
+available in extended diagnostic session.
 
 #### Related requirements
 
@@ -125,7 +125,7 @@ according to definition in [SEWS2](https://sews.volvo.net/Sews2/ViewData/ViewNod
 
 Returns vehicle identification number. The data connected to this identifier
 can be configured using address based parameter code VINNO.
-Available in all diagnostic sessions
+Available in extended diagnostic session.
 
 #### Related requirements
 
@@ -141,7 +141,7 @@ Connect Address parameter Rte_AddrPar_0x2F_VINNO
 
 Returns VOLVO proprietary chassis-id. The data connected to this identifier
 can be configured using address based parameter code CHANO.
-Available in all diagnostic sessions.
+Available in extended diagnostic session.
 
 #### Related requirements
 
