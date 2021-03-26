@@ -217,7 +217,7 @@ TBD
 
 ### P1B1O - Boot software identification
 
- An optional did for development purpose. Not supported in production
+ Identifies the PBL.
 
 #### Related requirements
 
