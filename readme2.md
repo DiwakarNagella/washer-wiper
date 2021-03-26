@@ -26,10 +26,10 @@ when requested using corresponding DIDs:
 
 The following parameters are provided for common snapshot data 
 
-*   Outdoor Temperature (DID P1AFR)
-*   Total Vehicle Distance (DID P1AFS). The odometer value of distance
-    driven since the assembly of the vehicle.
-*   Vehicle Mode (DID P1AFT)
+* Outdoor Temperature (DID P1AFR)
+* Total Vehicle Distance (DID P1AFS). The odometer value of distance
+  driven since the assembly of the vehicle.
+* Vehicle Mode (DID P1AFT)
 
 #### Related requirements
 
@@ -231,12 +231,12 @@ TBD
 
 ### Technical references
 
-*   Refer Vector technical references for functionality,
-    API and configuration of BSW Module.
-*   TechnicalReference_Dem.pdf (which can be found in ECU SIP)
-*   Vehicle Mode system specifications
-*   SYS - ReadAndWriteSpecifiction(Reg. no. 50135952)
-*   ECU Software Structure (Reg. no. 50136492)
+* Refer Vector technical references for functionality,
+  API and configuration of BSW Module.
+* TechnicalReference_Dem.pdf (which can be found in ECU SIP)
+* Vehicle Mode system specifications
+* SYS - ReadAndWriteSpecifiction(Reg. no. 50135952)
+* ECU Software Structure (Reg. no. 50136492)
 
 ### SEWS
 
