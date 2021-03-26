@@ -237,6 +237,7 @@ TBD
 * Vehicle Mode system specifications
 * SYS - ReadAndWriteSpecifiction(Reg. no. 50135952)
 * ECU Software Structure (Reg. no. 50136492)
+* LIN Node Identification and Addressing System Specification, Reg. no. 50136194
 
 ### SEWS
 
