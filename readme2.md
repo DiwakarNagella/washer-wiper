@@ -5,8 +5,6 @@
 The DID server implements many of the common mandatory DIDs
 (and extended data) used by most ECUs.
 
-* See [Integration](#integration)
-
 ## Use cases
 
 ### Snapshot data
@@ -24,8 +22,7 @@ The following parameters are provided for common snapshot data
 
 #### Integration notes
 
-* Service ports connected to DEM and DCM
-* connect RTE ports for signals
+* See [Integration](#integration)
 
 ### Extended diagnostic data
 
@@ -37,8 +34,7 @@ UTCTimeStamp data is provided as extended diagnostic data.
 
 #### Integration notes
 
-* Service ports connected to DEM
-* connect RTE ports for signals
+* See [Integration](#integration)
 
 ### P1DIH - Active Diagnostic Session
 
@@ -52,8 +48,7 @@ mode machine.
 
 #### Integration notes
 
-* Service port connected to DCM
-* connect RTE port for signal
+* See [Integration](#integration)
 
 ### P1ALA - ECU hardware identification
 
@@ -89,8 +84,7 @@ available in extended diagnostic session.
 #### Integration notes
 
 * Requires manufacturing_info.h for ZYNQ based ECUs.
-* Requires linker_symbols.h for symbols.
-* Connect service ports of VOL_LINManger for slave info.
+* See [Integration](#integration)
 
 ### P1ALB - System name
 
@@ -106,8 +100,7 @@ according to definition in [SEWS2](https://sews.volvo.net/Sews2/ViewData/ViewNod
 #### Integration notes
 
 * Requires manufacturing info.h for ZYNQ based ECUs
-* Requires linker_symbols.h for symbols
-* SEWS2 parameters assigned
+* See [Integration](#integration)
 
 ### VINNO - Vehicle identification
 
@@ -123,7 +116,8 @@ Available in extended diagnostic session.
 
 #### Integration notes
 
-Connect Address parameter Rte_AddrPar_0x2F_VINNO
+* Connect Address parameter Rte_AddrPar_0x2F_VINNO
+* See [Integration](#integration)
 
 ### CHANO - Chassis identification
 
@@ -137,7 +131,8 @@ Available in extended diagnostic session.
 
 #### Integration notes
 
-Connect Address parameter Rte_AddrPar_0x2F_CHANO
+* Connect Address parameter Rte_AddrPar_0x2F_CHANO
+* See [Integration](#integration)
 
 ### P1ALQ - Application software identification
 
@@ -153,8 +148,8 @@ For ZYNQ based ECUs, one CSW module may be the bitstream.
 
 #### Integration notes
 
-* Requires generation of build_info.h.
-* Requires linker_symbols.h for symbols
+* Requires generation of build_info.h
+* See [Integration](#integration)
 
 ### P1ALP - Application data identification
 
@@ -172,7 +167,8 @@ data for IC.
 
 #### Integration notes
 
-Requires generation of build_info.h.
+* Requires generation of build_info.h
+* See [Integration](#integration)
 
 ###  P1URK - Build ID
 
@@ -188,8 +184,8 @@ Example: 2.14.0.48-g1d621746
 
 #### Integration notes
 
-* Requires linker_symbols.h for symbols
 * Requires generation of build_info.h
+* See [Integration](#integration)
 
 ### P1Q82 - Description File Sha256
 
@@ -213,19 +209,19 @@ See optional identifier F180 in ReadAndWrite specification
 
 #### Integration notes
 
-* Requires linker_symbols.h for symbols
+* See [Integration](#integration)
 
 ## Integration
 
-To handle the various ECU specific configurations,
-there are a number of #ifdef configurations.
-Also add the header files _VOL_DIDServer_cfg.h_ and _LinkerSymbols.h_.
-DIDs, extended data and signals are connected in a standard way.
-If the ECU has a LIN slave, the LIN Master on the ECU
-must support the C/S port to retrieve partnumbers etc.
-If the ECU has no LIN slave, leave the port unconnected.
-To store information for mandatory and extended data in
-"no init" RAM (to preserve it at a reboot), see source code for configuration details.
+* To handle the various ECU specific configurations,
+  there are a number of #ifdef configurations.
+* Also add the header files _VOL_DIDServer_cfg.h_ and _LinkerSymbols.h_.
+* DIDs, extended data and signals are connected in a standard way.
+* If the ECU has a LIN slave, the LIN Master on the ECU
+  must support the C/S port to retrieve partnumbers etc.
+* If the ECU has no LIN slave, leave the port unconnected.
+* To store information for mandatory and extended data in
+  "no init" RAM (to preserve it at a reboot), see source code for configuration details.
 
 ## More information
 
